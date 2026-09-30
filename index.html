@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Röstlabbet – ditt röstgym med Monica</title>
+<meta name="description" content="Röstlabbet är ditt röstgym: två livepass och en frågelive med röstcoachen Monica varje månad, alla övningar och Sjung Smart-metoden. 349 kr i månaden.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Röstlabbet – ditt röstgym med Monica">
+<meta property="og:description" content="Två livepass och en frågelive med Monica varje månad, alla övningar och hela Sjung Smart-metoden. 349 kr i månaden, avsluta när du vill.">
+<meta property="og:image" content="https://rostlabbet.se/media/monica-poster.jpg">
+<meta property="og:url" content="https://rostlabbet.se/">
+<meta name="theme-color" content="#780000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23780000'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial' font-weight='900' font-size='36' text-anchor='middle' fill='%23FDF0D5'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: "röstgym". Cream base, whole bands in Vocal Red, and a membership card as the hero object that shows the offer. */
+:root{
+  color-scheme:light;
+  --vocal:#780000;
+  --vocal-deep:#5a0000;
+  --signal:#C1121F;
+  --lab:#00A6E6;
+  --cream:#FDF0D5;
+  --cream-2:#F7E4BF;
+  --ink:#1A1A1B;
+  --ink-soft:#4d4542;
+  --line:#e9d2a6;
+  /* CTA: Lab Blue with charcoal text (white on this blue is too low contrast) */
+  --cta-bg:var(--lab); --cta-fg:var(--ink); --cta-hover:#2bb8ee;
+  --cta-on-red-bg:var(--lab); --cta-on-red-fg:var(--ink); --cta-on-red-hover:#2bb8ee;
+  --f-display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --f-script:"Caveat","Segoe Script","Brush Script MT",cursive;
+  --f-label:"League Spartan",Arial,sans-serif;
+  --f-body:"Hanken Grotesk","Segoe UI",Arial,sans-serif;
+  --f-quote:"Libre Baskerville",Georgia,serif;
+  --f-logo:"Be Vietnam Pro","Arial Black",sans-serif;
+  --wrap:1180px;
+  --gutter:clamp(16px,4vw,44px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.band{padding-block:clamp(72px,10vw,128px)}
+.red{background:var(--vocal);color:var(--cream)}
+.kicker{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.34em;font-size:.78rem;margin:0 0 20px;color:var(--signal)}
+.red .kicker{color:var(--cream);opacity:.8}
+h1,h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.16;color:var(--vocal)}
+.red h2{color:var(--cream)}
+h3{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;margin:0 0 8px}
+.script{font-family:var(--f-script);font-weight:600;text-transform:none;letter-spacing:0;color:var(--lab);display:inline-block;transform:rotate(-6deg);line-height:1}
+.lede{font-size:clamp(1.1rem,1.6vw,1.32rem);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;text-decoration:none;padding:19px 30px 17px;border-radius:999px;border:2px solid transparent;background:var(--cta-bg);color:var(--cta-fg);transition:transform .15s ease,background .15s ease;cursor:pointer}
+.btn:hover{background:var(--cta-hover);transform:translateY(-2px)}
+.red .btn{background:var(--cta-on-red-bg);color:var(--cta-on-red-fg)}
+.red .btn:hover{background:var(--cta-on-red-hover)}
+.btn .arrow{font-family:var(--f-body);font-size:1.2rem;line-height:0;transition:transform .15s}
+.btn:hover .arrow{transform:translateX(4px)}
+.btn-line{background:transparent!important;color:inherit!important;border-color:currentColor}
+:focus-visible{outline:3px solid var(--lab);outline-offset:3px}
+
+/* placeholders */
+.ph{background:repeating-linear-gradient(-45deg,rgba(193,18,31,.07) 0 8px,transparent 8px 16px);outline:2px dashed var(--signal);outline-offset:-1px;border-radius:3px;padding:0 .25em}
+.red .ph,.dark .ph{outline-color:var(--cream);background:none}
+
+/* draft bar */
+.draft{background:var(--ink);color:var(--cream);font-family:var(--f-label);font-size:.78rem;letter-spacing:.06em}
+.draft .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;padding-block:8px}
+.draft b{color:#ff8a8a;font-weight:600}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;line-height:1;color:var(--vocal)}
+.logo .word{font-family:var(--f-logo);font-weight:700;font-size:1.6rem;letter-spacing:.01em}
+.logo .word i{font-family:"Times New Roman",Times,serif;font-weight:400;font-style:italic;letter-spacing:0;margin-left:1px}
+.logo .tag{font-family:var(--f-label);font-size:.52rem;letter-spacing:.44em;text-transform:uppercase;margin-top:5px;color:var(--ink-soft)}
+nav.main{display:flex;align-items:center;gap:28px;font-family:var(--f-label);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+nav.main a{text-decoration:none}
+nav.main a:not(.btn):hover{color:var(--signal)}
+nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
+@media (max-width:900px){nav.main .hide-sm{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-12vw;top:-20vw;width:60vw;height:60vw;border-radius:50%;border:1px solid rgba(253,240,213,.12);box-shadow:0 0 0 6vw rgba(253,240,213,.03),0 0 0 12vw rgba(253,240,213,.025);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(36px,6vw,80px);align-items:center;padding-block:clamp(56px,8vw,104px)}
+.hero h1{font-size:clamp(3.6rem,8.4vw,7.6rem);line-height:1.14}
+.hero h1 .script{font-size:.5em;margin:.2em 0 0 .06em;display:block;width:max-content;max-width:100%}
+.hero .lede{margin-top:28px}
+.hero .lede strong{font-weight:600;border-bottom:2px solid var(--lab)}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:36px}
+.hero .ctas .sub{font-family:var(--f-label);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+@media (max-width:1040px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.mcard-wrap{justify-content:flex-start;padding-top:30px}}
+
+/* membership card */
+.mcard-wrap{display:flex;justify-content:center;padding:10px}
+.mcard{position:relative;width:100%;max-width:420px;background:var(--cream);color:var(--ink);border-radius:22px;padding:26px 28px 22px;box-shadow:0 30px 60px rgba(30,0,0,.45),0 2px 0 rgba(255,255,255,.4) inset}
+.mcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mcard .logo .word{font-size:1.25rem}
+.mcard .label{font-family:var(--f-label);font-weight:700;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--signal);text-align:right}
+.mcard .title{font-family:var(--f-display);font-size:3.4rem;line-height:1.1;color:var(--vocal);margin:22px 0 4px;text-transform:uppercase}
+.mcard .month{font-family:var(--f-label);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.mcard dl{margin:18px 0 0;display:grid;gap:0}
+.mcard dl div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-top:1px dashed #d8bd8d;font-size:.98rem}
+.mcard dt{margin:0}
+.mcard dd{margin:0;font-family:var(--f-display);font-size:1.25rem;color:var(--vocal);font-variant-numeric:tabular-nums}
+.mcard-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:14px}
+.mcard .price{font-family:var(--f-display);font-size:2rem;line-height:1;color:var(--ink)}
+.mcard .price small{font-family:var(--f-label);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-left:4px;color:var(--ink-soft)}
+.barcode{width:110px;height:34px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.stamp{position:absolute;right:-30px;top:-34px;width:100px;height:100px;border-radius:50%;border:2px solid var(--signal);color:var(--signal);background:var(--cream);display:grid;place-items:center;text-align:center;font-family:var(--f-label);font-weight:700;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.25;transform:rotate(-14deg);box-shadow:0 0 0 4px var(--cream),0 0 0 5px var(--signal)}
+@media (max-width:480px){.stamp{right:-8px;top:-40px;width:88px;height:88px;font-size:.54rem}}
+
+/* proof */
+.proof{border-bottom:1px solid var(--line)}
+.proof .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 36px;padding-block:24px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:600}
+.proof b{font-family:var(--f-display);font-weight:400;font-size:1.7rem;letter-spacing:.02em;color:var(--vocal);margin-right:8px;vertical-align:-3px}
+
+/* gym analogy */
+.gym .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
+.gym .lede{margin-top:26px;color:var(--ink-soft)}
+.gym-list{display:grid;gap:0;margin-top:6px}
+.gym-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:22px 0;border-top:2px solid var(--vocal)}
+.gym-row:last-child{border-bottom:2px solid var(--vocal)}
+.gym-row span{font-size:1.02rem;color:var(--ink-soft)}
+.gym-row span:last-child{color:var(--ink)}
+.gym-row .h{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--signal)}
+@media (max-width:860px){.gym .wrap{grid-template-columns:1fr}}
+
+/* what's included */
+.incl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 40px;margin-bottom:48px}
+.incl-head .lede{max-width:40ch;opacity:.9}
+.incl{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(253,240,213,.18);border-radius:18px;overflow:hidden}
+.item{background:var(--vocal);padding:30px 26px 32px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.item .n{font-family:var(--f-display);font-size:5rem;line-height:.85;color:var(--cream)}
+.item .n small{font-size:.32em;letter-spacing:.04em;margin-left:4px;opacity:.75}
+.item h3{margin:6px 0 0;font-size:.95rem}
+.item p{font-size:1rem;opacity:.85}
+.item .worth{margin-top:auto;font-family:var(--f-label);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--vocal);background:var(--cream);align-self:flex-start;padding:6px 10px 4px;border-radius:999px}
+@media (max-width:980px){.incl{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.incl{grid-template-columns:1fr}}
+
+/* schedule */
+.sched-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.sched-wrap .lede{margin-top:24px;color:var(--ink-soft)}
+.schedule{background:#fffaf0;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(120,0,0,.08)}
+.sched-title{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 22px;background:var(--ink);color:var(--cream);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:700}
+.sched-title span:last-child{letter-spacing:.06em;font-weight:400;opacity:.7;text-transform:none;font-family:var(--f-body)}
+.row{display:grid;grid-template-columns:96px 1fr auto;gap:10px 20px;align-items:center;padding:18px 22px;border-top:1px solid var(--line)}
+#sched-items .row:first-child{border-top:0}
+#sched-items .row.empty{grid-template-columns:1fr}
+#sched-items .row.empty a{color:var(--vocal);font-weight:600}
+.tag.tema{background:var(--signal);color:var(--cream)}
+.when{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--vocal);font-variant-numeric:tabular-nums;line-height:1.35}
+.when small{display:block;font-weight:400;color:var(--ink-soft);letter-spacing:.04em}
+.what h3{margin:0 0 2px;font-size:.9rem}
+.what p{font-size:.96rem;color:var(--ink-soft);line-height:1.5}
+.tag{font-family:var(--f-label);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px 4px;border-radius:999px;white-space:nowrap}
+.tag.live{background:var(--vocal);color:var(--cream)}
+.tag.q{background:var(--ink);color:var(--cream)}
+.tag.lib{color:var(--vocal);box-shadow:inset 0 0 0 1.5px var(--vocal)}
+@media (max-width:860px){.sched-wrap{grid-template-columns:1fr}}
+@media (max-width:600px){.row{grid-template-columns:1fr auto}.row .what{grid-column:1/-1;order:3}}
+
+/* calm */
+.calm{text-align:center;background:var(--vocal-deep)}
+.calm .script{font-size:clamp(2.4rem,5vw,3.6rem);transform:rotate(-4deg);margin-bottom:14px}
+.calm .lede{margin:26px auto 0}
+
+/* price */
+.price .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.price .compare{margin-top:26px;display:grid;gap:0;max-width:440px}
+.compare div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:1.02rem}
+.compare div:last-child{border-bottom:1px solid var(--line)}
+.compare .v{font-family:var(--f-display);font-size:1.3rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.compare .us .v{color:var(--vocal)}
+.compare .us{font-weight:700}
+.pcard{background:var(--ink);color:var(--cream);border-radius:22px;padding:clamp(28px,4vw,46px);min-width:0;position:relative}
+.pcard .kicker{color:var(--cream);opacity:.7}
+.amount{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.amount .big{font-family:var(--f-display);font-size:clamp(4.6rem,9vw,6.6rem);line-height:.9}
+.amount .per{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.16em;font-size:.88rem}
+.pcard .alt{margin-top:8px;font-size:1rem;opacity:.85}
+.pcard ul{list-style:none;padding:0;margin:28px 0 32px;display:grid;gap:12px}
+.pcard li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:1.02rem}
+.pcard li::before{content:"";width:9px;height:9px;margin-top:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(193,18,31,.25)}
+.pcard .btn{width:100%;background:var(--cta-on-red-bg);color:var(--cta-on-red-fg)}
+.pcard .btn:hover{background:var(--cta-on-red-hover)}
+.pcard .fine{margin-top:14px;font-size:.88rem;opacity:.7;text-align:center}
+.pcard .ph{outline-color:var(--cream);background:none}
+@media (max-width:860px){.price .wrap{grid-template-columns:1fr}}
+
+/* monica */
+.monica .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:center}
+.photo{aspect-ratio:4/5;max-width:100%;border-radius:220px 220px 18px 18px;background:linear-gradient(170deg,#2a2a2b,#111);color:var(--cream);display:grid;place-items:end center;padding:26px;font-family:var(--f-label);letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;text-align:center}
+.photo span{outline:2px dashed var(--cream);outline-offset:4px;padding:4px 8px}
+.monica h2{margin-bottom:24px}
+.monica p+p{margin-top:14px}
+blockquote{margin:36px 0 0;padding:0;font-family:var(--f-quote);font-style:italic;color:var(--vocal);font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.45}
+blockquote cite{display:block;margin-top:14px;font-family:var(--f-label);font-style:normal;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;color:var(--ink)}
+@media (max-width:860px){.monica .wrap{grid-template-columns:1fr}.photo{max-width:340px}}
+
+/* voices */
+.voices h2{text-align:center}
+.voices .kicker{text-align:center}
+blockquote.pull{margin-top:32px;padding-left:22px;border-left:3px solid var(--signal);font-size:clamp(1.15rem,1.8vw,1.4rem)}
+.voice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:48px}
+.voice{border-top:1px solid rgba(253,240,213,.35);padding-top:22px;min-width:0}
+.voice p{font-family:var(--f-quote);font-style:italic;font-size:1.08rem;line-height:1.55}
+.voice cite{display:block;margin-top:14px;font-family:var(--f-label);font-style:normal;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;opacity:.8}
+@media (max-width:860px){.voice-grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq .wrap{max-width:880px}
+.faq h2{margin-bottom:36px}
+details{border-top:1px solid var(--line);padding-block:20px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-display);font-size:1.7rem;line-height:.8;color:var(--signal);transition:transform .2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
+
+/* more */
+.more{background:var(--cream-2)}
+.more .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.more h2{font-size:clamp(2rem,4vw,3rem)}
+.more .intro{margin-top:18px;color:var(--ink-soft)}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
+.offer{border:1px solid var(--line);background:var(--cream);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.offer .p{font-family:var(--f-display);font-size:1.7rem;color:var(--vocal);line-height:1}
+.offer .p small{font-family:var(--f-label);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-left:4px}
+.offer p{color:var(--ink-soft);font-size:1rem;flex:1}
+.offer a{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;text-decoration:none;border-bottom:2px solid var(--signal);align-self:flex-start;padding-bottom:3px}
+@media (max-width:860px){.more .wrap{grid-template-columns:1fr}}
+@media (max-width:560px){.more-grid{grid-template-columns:1fr}}
+
+/* final */
+.final{text-align:center}
+.final h2{font-size:clamp(3.2rem,8vw,6.4rem);line-height:1.14}
+.final .script{font-size:.55em;display:block;margin-top:.2em}
+.final .lede{margin:26px auto 36px}
+
+/* video */
+.film{background:var(--ink);color:var(--cream)}
+.film .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,72px);align-items:center}
+.film h2{color:var(--cream)}
+.film .kicker{color:#ff8a8a}
+.film .lede{margin-top:22px;opacity:.85}
+.film ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px;font-size:1rem}
+.film li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--signal);margin-right:12px;vertical-align:2px}
+.player{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.player video{display:block;width:100%;height:100%;object-fit:cover}
+.sound{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;padding:13px 18px 11px;border-radius:999px;border:0;background:var(--cream);color:var(--vocal);cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.sound .dot{width:0;height:0;border-left:10px solid var(--vocal);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-top:-2px}
+.live-badge{position:absolute;right:16px;top:16px;font-family:var(--f-label);font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;background:var(--signal);color:var(--cream);padding:6px 10px 4px;border-radius:6px}
+@media (max-width:900px){.film .wrap{grid-template-columns:1fr}.film .player{order:-1}}
+.photo.has-img{padding:0;background:#222;overflow:hidden}
+.photo.has-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* mobile */
+.mbar{display:none}
+@media (max-width:700px){
+  body{font-size:17px}
+  .band{padding-block:64px}
+  .top .wrap{padding-block:10px}
+  .logo .word{font-size:1.35rem}
+  nav.main .btn{padding:10px 16px 8px;font-size:.7rem}
+  .hero .wrap{padding-block:44px 56px;gap:44px}
+  .hero h1{font-size:clamp(3.2rem,16vw,4.4rem)}
+  .hero .ctas .btn{width:100%}
+  .hero .ctas .sub{width:100%;text-align:center}
+  .mcard{padding:22px 22px 18px}
+  .mcard .title{font-size:2.8rem}
+  .proof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;font-size:.72rem}
+  .proof b{display:block;margin:0 0 2px;font-size:1.9rem}
+  .gym-row{grid-template-columns:1fr;gap:4px;padding:16px 0}
+  .gym-row:first-child{display:none}
+  .gym-row span:first-child{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--signal)}
+  .item{padding:24px 22px}
+  .item .n{font-size:4rem}
+  .compare div{font-size:.95rem}
+  .final .btn{width:100%}
+  .draft{font-size:.7rem}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:12px;align-items:center;justify-content:space-between;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--cream);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(120,0,0,.12);transform:translateY(0);transition:transform .25s ease}
+  .mbar.away{transform:translateY(110%)}
+  .mbar .p{font-family:var(--f-display);font-size:1.5rem;line-height:1;color:var(--vocal)}
+  .mbar .p small{display:block;font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+  .mbar .btn{padding:14px 20px 12px;font-size:.8rem}
+  footer{padding-bottom:84px}
+}
+
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:28px;font-family:var(--f-label);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+footer span{opacity:.75}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{text-decoration:none;opacity:.75}
+footer a:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<div class="draft">
+  <div class="wrap">
+    <span>UTKAST 2 · <b>Streckat i rött</b> = platshållare som Monica fyller i</span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Röstlabbet, till toppen">
+      <span class="word">RÖST<i>lab</i></span>
+      <span class="tag">Röstgym med Monica</span>
+    </a>
+    <nav class="main" aria-label="Huvudmeny">
+      <a class="hide-sm" href="#ingar">Det här ingår</a>
+      <a class="hide-sm" href="#monica">Om Monica</a>
+      <a class="hide-sm" href="#fragor">Frågor</a>
+      <a class="hide-sm" href="https://www.rostlabbet.se/">Logga in</a>
+      <a class="btn" href="#pris">Bli medlem</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero red">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Röstlabbet · medlemskap</p>
+      <h1>Ditt röstgym<span class="script">med Monica</span></h1>
+      <p class="lede">Två livepass och en frågestund med röstcoachen Monica varje månad. Alla övningar och hela Sjung Smart-metoden. <strong>349 kr i månaden, avsluta när du vill.</strong></p>
+      <div class="ctas">
+        <a class="btn" href="#pris">Bli medlem <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="sub" href="#ingar">Se vad som ingår ↓</a>
+      </div>
+    </div>
+
+    <div class="mcard-wrap">
+      <div class="mcard" aria-label="Medlemskortet: det här ingår varje månad">
+        <div class="mcard-top">
+          <span class="logo"><span class="word">RÖST<i>lab</i></span></span>
+
+        </div>
+        <div class="title">Röstgym</div>
+        <div class="month">Medlemskort · varje månad ingår</div>
+        <dl>
+          <div><dt>Live Vocal Workout med Monica</dt><dd>2</dd></div>
+          <div><dt>Frågelive</dt><dd>1</dd></div>
+          <div><dt>Sjung Smart-metoden</dt><dd>✓</dd></div>
+          <div><dt>Övningar &amp; inspelningar</dt><dd>∞</dd></div>
+        </dl>
+        <div class="mcard-foot">
+          <span class="price">349 kr<small>/ mån</small></span>
+          <span class="barcode" aria-hidden="true"></span>
+        </div>
+        <div class="stamp" aria-hidden="true">Ingen<br>bindnings-<br>tid</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof">
+  <div class="wrap">
+    <span><b>30+</b>år som röstcoach</span>
+    <span><b class="ph">XXX</b>sångare coachade</span>
+    <span><b>2+1</b>livepass i månaden</span>
+    <span><b>349</b>kr, avsluta när du vill</span>
+  </div>
+</div>
+
+<!-- FILM -->
+<section class="band film" id="film">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Titta in i studion</p>
+      <h2>Så här tränar vi</h2>
+      <p class="lede">Monica leder passet från studion och du är med hemma. Hon visar, du härmar, och ni jobbar med andning, klang och sångglädje tillsammans.</p>
+      <ul>
+        <li>Två livepass i månaden</li>
+        <li>Kamera och mikrofon av om du vill</li>
+        <li>Allt spelas in</li>
+      </ul>
+    </div>
+    <div class="player">
+      <video id="film-video" src="media/monica-livepass.mp4" poster="media/monica-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Monica leder ett röstpass i studion"></video>
+      <span class="live-badge">Röstlabbet live</span>
+      <button class="sound" id="film-sound" type="button"><span class="dot" aria-hidden="true"></span>Spela med ljud</button>
+    </div>
+  </div>
+</section>
+
+<!-- GYM ANALOGY -->
+<section class="band gym">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Så funkar det</p>
+      <h2>Som ett gymkort, fast för rösten</h2>
+      <p class="lede">En röst blir starkare på samma sätt som en kropp: av regelbunden träning med någon som vet vad du ska göra. Du betalar per månad och tränar när det passar dig.</p>
+      <blockquote class="pull">”Träning utan att tänka på att det är träning.”<cite>Deltagare, Vocal Workout</cite></blockquote>
+    </div>
+    <div class="gym-list">
+      <div class="gym-row"><span class="h">På gymmet</span><span class="h">I Röstlabbet</span></div>
+      <div class="gym-row"><span>Gruppass med instruktör</span><span>Live Vocal Workout med Monica, två gånger i månaden</span></div>
+      <div class="gym-row"><span>Fråga en PT</span><span>Frågelive där du får svar på just din fråga</span></div>
+      <div class="gym-row"><span>Träningsprogram</span><span>Sjung Smart, metoden för att repa en låt smartare</span></div>
+      <div class="gym-row"><span>Träna på egen hand</span><span>Vocal Labs och inspelningar av alla livepass</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="band red" id="ingar">
+  <div class="wrap">
+    <div class="incl-head">
+      <div>
+        <p class="kicker">Det här ingår</p>
+        <h2>Allt i ett medlemskap</h2>
+      </div>
+      <p class="lede">Du köper en sak och får tillgång till allt. Inga tillägg, inga nivåer.</p>
+    </div>
+    <div class="incl">
+      <div class="item">
+        <span class="n">2<small>/mån</small></span>
+        <h3>Live Vocal Workouts</h3>
+        <p>Vi tränar tillsammans i realtid. En av träffarna har ett tema där vi nördar ner oss lite extra.</p>
+      </div>
+      <div class="item">
+        <span class="n">1<small>/mån</small></span>
+        <h3>Frågelive</h3>
+        <p>Fråga om röst, träning, scen och repetition. Både stora funderingar och små detaljer.</p>
+      </div>
+      <div class="item">
+        <span class="n">1</span>
+        <h3>Sjung Smart</h3>
+        <p>Hela metoden för att repa en låt: stanna upp, lyssna, justera och välja medvetet.</p>
+        <span class="worth">Värd 550 kr · ingår</span>
+      </div>
+      <div class="item">
+        <span class="n">∞</span>
+        <h3>Övningar &amp; inspelningar</h3>
+        <p>Vocal Labs, alla träningsmoduler som finns och kommer, och varje livepass i efterhand. Plus forumet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="band">
+  <div class="wrap sched-wrap">
+    <div>
+      <p class="kicker">En månad som medlem</p>
+      <h2>Ditt repschema</h2>
+      <p class="lede">Passen varvas mellan dagtid och kväll, så att så många som möjligt kan vara med live. Kan du inte? Allt spelas in.</p>
+    </div>
+    <div class="schedule" role="table" aria-label="Kommande livepass">
+      <div class="sched-title" role="row"><span role="columnheader" id="sched-month">Oktober 2026</span><span>Alla pass spelas in</span></div>
+      <!-- Static rows are the fallback. When SHEET_CSV_URL is set, the script replaces them with the rows in Monica's sheet. -->
+      <div id="sched-items" role="rowgroup">
+        <div class="row" role="row" data-date="2026-10-06">
+          <div class="when" role="cell">Tis 6/10<small>kl 11.00</small></div>
+          <div class="what" role="cell"><h3>Live Vocal Workout</h3><p>Uppvärmning, andning och klang med Vocal Labs.</p></div>
+          <span class="tag live" role="cell">Livepass</span>
+        </div>
+        <div class="row" role="row" data-date="2026-10-22">
+          <div class="when" role="cell">Tor 22/10</div>
+          <div class="what" role="cell"><h3>Vocal Workout med tema</h3><p>Månadens tema: bygg styrka i ditt högre register.</p></div>
+          <span class="tag tema" role="cell">Tema</span>
+        </div>
+        <div class="row" role="row" data-date="2026-10-30">
+          <div class="when" role="cell">Fre 30/10</div>
+          <div class="what" role="cell"><h3>Frågelive med Monica</h3><p>Skicka in din fråga i förväg eller ställ den direkt.</p></div>
+          <span class="tag q" role="cell">Frågelive</span>
+        </div>
+      </div>
+      <div class="row" role="row">
+        <div class="when" role="cell">Alltid<small>när du vill</small></div>
+        <div class="what" role="cell"><h3>Bibliotek</h3><p>Sjung Smart, Vocal Labs och alla inspelningar.</p></div>
+        <span class="tag lib" role="cell">Bibliotek</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALM -->
+<section class="band red calm">
+  <div class="wrap">
+    <span class="script">Andas ut.</span>
+    <h2>Du behöver inte sjunga inför någon</h2>
+    <p class="lede">Du är med via skärmen och tränar hemma. Kameran och mikrofonen kan vara avstängda, och frågor ställer du i chatten. Här finns inga prestationskrav och inga perfekta röster.</p>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="band price" id="pris">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Ett pris, allt ingår</p>
+      <h2>Mindre än en lektion i månaden</h2>
+      <div class="compare">
+        <div><span>En privatlektion med Monica</span><span class="v">995 kr</span></div>
+        <div><span>Sjung Smart som separat kurs</span><span class="v">550 kr</span></div>
+        <div class="us"><span>Röstlabbet, allt ovan varje månad*</span><span class="v">349 kr</span></div>
+      </div>
+      <p style="margin-top:14px;font-size:.9rem;color:var(--ink-soft)">*Livepass i grupp och frågelive. Personlig 1:1-coaching bokar du separat.</p>
+    </div>
+    <div class="pcard">
+      <p class="kicker">Röstlabbet medlem</p>
+      <div class="amount"><span class="big">349 kr</span><span class="per">/ månad</span></div>
+      <p class="alt">eller <span class="ph">3 490 kr</span> per år, två månader gratis</p>
+      <ul>
+        <li><span>2 Live Vocal Workouts med Monica varje månad</span></li>
+        <li><span>1 frågelive varje månad</span></li>
+        <li><span>Sjung Smart, hela metoden</span></li>
+        <li><span>Vocal Labs och alla träningsmoduler, nu och framöver</span></li>
+        <li><span>Inspelningar av alla livepass</span></li>
+        <li><span>Forum med andra sångare</span></li>
+      </ul>
+      <a class="btn" href="https://www.rostlabbet.se/courses/rostlabbet-medlemskap">Bli medlem nu <span class="arrow" aria-hidden="true">→</span></a>
+      <p class="fine">Ingen bindningstid. Avsluta när du vill från ditt konto. <span class="ph">bekräfta i Zenler</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- MONICA -->
+<section class="band monica" id="monica" style="padding-top:0">
+  <div class="wrap">
+    <div class="photo has-img"><img src="media/monica-portratt.jpg" alt="Monica sjunger i studion med hörlurar och mikrofon" width="720" height="900" loading="lazy"></div>
+    <div>
+      <p class="kicker">Din coach</p>
+      <h2>Hej, jag heter Monica</h2>
+      <p>Jag har arbetat med sång, röst och scen i över 30 år. Som sångpedagog möter jag ofta människor som älskar att sjunga men inte riktigt vet hur de ska träna mellan lektioner och körrepetitioner.</p>
+      <p>Därför startade jag Röstlabbet. Jag ville göra röstträning mer tillgänglig och skapa en plats där sångare kan träna regelbundet, inspireras av andra så att träningen faktiskt blir av, och upptäcka fler möjligheter i sin egen röst.</p>
+      <blockquote>”Med nyfikenhet och sångglädje som drivkraft.”<cite>Monica Christoffersson, sångpedagog</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="band red voices">
+  <div class="wrap">
+    <p class="kicker">Från sångare som tränat med Monica</p>
+    <h2>Det här säger de</h2>
+    <div class="voice-grid">
+      <div class="voice"><p>”Märkte skillnad direkt när jag testade övningarna i kursmaterialet! Är helt såld!”</p><cite>Amanda, efter Sjung Smart</cite></div>
+      <div class="voice"><p>”Monica har alltid en förmåga att lyfta mig och nå de mål jag vill med min sång.”</p><cite>Qica, artist · individuell coaching</cite></div>
+      <div class="voice"><p>”Det bästa med kursen? Monicas energi, hennes lyhördhet till allas unika behov och den tillåtande miljön!”</p><cite>Kursdeltagare · anonym utvärdering</cite></div>    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band faq" id="fragor">
+  <div class="wrap">
+    <p class="kicker">Vanliga frågor</p>
+    <h2>Innan du bestämmer dig</h2>
+    <details><summary>Kan jag avsluta när jag vill?</summary><p>Ja. Det finns ingen bindningstid. Du avslutar själv från ditt konto och har kvar tillgången månaden ut. <span class="ph">bekräfta mot Zenler</span></p></details>
+    <details><summary>Måste jag synas eller sjunga inför andra?</summary><p>Nej. Du kan ha kamera och mikrofon avstängda på alla livepass och ställa dina frågor i chatten.</p></details>
+    <details><summary>Vilken nivå behöver jag vara på?</summary><p>Ingen särskild. Röstlabbet är för alla som sjunger, från dig som precis börjat i kör till dig som stått på scen i många år.</p></details>
+    <details><summary>Jag kan inte när livepasset går. Vad gör jag då?</summary><p>Alla livepass spelas in och läggs i biblioteket. Passen varvas dessutom mellan dagtid och kvällstid.</p></details>
+    <details><summary>Hur mycket tid behöver jag lägga?</summary><p>Ett livepass är cirka 45 minuter. Utöver det räcker 10–15 minuter några gånger i veckan för att du ska märka skillnad. <span class="ph">Monica justerar</span></p></details>
+    <details><summary>Kan jag köpa Sjung Smart separat?</summary><p>Sjung Smart ingår i medlemskapet, tillsammans med livepass, frågelive och alla övningar. Det är det enklaste sättet att komma igång.</p></details>
+  </div>
+</section>
+
+<!-- MORE -->
+<section class="band more">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Vill du ha mer?</p>
+      <h2>Personlig coaching &amp; workshops</h2>
+      <p class="intro">För dig som vill ha feedback på just din röst, eller för körer och grupper som vill träna tillsammans.</p>
+    </div>
+    <div class="more-grid">
+      <div class="offer">
+        <h3>1:1-coaching</h3>
+        <div class="p">995 kr<small>per tillfälle</small></div>
+        <p>Vi ses via skärm och arbetar med det du vill utveckla, inför en audition, ett framträdande eller för att komma vidare.</p>
+        <a href="#" title="Länk till bokning">Boka tid</a>
+      </div>
+      <div class="offer">
+        <h3>Workshops</h3>
+        <div class="p">Live<small>på plats &amp; online</small></div>
+        <p>För körer, grupper och arbetsplatser. Vi testar, utmanar och inspirerar varandra.</p>
+        <a href="#" title="Länk till workshops">Se workshops</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="band red final">
+  <div class="wrap">
+    <h2>Sluta gissa<span class="script">börja träna</span></h2>
+    <p class="lede" id="next-live">Nästa livepass är tisdag 6 oktober kl 11. Bli medlem i dag så är du med.</p>
+    <a class="btn" href="#pris">Bli medlem · 349 kr/mån <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Röstlabbet · Monk Produktion</span>
+    <nav aria-label="Sidfot">
+      <a href="#">Allmänna villkor</a>
+      <a href="#">Integritetspolicy</a>
+      <a href="#">Cookies</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar" aria-label="Bli medlem">
+  <span class="p">349 kr<small>per månad · ingen bindning</small></span>
+  <a class="btn" href="#pris">Bli medlem</a>
+</div>
+
+<script>
+(function(){
+  var v=document.getElementById('film-video'),b=document.getElementById('film-sound');
+  if(v&&b){b.addEventListener('click',function(){
+    v.muted=false;v.loop=false;v.currentTime=0;v.controls=true;
+    var p=v.play();if(p&&p.catch)p.catch(function(){});
+    b.hidden=true;
+  });}
+  var bar=document.getElementById('mbar'),hero=document.querySelector('.hero'),pris=document.getElementById('pris');
+  if(bar&&'IntersectionObserver' in window){
+    var heroVis=true,prisVis=false;
+    var set=function(){bar.classList.toggle('away',heroVis||prisVis)};
+    new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;set()}).observe(hero);
+    new IntersectionObserver(function(e){prisVis=e[0].isIntersecting;set()}).observe(pris);
+  }
+})();
+
+/* Schedule from Monica's Google Sheet.
+   Sheet columns (row 1): Datum | Tid | Typ | Rubrik | Beskrivning.
+   The sheet is shared "anyone with the link can view"; the export link returns live CSV with CORS.
+   Empty URL, a failed fetch or a sheet without the "Datum" header = keep the static rows in the HTML. */
+var SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/1psrrpbkBSNHctvYX_uolhrglpOxRO52bGWGunK1ZLcU/export?format=csv';
+var ZENLER_URL='https://www.rostlabbet.se/courses/rostlabbet-medlemskap';
+(function(){
+  var DAYS=['Sön','Mån','Tis','Ons','Tor','Fre','Lör'];
+  var DAYS_LONG=['söndag','måndag','tisdag','onsdag','torsdag','fredag','lördag'];
+  var MONTHS=['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
+  var box=document.getElementById('sched-items'),monthEl=document.getElementById('sched-month'),nextEl=document.getElementById('next-live');
+  if(!box)return;
+  var today=new Date();today.setHours(0,0,0,0);
+
+  function parseDate(s){
+    // 2026-10-06, optionally followed by a time if Sheets turned the cell into a date-time
+    var m=/^\s*(\d{4})-(\d{1,2})-(\d{1,2})(?:[ T].*)?\s*$/.exec(s||'');if(!m)return null;
+    var d=new Date(+m[1],+m[2]-1,+m[3]);return d.getMonth()===+m[2]-1?d:null;
+  }
+  // 11 / 11:00 / 11,00 / 11.00 -> 11.00 (Sheets may turn "11.00" into a number)
+  function normTime(s){
+    s=(s||'').trim();if(!s)return'';
+    var m=/^(\d{1,2})(?:[.:,](\d{1,2}))?(?::\d{2})?$/.exec(s);
+    if(!m)return s;
+    var mm=m[2]?(m[2].length===1?m[2]+'0':m[2]):'00';
+    return m[1]+'.'+mm;
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+  function monthLabel(items){
+    var a=items[0].d,b=items[items.length-1].d,t=cap(MONTHS[a.getMonth()]);
+    if(a.getMonth()!==b.getMonth()||a.getFullYear()!==b.getFullYear())t+=' – '+MONTHS[b.getMonth()];
+    return t+' '+b.getFullYear();
+  }
+  function setNext(it){
+    if(!nextEl)return;
+    nextEl.textContent=it?'Nästa livepass är '+DAYS_LONG[it.d.getDay()]+' '+it.d.getDate()+' '+MONTHS[it.d.getMonth()]+(it.t?' kl '+it.t:'')+'. Bli medlem i dag så är du med.':'Bli medlem i dag så är du med på nästa livepass.';
+  }
+  function showEmpty(){
+    box.innerHTML='<div class="row empty" role="row"><p role="cell">Nästa månads pass läggs upp inom kort. <a href="'+ZENLER_URL+'">Se schemat i Röstlabbet</a></p></div>';
+    if(monthEl)monthEl.textContent='Kommande pass';
+    setNext(null);
+  }
+  // CSV parser that handles quoted fields with commas and line breaks
+  function parseCSV(text){
+    var rows=[],row=[],f='',q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){if(c==='"'){if(text[i+1]==='"'){f+='"';i++}else q=false}else f+=c}
+      else if(c==='"')q=true;
+      else if(c===','){row.push(f);f=''}
+      else if(c==='\n'||c==='\r'){if(c==='\r'&&text[i+1]==='\n')i++;row.push(f);rows.push(row);row=[];f=''}
+      else f+=c;
+    }
+    if(f!==''||row.length){row.push(f);rows.push(row)}
+    return rows;
+  }
+  function fromSheet(text){
+    var rows=parseCSV(text);if(!rows.length)return null;
+    var head=rows[0].map(function(h){return h.trim().toLowerCase()});
+    if(head.indexOf('datum')<0)return null; // sheet not set up yet
+    var col=function(n,fb){var i=head.indexOf(n);return i<0?fb:i};
+    var cD=col('datum',0),cT=col('tid',1),cY=col('typ',2),cR=col('rubrik',3),cB=col('beskrivning',4);
+    var out=[];
+    rows.slice(1).forEach(function(r){
+      var d=parseDate(r[cD]);if(!d||d<today)return; // skip bad dates one row at a time
+      var type=(r[cY]||'Livepass').trim();
+      out.push({d:d,t:normTime(r[cT]),type:type,title:(r[cR]||'').trim()||type,desc:(r[cB]||'').trim()});
+    });
+    return out.sort(function(a,b){return a.d-b.d});
+  }
+  function render(items){
+    if(!items.length){showEmpty();return}
+    box.innerHTML=items.map(function(it){
+      var low=it.type.toLowerCase(),cls=low.indexOf('fråg')>-1?'q':(low.indexOf('tema')>-1?'tema':'live');
+      var label=cls==='q'?'Frågelive':(cls==='tema'?'Tema':'Livepass');
+      return '<div class="row" role="row"><div class="when" role="cell">'+DAYS[it.d.getDay()]+' '+it.d.getDate()+'/'+(it.d.getMonth()+1)+(it.t?'<small>kl '+esc(it.t)+'</small>':'')+'</div>'+
+        '<div class="what" role="cell"><h3>'+esc(it.title)+'</h3>'+(it.desc?'<p>'+esc(it.desc)+'</p>':'')+'</div>'+
+        '<span class="tag '+cls+'" role="cell">'+label+'</span></div>';
+    }).join('');
+    if(monthEl)monthEl.textContent=monthLabel(items);
+    setNext(items[0]);
+  }
+  // Static fallback: drop rows that have passed
+  function pruneStatic(){
+    var left=[];
+    Array.prototype.forEach.call(box.querySelectorAll('.row[data-date]'),function(r){
+      var d=parseDate(r.getAttribute('data-date'));
+      if(!d||d<today)r.remove();else left.push(d);
+    });
+    if(!left.length)showEmpty();
+  }
+
+  if(!SHEET_CSV_URL){pruneStatic();return}
+  var done=false,timer=setTimeout(function(){if(!done){done=true;pruneStatic()}},6000);
+  fetch(SHEET_CSV_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()})
+    .then(function(t){if(done)return;done=true;clearTimeout(timer);var items=fromSheet(t);if(items)render(items);else pruneStatic()})
+    .catch(function(){if(done)return;done=true;clearTimeout(timer);pruneStatic()});
+})();
+</script>
+</body>
+</html>
