@@ -656,6 +656,7 @@ footer a:hover{opacity:1}
    Empty URL, a failed fetch or a sheet without the "Datum" header = keep the static rows in the HTML. */
 var SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/1psrrpbkBSNHctvYX_uolhrglpOxRO52bGWGunK1ZLcU/export?format=csv';
 var ZENLER_URL='https://www.rostlabbet.se/courses/rostlabbet-medlemskap';
+var MAX_ITEMS=3; // how many upcoming sessions to show
 (function(){
   var DAYS=['Sön','Mån','Tis','Ons','Tor','Fre','Lör'];
   var DAYS_LONG=['söndag','måndag','tisdag','onsdag','torsdag','fredag','lördag'];
@@ -723,6 +724,7 @@ var ZENLER_URL='https://www.rostlabbet.se/courses/rostlabbet-medlemskap';
   }
   function render(items){
     if(!items.length){showEmpty();return}
+    items=items.slice(0,MAX_ITEMS); // only the next few sessions; the library row always stays
     box.innerHTML=items.map(function(it){
       var low=it.type.toLowerCase(),cls=low.indexOf('fråg')>-1?'q':(low.indexOf('tema')>-1?'tema':'live');
       var label=esc(it.type||'Livepass'); // Monica's own words; keywords only pick the colour
@@ -738,7 +740,7 @@ var ZENLER_URL='https://www.rostlabbet.se/courses/rostlabbet-medlemskap';
     var left=[];
     Array.prototype.forEach.call(box.querySelectorAll('.row[data-date]'),function(r){
       var d=parseDate(r.getAttribute('data-date'));
-      if(!d||d<today)r.remove();else left.push(d);
+      if(!d||d<today||left.length>=MAX_ITEMS)r.remove();else left.push(d);
     });
     if(!left.length)showEmpty();
   }
