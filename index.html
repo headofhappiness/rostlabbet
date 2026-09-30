@@ -176,7 +176,7 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 .when small{display:block;font-weight:400;color:var(--ink-soft);letter-spacing:.04em}
 .what h3{margin:0 0 2px;font-size:.9rem}
 .what p{font-size:.96rem;color:var(--ink-soft);line-height:1.5}
-.tag{font-family:var(--f-label);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px 4px;border-radius:999px;white-space:nowrap}
+.tag{font-family:var(--f-label);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px 4px;border-radius:999px;white-space:normal;max-width:12em;text-align:center;line-height:1.3}
 .tag.live{background:var(--vocal);color:var(--cream)}
 .tag.q{background:var(--ink);color:var(--cream)}
 .tag.lib{color:var(--vocal);box-shadow:inset 0 0 0 1.5px var(--vocal)}
@@ -729,7 +729,7 @@ var ZENLER_URL='https://www.rostlabbet.se/courses/rostlabbet-medlemskap';
     if(!items.length){showEmpty();return}
     box.innerHTML=items.map(function(it){
       var low=it.type.toLowerCase(),cls=low.indexOf('fråg')>-1?'q':(low.indexOf('tema')>-1?'tema':'live');
-      var label=cls==='q'?'Frågelive':(cls==='tema'?'Tema':'Livepass');
+      var label=esc(it.type||'Livepass'); // Monica's own words; keywords only pick the colour
       return '<div class="row" role="row"><div class="when" role="cell">'+DAYS[it.d.getDay()]+' '+it.d.getDate()+'/'+(it.d.getMonth()+1)+(it.t?'<small>kl '+esc(it.t)+'</small>':'')+'</div>'+
         '<div class="what" role="cell"><h3>'+esc(it.title)+'</h3>'+(it.desc?'<p>'+esc(it.desc)+'</p>':'')+'</div>'+
         '<span class="tag '+cls+'" role="cell">'+label+'</span></div>';
