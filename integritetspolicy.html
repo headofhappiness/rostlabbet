@@ -1,0 +1,188 @@
+<!doctype html>
+<!--
+  RÖSTLABBET – Integritetspolicy (integritetspolicy.html). Texten är kopierad från Zenler (https://kurs.rostlabbet.se/privacypolicy) 2026-10-01.
+  Till den som ändrar i filen, människa eller AI:
+  - Ändra bara text mellan taggarna. Rör inte design, färger eller kod om det inte uttryckligen efterfrågas.
+  - Bilder ligger i mappen media/.
+  - Lämna alltid tillbaka hela filen.
+  Hjälp: Lisa Jonsson, Head of Happiness.
+-->
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Integritetspolicy – Röstlabbet</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Integritetspolicy för Röstlabbet.">
+<meta name="theme-color" content="#780000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23780000'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial' font-weight='900' font-size='36' text-anchor='middle' fill='%23FDF0D5'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Same system as index.html: cream base, Vocal Red bands, Lab Blue buttons with charcoal text. */
+:root{
+  color-scheme:light;
+  --vocal:#780000;
+  --vocal-deep:#5a0000;
+  --signal:#C1121F;
+  --lab:#00A6E6;
+  --cream:#FDF0D5;
+  --cream-2:#F7E4BF;
+  --ink:#1A1A1B;
+  --ink-soft:#4d4542;
+  --line:#e9d2a6;
+  --f-display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --f-script:"Caveat","Segoe Script","Brush Script MT",cursive;
+  --f-label:"League Spartan",Arial,sans-serif;
+  --f-body:"Hanken Grotesk","Segoe UI",Arial,sans-serif;
+  --f-logo:"Be Vietnam Pro","Arial Black",sans-serif;
+  --wrap:1180px;
+  --gutter:clamp(16px,4vw,44px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.band{padding-block:clamp(72px,10vw,120px)}
+.red{background:var(--vocal);color:var(--cream)}
+.kicker{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.34em;font-size:.78rem;margin:0 0 20px;color:var(--signal)}
+.red .kicker{color:var(--cream);opacity:.8}
+h1,h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.36;color:var(--vocal)}
+.red h2{color:var(--cream)}
+h3{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;margin:0 0 8px}
+.script{font-family:var(--f-script);font-weight:600;text-transform:none;letter-spacing:0;color:var(--lab);display:inline-block;transform:rotate(-6deg);line-height:1}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);max-width:56ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;text-decoration:none;padding:19px 30px 17px;border-radius:999px;background:var(--lab);color:var(--ink);transition:transform .15s ease,background .15s ease}
+.btn:hover{background:#2bb8ee;transform:translateY(-2px)}
+.btn .arrow{font-family:var(--f-body);font-size:1.2rem;line-height:0}
+.textlink{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:3px}
+:focus-visible{outline:3px solid var(--lab);outline-offset:3px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;color:var(--vocal)}
+.logo .word{font-family:var(--f-logo);font-weight:700;font-size:1.6rem;letter-spacing:.01em}
+.logo .word i{font-family:"Times New Roman",Times,serif;font-weight:400;font-style:italic;letter-spacing:0;margin-left:1px}
+.logo .tag{font-family:var(--f-label);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;margin-top:6px;line-height:1.35;color:var(--ink-soft);white-space:nowrap;text-align:left;padding:0;border-radius:0;background:none;max-width:none}
+nav.main{display:flex;align-items:center;gap:28px;font-family:var(--f-label);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+nav.main a{text-decoration:none}
+nav.main a[aria-current="page"]{color:var(--signal)}
+nav.main a:not(.btn):hover{color:var(--signal)}
+nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
+@media (max-width:900px){nav.main .hide-sm{display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(36px,6vw,80px);align-items:center;padding-block:clamp(56px,8vw,100px)}
+.hero h1{font-size:clamp(3.6rem,9vw,7rem);line-height:1.14}
+.hero h1 .script{font-size:.5em;display:block;margin:.2em 0 0 .06em}
+.hero .lede{margin-top:40px}
+.members{display:inline-block;margin-top:24px;background:var(--lab);color:var(--ink);font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;padding:9px 16px 7px;border-radius:999px}
+.hero-photo{border-radius:220px 220px 18px 18px;overflow:hidden;aspect-ratio:4/5;max-width:420px;justify-self:center;background:#111;border:1px solid rgba(253,240,213,.2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero-photo{max-width:320px;justify-self:start}}
+
+/* two ways */
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:44px}
+@media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}}
+.way{background:#fffaf0;border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3vw,36px);min-width:0}
+.way .n{white-space:nowrap;font-family:var(--f-display);font-size:3.2rem;line-height:1;color:var(--signal);display:block;margin-bottom:12px}
+.way h3{color:var(--vocal);font-size:1.1rem}
+.way p{color:var(--ink-soft)}
+
+/* good to know */
+.know{background:var(--cream-2)}
+.know .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:860px){.know .wrap{grid-template-columns:minmax(0,1fr)}}
+.facts{display:grid;gap:0}
+.fact{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:20px 0;border-top:2px solid var(--vocal)}
+.fact:last-child{border-bottom:2px solid var(--vocal)}
+.fact p{color:var(--ink-soft)}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:44px}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step .n{font-family:var(--f-display);font-size:4rem;line-height:1;color:var(--signal);display:block;margin-bottom:10px}
+.step p{color:var(--ink-soft)}
+
+/* choirs */
+.choir .wrap > div{max-width:760px}
+
+/* policy text */
+.legal{max-width:760px}
+.legal h2{font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.3;margin:36px 0 10px}
+.legal h3,.legal h4{margin:24px 0 6px}
+.legal p,.legal li{color:var(--ink-soft)}
+.legal p{margin:0 0 12px}
+.legal ul,.legal ol{margin:0 0 14px;padding-left:22px}
+.legal a{color:var(--vocal)}
+
+/* final */
+.final{text-align:center}
+.final h2{font-size:clamp(3rem,7vw,5.6rem);line-height:1.14}
+.final .script{font-size:.55em;display:block;margin-top:.2em}
+.final .lede{margin:38px auto 34px}
+.final .ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 28px}
+
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:28px;font-family:var(--f-label);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+footer span{opacity:.75}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{text-decoration:none;opacity:.75}
+footer a:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Röstlabbet, till startsidan">
+      <span class="word">RÖST<i>lab</i></span>
+      <span class="tag">Röstgym<br>med Monica</span>
+    </a>
+    <nav class="main" aria-label="Huvudmeny">
+      <a class="hide-sm" href="index.html#ingar">Det här ingår</a>
+      <a class="hide-sm" href="workshops.html">Workshops</a>
+      <a class="hide-sm" href="index.html#monica">Om Monica</a>
+      <a class="hide-sm" href="index.html#fragor">Frågor</a>
+      <a class="hide-sm" href="https://kurs.rostlabbet.se/login">Logga in</a>
+      <a class="btn" href="index.html#pris">Bli medlem</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="band" style="padding-top:clamp(48px,7vw,80px)">
+  <div class="wrap">
+    <p class="kicker">Röstlabbet</p>
+    <h2 style="font-size:clamp(2.4rem,6vw,4rem)">Integritetspolicy</h2>
+    <div class="legal" style="margin-top:28px">
+<p>Vi förstår att din integritet och säkerheten för dina personuppgifter är extremt viktig. Denna policy fastställer vad vi gör med dina uppgifter och vad vi gör för att hålla dem säkra. Den förklarar även var och hur vi samlar in dina personuppgifter, samt dina rättigheter gällande de personuppgifter vi har om dig. Denna policy förklarar hur vi gör detta och informerar dig om dina integritetsrättigheter och hur lagen skyddar dig.</p> <h4>Inledning</h4> <p>Detta integritetsmeddelande gäller för denna webbplats samt för andra interaktioner du kan ha med oss (t.ex. när du skapar ett konto på webbplatsen, köper eller registrerar dig för vår produkt eller tjänst, anmäler dig till vårt nyhetsbrev eller uppdateringar, öppnar ett supportärende, kontaktar oss via e-post eller telefon, eller via sociala medier). Om du inte godkänner villkoren bör du inte besöka våra webbplatser eller använda någon annan del av denna webbplats.</p> <p>Om du har några frågor om vår integritetspraxis, vänligen kontakta oss via support- eller kontaktformuläret på webbplatsen. Du kan använda kontaktlänken på din webbplats eller skicka ett e-postmeddelande till <a href="mailto:support@zenler.com">support@zenler.com</a>för att få kontaktuppgifter till webbplatsens instruktörer och administratör(er).</p> <h4>Vilka uppgifter samlar vi in om dig?</h4> <p><em>Personuppgifter</em> avser all information som kan identifiera en individ. Det omfattar inte anonymiserade data. Vi kan samla in och behandla dina personuppgifter på flera olika sätt:</p> <p><strong><em>Kommunikationsuppgifter</em></strong> omfattar all kommunikation som du skickar till oss, oavsett om det sker via kontaktformuläret på vår webbplats, via e-post, sms, meddelanden i sociala medier, inlägg i sociala medier eller någon annan form av kommunikation som du skickar till oss.</p> <p><strong><em>Kunduppgifter</em></strong> som omfattar uppgifter relaterade till köp av varor och/eller tjänster, såsom ditt namn, titel, faktureringsadress, leveransadress, e-postadress, telefonnummer, kontaktuppgifter, köpinformation och dina kortuppgifter.</p> <p><strong><em>Användaruppgifter</em></strong> som omfattar data om hur du använder vår webbplats och våra onlinetjänster, tillsammans med alla uppgifter som du publicerar på vår webbplats eller via andra onlinetjänster. Detta kan inkludera produkter, innehåll, filer, kurser, quiz, undersökningar eller annat innehåll som du laddar upp till eller skapar på webbplatsen.</p> <p><strong><em>Tekniska uppgifter</em></strong> som omfattar data om din användning av vår webbplats och våra onlinetjänster, såsom din IP-adress, dina inloggningsuppgifter, information om din webbläsare, besökslängd på sidor på vår webbplats, sidvisningar och navigeringsvägar, detaljer om hur många gånger du använder vår webbplats, tidszonsinställningar och annan teknik på de enheter du använder för att komma åt vår webbplats. Källan till denna data är vårt system för analysspårning.</p> <p><strong><em>Marknadsföringsuppgifter</em></strong> som omfattar uppgifter om dina preferenser gällande att ta emot marknadsföring från oss och våra tredje parter, samt dina kommunikationsinställningar.</p> <p>Vi kan använda kunduppgifter, användaruppgifter, tekniska uppgifter och marknadsföringsuppgifter för att leverera relevant webbplatsinnehåll och annonser till dig (inklusive Facebook-annonser eller andra displayannonser) samt för att mäta eller förstå effektiviteten av den annonsering vi visar dig.</p> <h4>Övrig information som samlas in</h4> <p>Vi kan samla in uppgifter om dig genom att du tillhandahåller uppgifterna direkt till oss (till exempel genom att fylla i formulär på vår webbplats eller genom att skicka e-postmeddelanden till oss). Vi kan automatiskt samla in vissa uppgifter från dig när du använder vår webbplats genom att använda cookies och liknande tekniker. Se vår cookiepolicy för mer information om detta: <a href="cookiepolicy.html">Cookie Policy</a>.</p> <p>Vi kan ta emot uppgifter från tredje parter, såsom analysleverantörer (exempelvis Google) baserade utanför EU, annonsnätverk (exempelvis Facebook) baserade utanför EU, sökinformationsleverantörer (exempelvis Google) baserade utanför EU, leverantörer av tekniska tjänster, betaltjänstleverantörer (såsom Stripe och Paypal) samt leverans- och distributionstjänster, såsom datamäklare eller sökordsaggregatorer.</p> <p>Vi kan även ta emot uppgifter från offentligt tillgängliga källor, såsom Europeiska kommissionens databas för EU-momsnummer (VIES).</p> <h4>Tredje parter eller offentligt tillgängliga källor</h4> <p>Vi kan ta emot personuppgifter om dig från olika tredje parter och offentliga källor enligt vad som anges nedan. När en tredjepartstjänst aktiveras är vi auktoriserade att ansluta till och få tillgång till övrig information som görs tillgänglig för oss i enlighet med vårt avtal med tredjepartsleverantören. Vi tar dock inte emot eller lagrar lösenord för någon av dessa tredjepartstjänster när de ansluts till våra tjänster. Integrationer med tredje part kan inkludera:</p> <ul><li><a href="https://www.zapier.com">Zapier.com</a>: Integrations, Automation</li><li><a href="https://www.mailchimp.com">MailChimp.com</a>: Mailing Service</li><li><a href="https://www.google.com">Google.com</a>: Analytics, reCAPTCHA</li><li><a href="https://www.digitalofficepro.com">DigitalOfficePro.com</a>: <a href="https://www.digitalofficepro.com/powerpoint/powerpoint-to-html5-converter.html">PowerPoint to HTML5 Technology</a></li><li><a href="https://www.slideserve.com">SlideServe.com</a> , <a href="https://www.slideorbit.com">SlideOrbit.com</a>: Slide Hosting Service</li><li><a href="https://www.facebook.com">Facebook.com</a>: Facebook Login, Meta Pixel</li><li><a href="https://www.segment.com">Segment.io</a>: Customer Data Management</li></ul> <h4>Känslig data</h4> <p>Vi samlar inte in några känsliga personuppgifter om dig. Känsliga personuppgifter avser uppgifter som inkluderar detaljer om din ras eller etnicitet, religiösa eller filosofiska övertygelser, sexliv, sexuell läggning, politiska åsikter, fackföreningsmedlemskap, information om din hälsa samt genetiska och biometriska data. Vi samlar inte heller in någon information om brottsdomar eller lagöverträdelser.</p> <p>I de fall vi enligt lag, eller enligt villkoren i avtalet mellan oss, är skyldiga att samla in personuppgifter och du inte tillhandahåller dessa uppgifter på begäran, kan det hända att vi inte kan fullgöra avtalet (till exempel för att leverera varor eller tjänster till dig). Om du inte tillhandahåller oss de begärda uppgifterna kan vi bli tvungna att avbryta en produkt eller tjänst som du har beställt, men om så sker kommer vi att meddela dig vid det tillfället.</p> <h4>Hur vi använder dina personuppgifter</h4> <p>Vi kommer endast att använda dina personuppgifter när det är lagligt tillåtet. De vanligaste sätten vi använder dina personuppgifter på är:</p> <ul><li>När vi behöver fullgöra avtalet mellan oss. När vi behöver behandla uppgifter i enlighet med kundens instruktioner. När det är nödvändigt för våra berättigade intressen (eller en tredje parts intressen) och dina intressen och grundläggande rättigheter inte väger tyngre än dessa intressen. När vi behöver efterleva en rättslig eller regulatorisk förpliktelse.</li></ul> <p>Generellt sett förlitar vi oss inte på samtycke som rättslig grund för att behandla dina personuppgifter, förutom när det gäller att skicka marknadskommunikation till dig via e-post eller sms. Du har rätt att när som helst återkalla ditt samtycke till marknadsföring genom att kontakta oss via kontaktformuläret på webbplatsen eller genom att använda integritetsinställningarna i din profil.</p> <h4>Ändamål och rättslig grund för behandling av dina personuppgifter</h4> <p>Nedan följer en beskrivning av de sätt på vilka vi avser att använda dina personuppgifter och de rättsliga grunder på vilka vi kommer att behandla sådana uppgifter. Vi har även förklarat vad våra berättigade intressen är där det är relevant.</p> <p>Vi kan behandla dina personuppgifter utifrån mer än en rättslig grund, beroende på det specifika ändamål för vilket vi använder dina uppgifter.</p> <p>Kommunikationsuppgifter: Vi behandlar dessa uppgifter i syfte att kommunicera med dig, för dokumentation samt för att kunna fastställa, göra gällande eller försvara rättsliga anspråk. Vår rättsliga grund för denna behandling är vårt berättigade intresse, vilket i detta fall är att besvara kommunikation som skickas till oss, att föra register samt att fastställa, göra gällande eller försvara rättsliga anspråk.</p> <p>Kunduppgifter: Vi behandlar dessa uppgifter för att tillhandahålla de varor och/eller tjänster som du har köpt samt för att föra register över sådana transaktioner. Vår rättsliga grund för denna behandling är fullgörande av ett avtal mellan dig och oss och/eller för att vidta åtgärder på din begäran för att ingå ett sådant avtal.</p> <p>Användaruppgifter: Vi behandlar dessa uppgifter för att driva vår webbplats och säkerställa att relevant innehåll tillhandahålls dig, för att garantera säkerheten på vår webbplats, för att underhålla säkerhetskopior av vår webbplats och/eller databaser samt för att möjliggöra publicering och administration av vår webbplats, andra onlinetjänster och verksamheten. Vår rättsliga grund för denna behandling är vårt berättigade intresse, vilket i detta fall är att göra det möjligt för oss att administrera vår webbplats och vår verksamhet på ett korrekt sätt.</p> <p>Tekniska uppgifter: Vi behandlar dessa uppgifter för att analysera din användning av vår webbplats och andra onlinetjänster, för att administrera och skydda vår verksamhet och webbplats, för att leverera relevant webbplatsinnehåll och annonser till dig samt för att förstå effektiviteten av vår annonsering. Vår rättsliga grund för denna behandling är vårt berättigade intresse, vilket i detta fall är att göra det möjligt för oss att administrera vår webbplats och vår verksamhet på ett korrekt sätt, att få vår verksamhet att växa samt att fastställa vår marknadsföringsstrategi.</p> <p>Marknadsföringsuppgifter: Vi behandlar dessa uppgifter för att göra det möjligt för dig att delta i våra kampanjer, såsom tävlingar, utlottningar och gratisgåvor, för att leverera relevant webbplatsinnehåll och annonser till dig samt för att mäta eller förstå effektiviteten av denna annonsering. Vår rättsliga grund för denna behandling är vårt berättigade intresse, vilket i detta fall är att studera hur kunder använder våra produkter/tjänster, att utveckla dem, att få vår verksamhet att växa samt att fastställa vår marknadsföringsstrategi.</p> <p>Vi kan använda kunduppgifter, användaruppgifter, tekniska uppgifter och marknadsföringsuppgifter för att leverera relevant webbplatsinnehåll och annonser till dig (inklusive Facebook-annonser eller andra displayannonser) samt för att mäta eller förstå effektiviteten av den annonsering vi visar dig. Vår rättsliga grund för denna behandling är berättigat intresse, vilket är att få vår verksamhet att växa. Vi kan även använda sådana uppgifter för att skicka annan marknadskommunikation till dig. Vår rättsliga grund för denna behandling är antingen samtycke eller berättigat intresse (nämligen att få vår verksamhet att växa).</p> <h4>Marknadskommunikation</h4> <p>Vår rättsliga grund för att behandla dina personuppgifter i syfte att skicka marknadskommunikation till dig är antingen ditt samtycke eller våra berättigade intressen (nämligen att få vår verksamhet att växa).</p> <p>Enligt reglerna för integritet och elektronisk kommunikation (PECR) kan vi skicka marknadskommunikation till dig om:</p> <p>du har gjort ett köp eller begärt information från oss om våra varor eller tjänster, eller om du har samtyckt till att ta emot marknadskommunikation, och du i båda fallen inte har valt att avstå från att ta emot sådan kommunikation sedan dess.</p> <p>Enligt dessa bestämmelser kan vi, om du är ett aktiebolag, skicka marknadsföring via e-post till dig utan ditt samtycke. Du kan dock fortfarande när som helst välja att avstå från att ta emot marknadsföring via e-post från oss.</p> <p>Innan vi delar dina personuppgifter med någon tredje part för deras egna marknadsföringsändamål kommer vi att inhämta ditt uttryckliga samtycke.</p> <p>Du kan när som helst be oss eller tredje parter att sluta skicka marknadsföringsmeddelanden till dig genom att logga in på webbplatsen och markera eller avmarkera relevanta rutor för att justera dina marknadsföringsinställningar, eller genom att följa länkarna för avanmälan i de marknadsföringsmeddelanden som skickas till dig, eller genom att när som helst mejla oss via kontaktformuläret på webbplatsen.</p> <p>Om du väljer att avstå från att ta emot marknadskommunikation, gäller detta beslut inte för personuppgifter som har tillhandahållits som ett resultat av andra transaktioner, såsom köp, garantiregistreringar eller liknande.</p> <h4>Utlämnande av dina personuppgifter</h4> <p>Vi kan behöva dela dina personuppgifter med de parter som anges nedan:</p> <p>Plattformsleverantören för onlinekurser, Zenler.com, som kommer att vara personuppgiftsbiträde för dina uppgifter. Vi har ingått ett personuppgiftsbiträdesavtal med Zenler för att behandla dina uppgifter. Andra företag i vår koncern som tillhandahåller IT- och systemadministrationstjänster och utför ledningsrapportering. Tjänsteleverantörer som tillhandahåller molninfrastruktur, videohosting, plattformar för livesänd video, e-postleverantörer samt IT- och systemadministrationstjänster.</p> <ul><li>- Amazon</li><li>- Sendgrid</li><li>- FileStack</li><li>- Vimeo</li><li>- Zoom</li></ul> <p>Professionella rådgivare, inklusive advokater, banktjänstemän, revisorer och försäkringsgivare som tillhandahåller konsult-, bank-, juridik-, försäkrings- och redovisningstjänster. Myndigheter som kräver att vi rapporterar behandlingsaktiviteter under vissa omständigheter. Tredje parter till vilka vi kan sälja, överföra eller slå samman delar av vår verksamhet eller våra tillgångar.</p> <p>Vi kräver att alla tredje parter till vilka vi överför dina uppgifter respekterar säkerheten för dina personuppgifter och behandlar dem i enlighet med lagen. Vi tillåter endast sådana tredje parter att behandla dina personuppgifter för specifika ändamål och i enlighet med våra instruktioner.</p> <h4>Internationella överföringar</h4> <p>Vi delar dina personuppgifter inom vår företagskoncern, vilket innebär att dina uppgifter överförs utanför det Europeiska ekonomiska samarbetsområdet (EES).</p> <p>Länder utanför Europeiska ekonomiska samarbetsområdet (EES) erbjuder inte alltid samma skyddsnivå för dina personuppgifter, därför förbjuder europeisk lagstiftning överföring av personuppgifter utanför EES såvida inte överföringen uppfyller vissa kriterier.</p> <p>Många av våra tredjepartsleverantörer är baserade utanför Europeiska ekonomiska samarbetsområdet (EES), vilket innebär att deras behandling av dina personuppgifter kommer att innebära en överföring av data utanför EES.</p> <p>Närhelst vi överför dina personuppgifter utanför EES gör vi vårt yttersta för att säkerställa en liknande grad av säkerhet för uppgifterna genom att se till att minst en av följande skyddsåtgärder implementeras:</p> <p>Vår leverantör av onlinekursplattformen, Zenler, som är baserad i Storbritannien, är vårt personuppgiftsbiträde och vi har ingått ett personuppgiftsbiträdesavtal för att biträdet ska skydda dina personuppgifter. Vi överför endast dina personuppgifter till länder som av Europeiska kommissionen anses erbjuda en adekvat skyddsnivå för personuppgifter, eller: Där vi använder vissa tjänsteleverantörer kan vi använda specifika avtal, uppförandekoder eller certifieringsmekanismer som godkänts av Europeiska kommissionen och som ger personuppgifter samma skydd som de har i Europa; eller Där vi använder leverantörer baserade i USA kan vi överföra data till dem om de är anslutna till EU-U.S. Data Privacy Framework (tidigare Privacy Shield) vilket kräver att de tillhandahåller ett liknande skydd för personuppgifter som delas mellan Europa och USA. Där vi använder leverantörer baserade i USA (till exempel Amazon, Sendgrid) kan vi överföra data till dem i de fall vi har undertecknat personuppgiftsbiträdesavtal som säkerställer att leverantören skyddar data som delas mellan Europa och USA.</p> <p>Om ingen av ovanstående skyddsåtgärder finns tillgänglig, kan vi begära ditt uttryckliga samtycke till den specifika överföringen. Du har rätt att när som helst återkalla detta samtycke.</p> <p>Kontakta oss via e-post på <a href="mailto:support@zenler.com">support@zenler.com</a>om du vill ha ytterligare information om den specifika mekanism som används av oss vid överföring av dina personuppgifter utanför EES.</p> <h4>Datasäkerhet</h4> <p>Vi har vidtagit lämpliga säkerhetsåtgärder för att förhindra att dina personuppgifter oavsiktligt går förlorade, används eller ges tillgång till på ett obehörigt sätt, ändras eller röjs. Dessutom begränsar vi tillgången till dina personuppgifter till de anställda, agenter, uppdragstagare och andra tredje parter som har ett affärsmässigt behov av att känna till sådana uppgifter. De kommer endast att behandla dina personuppgifter enligt våra instruktioner och de är underlagda tystnadsplikt.</p> <p>Vi har fastställt rutiner för att hantera misstänkta personuppgiftsincidenter och kommer att meddela dig och berörda tillsynsmyndigheter om en incident inträffar i de fall vi är lagligt skyldiga att göra det.</p> <h4>Datalagring</h4> <p>Här är översättningen för stycket om hur länge ni sparar uppgifterna: Förslag på översättning "Vi kommer endast att behålla dina personuppgifter så länge det är nödvändigt för att uppfylla de ändamål som vi samlade in dem för, inklusive för att uppfylla eventuella juridiska krav samt krav gällande bokföring eller rapportering.</p> <p>När vi fastställer lämplig lagringstid för uppgifterna ser vi till dess mängd, art och känslighet, den potentiella risken för skada vid obehörig användning eller röjande, ändamålen med behandlingen, huruvida dessa kan uppnås på andra sätt samt gällande lagkrav.</p> <p>För skatteändamål kräver lagen att vi behåller grundläggande information om våra kunder (inklusive kontakt-, identitets-, ekonomi- och transaktionsuppgifter) i sju år efter att de har upphört att vara kunder.</p> <p>Under vissa omständigheter kan vi anonymisera dina personuppgifter för forsknings- eller statistikändamål, i vilket fall vi kan använda denna information på obestämd tid utan ytterligare meddelande till dig.</p> <h4>Dina lagliga rättigheter</h4> <p>Under vissa omständigheter har du rättigheter enligt dataskyddslagar i förhållande till dina personuppgifter. Dessa inkluderar rätten att:</p> <ul><li>Begära tillgång till dina personuppgifter (så kallat registerutdrag). Begära rättelse av dina personuppgifter. Begära radering av dina personuppgifter (rätten att bli glömd). Invända mot behandling av dina personuppgifter. Begära begränsning av behandling av dina personuppgifter. Begära överföring av dina personuppgifter (dataportabilitet). Rätten att återkalla samtycke.</li></ul> <p>Du kan läsa mer om dessa rättigheter på:</p> <p><a href="https://www.imy.se/privatperson/dataskydd/dina-rattigheter/">https://www.imy.se/privatperson/dataskydd/dina-rattigheter/</a></p> <p>Om du önskar utöva någon av de rättigheter som anges ovan, vänligen kontakta oss via kontaktformuläret på webbplatsen.</p> <p>Du behöver inte betala någon avgift för att få tillgång till dina personuppgifter (eller för att utöva någon av de andra rättigheterna). Vi kan dock ta ut en rimlig avgift om din begäran är uppenbart ogrundad, upprepad eller orimlig. Alternativt kan vi under dessa omständigheter vägra att tillmötesgå din begäran.</p> <p>Vi kan behöva begära specifik information från dig för att hjälpa oss att bekräfta din identitet och säkerställa din rätt att få tillgång till dina personuppgifter (eller att utöva någon av dina andra rättigheter). Detta är en säkerhetsåtgärd för att säkerställa att personuppgifter inte röjs för någon person som inte har rätt att ta del av dem. Vi kan också komma att kontakta dig för att be om ytterligare information gällande din begäran för att påskynda vårt svar.</p> <p>Vi försöker besvara alla legitima begäranden inom 30 dagar. Ibland kan det ta oss längre tid än 30 dagar om din begäran är särskilt komplex eller om du har gjort flera förfrågningar. I sådana fall kommer vi att meddela dig och hålla dig uppdaterad.</p> <h4>Länkar till tredje part</h4> <p>Vi kan inkludera länkar till tredjepartswebbplatser, tillägg (addons) och applikationer. Genom att klicka på dessa länkar eller aktivera dessa anslutningar kan du tillåta tredje part att samla in eller dela data om dig. Vi kontrollerar inte dessa tredjepartswebbplatser och ansvarar inte för deras integritetspolicyer. När du lämnar vår webbplats uppmanar vi dig att läsa integritetsinformationen för varje webbplats du besöker.</p> <h4>Cookies</h4> <p>Du kan ställa in din webbläsare så att den nekar alla eller vissa cookies, eller så att den varnar dig när webbplatser placerar eller får tillgång till cookies. Om du inaktiverar eller nekar cookies bör du vara medveten om att vissa delar av denna webbplats kan bli oåtkomliga eller inte fungera korrekt. För mer information om de cookies vi använder, vänligen se vår <a href="cookiepolicy.html">Cookie Policy</a>.</p> <h4>Åldersbegränsningar</h4> <p>Genom att tillhandahålla dina uppgifter till oss intygar du att du är över 13 år gammal.</p> <h4>Kontakta oss</h4> <p>Du kan kontakta Zenler när som helst om du har frågor om denna integritetspolicy eller våra rutiner, eller om du vill utöva någon av dina lagstadgade rättigheter.</p> <p>Du kan kontakta oss via support- eller kontaktformuläret på webbplatsen.</p> <h4>Dataskyddsmyndighet</h4> <p>Om du inte är nöjd med någon del av hur vi samlar in och använder dina uppgifter har du rätt att framföra ett klagomål till Integritetsskyddsmyndigheten (IMY), som är tillsynsmyndighet för dataskyddsfrågor i Sverige (www.imy.se). Vi skulle dock uppskatta om du kontaktar oss först på support@zenler.com om du har synpunkter, så att vi kan försöka lösa frågan direkt med dig.</p> <p>Det är mycket viktigt att den information vi har om dig är korrekt och aktuell. Vänligen meddela oss om dina personuppgifter ändras vid något tillfälle genom att skicka ett e-postmeddelande till oss via support- eller kontaktformuläret på webbplatsen, eller genom att uppdatera din profil direkt på ditt konto.</p> 
+ <p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Röstlabbet · Monk Produktion · <a href="mailto:monica@rostlabbet.se" style="opacity:1;text-transform:none;letter-spacing:.04em">monica@rostlabbet.se</a></span>
+    <nav aria-label="Sidfot">
+      <a href="https://www.facebook.com/profile.php?id=61587309359448" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/rostlabbet/" rel="noopener">Instagram</a>
+      <a href="index.html">Startsidan</a>
+      <a href="villkor.html">Allmänna villkor</a>
+      <a href="integritetspolicy.html">Integritetspolicy</a>
+      <a href="cookiepolicy.html">Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
