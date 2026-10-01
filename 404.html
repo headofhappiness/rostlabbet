@@ -1,8 +1,9 @@
 <!doctype html>
 <!--
   RÖSTLABBET – vidarebefordran (404.html)
-  Alla adresser som inte finns på hemsidan (t.ex. /login, /courses/..., /f/...) låg tidigare i Zenler.
-  Den här sidan skickar besökaren vidare till samma adress på kurs.rostlabbet.se.
+  Gamla adresser från tiden då rostlabbet.se låg i Zenler (Google har dem fortfarande).
+  - Gamla informationssidor (kontakt, medlemskap, vocal-labs …) skickas till rätt ställe på nya hemsidan.
+  - Allt annat (inloggning, kurser, köp, funnel, community) skickas till samma adress på kurs.rostlabbet.se.
   Ändra inte om du inte vet vad du gör.
 -->
 <html lang="sv">
@@ -13,7 +14,25 @@
 <title>Röstlabbet – skickar dig vidare</title>
 <script>
   (function(){
-    var target = 'https://kurs.rostlabbet.se' + location.pathname + location.search + location.hash;
+    // Old Zenler info pages -> new site (path without trailing slash, lower case)
+    var MAP = {
+      '/home': '/',
+      '/medlemskap': '/#ingar',
+      '/rostlabbet-medlemskap': '/#ingar',
+      '/vocal-labs': '/#ingar',
+      '/sjung-smart': '/#mer',
+      '/workshops': '/workshops.html',
+      '/om-monica': '/#monica',
+      '/kontakt': '/#kontakt',
+      '/calendar': '/#manad',
+      '/kalender': '/#manad',
+      '/terms': '/villkor.html',
+      '/privacypolicy': '/integritetspolicy.html',
+      '/cookiepolicy': '/cookiepolicy.html',
+      '/support': '/#kontakt'
+    };
+    var p = location.pathname.replace(/\/+$/, '').toLowerCase();
+    var target = MAP[p] || ('https://kurs.rostlabbet.se' + location.pathname + location.search + location.hash);
     location.replace(target);
   })();
 </script>
@@ -24,11 +43,8 @@
 </head>
 <body>
   <main>
-    <p>Du skickas vidare till Röstlabbets kurssidor…</p>
-    <p><a id="go" href="https://kurs.rostlabbet.se/">Klicka här om inget händer</a></p>
+    <p>Du skickas vidare…</p>
+    <p><a href="/">Till Röstlabbets startsida</a></p>
   </main>
-  <script>
-    document.getElementById('go').href = 'https://kurs.rostlabbet.se' + location.pathname + location.search + location.hash;
-  </script>
 </body>
 </html>
