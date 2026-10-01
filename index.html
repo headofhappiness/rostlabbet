@@ -245,17 +245,18 @@ details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
 
 /* more */
 .more{background:var(--cream-2)}
-.more .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.more .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,40px);align-items:start}
+.more .wrap > div:first-child{max-width:640px}
 .more h2{font-size:clamp(2rem,4vw,3rem)}
 .more .intro{margin-top:18px;color:var(--ink-soft)}
-.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
+.more-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
 .offer{border:1px solid var(--line);background:var(--cream);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .offer .p{font-family:var(--f-display);font-size:1.7rem;color:var(--vocal);line-height:1}
 .offer .p small{font-family:var(--f-label);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:block;margin:8px 0 0}
 .offer p{color:var(--ink-soft);font-size:1rem;flex:1}
 .offer a{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;text-decoration:none;border-bottom:2px solid var(--signal);align-self:flex-start;padding-bottom:3px}
 @media (max-width:860px){.more .wrap{grid-template-columns:1fr}}
-@media (max-width:560px){.more-grid{grid-template-columns:1fr}}
+@media (max-width:860px){.more-grid{grid-template-columns:minmax(0,1fr)}}
 
 /* lead capture (hidden until the Zenler funnel is ready) */
 .lead{background:var(--cream)}
@@ -606,10 +607,16 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
   <div class="wrap">
     <div>
       <p class="kicker">Vill du ha mer?</p>
-      <h2>Personlig coaching &amp; workshops</h2>
-      <p class="intro">För dig som vill ha feedback på just din röst, eller fördjupa dig i ett tema live tillsammans med andra.</p>
+      <h2>Kurs, coaching &amp; workshops</h2>
+      <p class="intro">För dig som vill köpa metoden separat, ha feedback på just din röst eller fördjupa dig i ett tema live tillsammans med andra.</p>
     </div>
     <div class="more-grid">
+      <div class="offer">
+        <h3>Sjung Smart</h3>
+        <div class="p">550 kr<small>engångsköp · ett års tillgång</small></div>
+        <p>Metoden för att repa en låt smartare, som inspelad kurs. Ingår redan i medlemskapet.</p>
+        <a href="https://kurs.rostlabbet.se/courses/sjung-smart/buy/plan/203133" data-value="550">Köp Sjung Smart</a>
+      </div>
       <div class="offer">
         <h3>1:1-coaching</h3>
         <div class="p">995 kr<small>per tillfälle</small></div>
