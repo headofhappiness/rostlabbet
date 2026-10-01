@@ -130,6 +130,10 @@ footer span{opacity:.75}
 footer nav{display:flex;flex-wrap:wrap;gap:20px}
 footer a{text-decoration:none;opacity:.75}
 footer a:hover{opacity:1}
+/* login button in the header */
+nav.main a.nav-login{border:2px solid var(--ink);border-radius:999px;padding:10px 18px 8px;font-weight:700;transition:background .15s,color .15s}
+nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
+@media (max-width:900px){nav.main{gap:10px}nav.main a.nav-login{padding:9px 13px 7px;font-size:.7rem}}
 </style>
 </head>
 <body>
@@ -145,7 +149,7 @@ footer a:hover{opacity:1}
       <a class="hide-sm" href="workshops.html" aria-current="page">Workshops</a>
       <a class="hide-sm" href="index.html#monica">Om Monica</a>
       <a class="hide-sm" href="index.html#fragor">Frågor</a>
-      <a class="hide-sm" href="https://kurs.rostlabbet.se/login">Logga in</a>
+      <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
       <a class="btn" href="index.html#pris">Bli medlem</a>
     </nav>
   </div>
