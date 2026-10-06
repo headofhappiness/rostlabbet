@@ -21,7 +21,8 @@
 <meta property="og:image" content="https://rostlabbet.se/media/monica-poster.jpg">
 <meta property="og:url" content="https://rostlabbet.se/">
 <meta name="theme-color" content="#780000">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23780000'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial' font-weight='900' font-size='36' text-anchor='middle' fill='%23FDF0D5'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="apple-touch-icon" href="media/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
@@ -342,6 +343,10 @@ footer a:hover{opacity:1}
 nav.main a.nav-login{border:2px solid var(--ink);border-radius:999px;padding:10px 18px 8px;font-weight:700;transition:background .15s,color .15s}
 nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 @media (max-width:900px){nav.main{gap:10px}nav.main a.nav-login{padding:9px 13px 7px;font-size:.7rem}}
+/* Monica's real logo (same as Zenler) */
+.logo-img{display:block;height:62px;width:auto}
+.mcard .logo-img{height:44px}
+@media (max-width:700px){.logo-img{height:50px}}
 </style>
 </head>
 <body>
@@ -350,8 +355,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Röstlabbet, till toppen">
-      <span class="word">RÖST<i>lab</i></span>
-      <span class="tag">Röstgym<br>med Monica</span>
+      <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet – din digitala röstcoach" width="261" height="147">
     </a>
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm" href="#ingar">Det här ingår</a>
@@ -382,7 +386,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <div class="mcard-wrap">
       <div class="mcard" aria-label="Medlemskortet: det här ingår varje månad">
         <div class="mcard-top">
-          <span class="logo"><span class="word">RÖST<i>lab</i></span></span>
+          <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet" width="261" height="147">
 
         </div>
         <div class="title">Röstgym</div>
@@ -668,7 +672,6 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
   <div class="wrap">
     <span>© 2026 Röstlabbet · Monk Produktion · <a href="mailto:monica@rostlabbet.se" style="opacity:1;text-transform:none;letter-spacing:.04em">monica@rostlabbet.se</a></span>
     <nav aria-label="Sidfot">
-      <a href="https://www.facebook.com/profile.php?id=61587309359448" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/rostlabbet/" rel="noopener">Instagram</a>
       <a href="villkor.html">Allmänna villkor</a>
       <a href="integritetspolicy.html">Integritetspolicy</a>
