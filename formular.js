@@ -1,10 +1,12 @@
-/* Röstlabbet – formulär (Formspree), gemensam för alla sidor.
-   Klistra in formulärens adresser nedan. Tom adress = knappen öppnar ett mejl som förut.
+/* Röstlabbet – formulär (Web3Forms), gemensam för alla sidor.
+   Klistra in Monicas access key från Web3Forms nedan. Tom = knapparna öppnar ett mejl som förut.
+   Samma nyckel används för båda formulären; mejlets ämnesrad visar vilket det gäller.
    - Workshopanmälan: länkar med data-ws="Workshopens namn · datum · plats"
    - Kontakt: länkar med data-kontakt (värdet förväljer ämnet, t.ex. data-kontakt="1:1-coachning") */
 (function(){
-  var WORKSHOP_FORM='';   // t.ex. https://formspree.io/f/abcdwxyz
-  var KONTAKT_FORM='';    // t.ex. https://formspree.io/f/efghijkl
+  var ACCESS_KEY='';      // t.ex. 1a2b3c4d-1234-5678-9abc-def012345678
+  var ENDPOINT='https://api.web3forms.com/submit';
+  var WORKSHOP_FORM=ACCESS_KEY?ENDPOINT:'',KONTAKT_FORM=ACCESS_KEY?ENDPOINT:'';
   var MAIL='monica@rostlabbet.se';
   var AMNEN=['1:1-coachning','Workshop för kör eller grupp','Medlemskapet','Sjung Smart','Annat'];
   if(!WORKSHOP_FORM&&!KONTAKT_FORM)return;
@@ -45,8 +47,9 @@
       +'<p class="lead" data-text></p>'
       +'<form novalidate>'
       +(kind==='ws'?'<input type="hidden" name="workshop">':'')
-      +'<input type="hidden" name="_subject">'
-      +'<input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">'
+      +'<input type="hidden" name="access_key" value="'+esc(ACCESS_KEY)+'">'
+      +'<input type="hidden" name="subject"><input type="hidden" name="from_name" value="Röstlabbet hemsida">'
+      +'<input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">'
       +'<label for="f-'+kind+'-name">Namn</label><input id="f-'+kind+'-name" name="namn" autocomplete="name" required>'
       +'<label for="f-'+kind+'-email">E-post</label><input id="f-'+kind+'-email" name="email" type="email" autocomplete="email" required>'
       +fields
@@ -71,11 +74,12 @@
         err.textContent=bad&&bad.type==='email'?'Kolla e-postadressen.':'Fyll i namn, e-post'+(kind==='kontakt'?' och meddelande.':'.');
         err.hidden=false;if(bad)bad.focus();return;
       }
-      if(kind==='kontakt')form._subject.value='Kontakt via hemsidan: '+form.amne.value;
+      if(kind==='kontakt')form.subject.value='Kontakt via hemsidan: '+form.amne.value;
       send.disabled=true;
       var url=kind==='ws'?WORKSHOP_FORM:KONTAKT_FORM,label=d.getAttribute('data-label')||'';
       fetch(url,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(!r.ok)throw 0;
+        .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||j.success===false)throw 0})})
+        .then(function(){
           form.reset();
           d.querySelector('[data-step=form]').hidden=true;d.querySelector('[data-step=ok]').hidden=false;
           d.querySelector('[data-close]').focus();
@@ -99,7 +103,7 @@
     d.querySelector('[data-step=form]').hidden=false;d.querySelector('[data-step=ok]').hidden=true;
     d.querySelector('.err').hidden=true;
     Array.prototype.forEach.call(d.querySelectorAll('[data-text]'),function(p){p.textContent=kind==='ws'?label:'';p.hidden=kind!=='ws'});
-    if(kind==='ws'){form.workshop.value=label;form._subject.value='Anmälan: '+label}
+    if(kind==='ws'){form.workshop.value=label;form.subject.value='Anmälan: '+label}
     else if(label&&AMNEN.indexOf(label)>=0)form.amne.value=label;
     d.showModal();
     setTimeout(function(){form.namn.focus()},50);
