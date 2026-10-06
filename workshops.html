@@ -215,7 +215,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
           <ul><li><b>Plats:</b> Dramalogen, Halmstad</li><li><b>Tid:</b> 11–12</li><li><b>Pris:</b> 195 kr inkl moms</li></ul>
           <p class="wnote">Betalas med Swish i dörren. Anmäl dig via mejl till monica@rostlabbet.se.</p>
         </div>
-        <a class="btn" href="mailto:monica@rostlabbet.se?subject=Anm%C3%A4lan%3A%20Vocal%20Workout%2031%2F10">Anmäl dig <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" data-ws="Vocal Workout · lördag 31 okt · Dramalogen, Halmstad" href="mailto:monica@rostlabbet.se?subject=Anm%C3%A4lan%3A%20Vocal%20Workout%2031%2F10">Anmäl dig <span class="arrow" aria-hidden="true">→</span></a>
       </article>
     </div>
     <p class="wempty" id="wempty" hidden>Inga workshops är inplanerade just nu. Anmäl dig till <a href="index.html#gratis">nyhetsbrevet</a> så får du veta först när nästa släpps.</p>
@@ -265,7 +265,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <p class="lede">Vill din kör, ensemble eller grupp träna tillsammans med Monica? Hon håller workshops för körer och grupper, på plats eller digitalt, med ett tema som passar er.</p>
       <p class="lede" style="margin-top:14px">Mejla Monica, så berättar hon mer om upplägg och pris.</p>
       <p class="mail">monica@rostlabbet.se</p>
-      <p style="margin-top:28px"><a class="btn" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20k%C3%B6r%20%2F%20grupp">Mejla Monica <span class="arrow" aria-hidden="true">→</span></a></p>
+      <p style="margin-top:28px"><a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20k%C3%B6r%20%2F%20grupp">Mejla Monica <span class="arrow" aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
@@ -276,7 +276,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <p class="lede">Bli medlem, så bokar du workshops till medlemspris och tränar med Monica varje månad.</p>
     <div class="ctas">
       <a class="btn" href="index.html#pris">Bli medlem · 349 kr/mån <span class="arrow" aria-hidden="true">→</span></a>
-      <a class="textlink" href="mailto:monica@rostlabbet.se">Frågor? Kontakta Monica</a>
+      <a class="textlink" data-kontakt href="mailto:monica@rostlabbet.se">Frågor? Kontakta Monica</a>
     </div>
   </div>
 </section>
@@ -361,7 +361,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       if(w.pris)facts.push('<li><b>Pris:</b> '+esc(w.pris)+'</li>');
       return '<article class="wcard"><div class="wdate"><span class="d">'+w.d.getDate()+'</span><span class="m">'+M[w.d.getMonth()]+'</span><span class="wd">'+W[w.d.getDay()]+'</span></div>'
         +'<div class="winfo"><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
-        +'<a class="btn" href="'+esc(href)+'"'+(/^https?:/i.test(href)?' rel="noopener"':'')+'>'+label+' <span class="arrow" aria-hidden="true">→</span></a></article>';
+        +'<a class="btn" data-ws="'+esc(w.namn+' · '+W[w.d.getDay()]+' '+w.d.getDate()+' '+M[w.d.getMonth()]+(w.plats?' · '+w.plats:''))+'" href="'+esc(href)+'"'+(/^https?:/i.test(href)?' rel="noopener"':'')+'>'+label+' <span class="arrow" aria-hidden="true">→</span></a></article>';
     }).join('');
     if(empty)empty.hidden=items.length>0;
     return true;
@@ -372,6 +372,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     .catch(function(){});
 })();
 </script>
+<script src="formular.js"></script>
 <script src="sparning.js"></script>
 </body>
 </html>

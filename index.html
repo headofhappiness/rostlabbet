@@ -564,7 +564,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <p>Jag har arbetat med sång, röst och scen i över 30 år och har mött tusentals röster, på scener, i studior, i replokaler och i lektionsrum. Röster med olika drömmar och förutsättningar, men med samma längtan: att få låta mer som sig själv.</p>
       <p>Min drivkraft är att göra röstutveckling begriplig, trygg och tillgänglig. Teknik är inget stelt, utan ett verktyg som gör dig friare, starkare och modigare i ditt uttryck.</p>
       <p>Därför startade jag Röstlabbet: en plats där du kan träna smart, på dina villkor, med struktur, motivation och andra sångare omkring dig.</p>
-      <p id="kontakt">Hör gärna av dig: <a href="mailto:monica@rostlabbet.se" style="color:var(--vocal);font-weight:600">monica@rostlabbet.se</a></p>
+      <p id="kontakt">Hör gärna av dig: <a data-kontakt href="mailto:monica@rostlabbet.se" style="color:var(--vocal);font-weight:600">monica@rostlabbet.se</a></p>
       <blockquote>”Det här är en plats där röster får växa, låta och ta plats. På riktigt.”<cite>Monica Christoffersson, sångpedagog</cite></blockquote>
       <img class="cvt" src="media/cvt-authorised-teacher.png" alt="Complete Vocal Technique, Authorised Teacher" width="300" height="124" loading="lazy">
     </div>
@@ -594,7 +594,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <details><summary>Jag kan inte när livepasset går. Vad gör jag då?</summary><p>Alla livepass spelas in och läggs i biblioteket. Passen varvas dessutom mellan dagtid och kvällstid.</p></details>
     <details><summary>Hur mycket tid behöver jag lägga?</summary><p>Det väljer du helt själv. Livepassen är cirka 45 minuter och du är med när det passar dig. Det finns inga krav eller förväntningar.</p></details>
     <details><summary>Kan jag köpa Sjung Smart separat?</summary><p>Ja. Sjung Smart kostar 550 kr som <a href="https://kurs.rostlabbet.se/courses/sjung-smart/buy/plan/203133" data-value="550">separat kurs</a>, och då har du tillgång till den i ett år. I medlemskapet ingår Sjung Smart, tillsammans med livepass, frågelive och alla övningar.</p></details>
-    <details><summary>Hur kontaktar jag Monica?</summary><p>Mejla till <a href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>, så svarar Monica så snart hon kan.</p></details>
+    <details><summary>Hur kontaktar jag Monica?</summary><p>Mejla till <a data-kontakt href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>, så svarar Monica så snart hon kan.</p></details>
   </div>
 </section>
 
@@ -617,7 +617,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
         <h3>1:1-coaching</h3>
         <div class="p">995 kr<small>per tillfälle</small></div>
         <p>Vi ses via skärm och arbetar med det du vill utveckla, inför en audition, ett framträdande eller för att komma vidare.</p>
-        <a href="mailto:monica@rostlabbet.se">Kontakta Monica för att boka</a>
+        <a data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se">Kontakta Monica för att boka</a>
       </div>
       <div class="offer">
         <h3>Workshops</h3>
@@ -796,6 +796,7 @@ var MAX_ITEMS=3; // how many upcoming sessions to show
     .catch(function(){if(done)return;done=true;clearTimeout(timer);pruneStatic()});
 })();
 </script>
+<script src="formular.js"></script>
 <script src="sparning.js"></script>
 </body>
 </html>
