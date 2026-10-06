@@ -324,15 +324,6 @@ details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
   footer{padding-bottom:84px}
 }
 
-/* cookie consent (Meta pixel loads only after "Godkänn") */
-.consent{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;max-width:560px;margin-inline:auto;background:var(--ink);color:var(--cream);border-radius:16px;padding:18px 20px;box-shadow:0 16px 40px rgba(0,0,0,.35);font-size:.95rem}
-.consent p{margin:0 0 12px;line-height:1.5}
-.consent a{color:var(--cream)}
-.consent .row2{display:flex;flex-wrap:wrap;gap:10px}
-.consent button{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;border-radius:999px;padding:11px 18px 9px;cursor:pointer;border:2px solid var(--cream);background:transparent;color:var(--cream)}
-.consent button.yes{background:var(--lab);border-color:var(--lab);color:var(--ink)}
-.linkbtn{background:none;border:0;padding:0;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;opacity:.75}
-.linkbtn:hover{opacity:1}
 footer{background:var(--ink);color:var(--cream)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:28px;font-family:var(--f-label);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
 footer span{opacity:.75}
@@ -632,7 +623,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
         <h3>Workshops</h3>
         <div class="p">Köps till<small>medlemspris för medlemmar</small></div>
         <p>Liveworkshops med ett tema, med Monica eller gästcoacher. Följ digitalt eller var med på plats. Körer och grupper kan boka egna workshops.</p>
-        <a href="workshops.html">Läs om workshops</a>
+        <a href="workshops.html#kommande">Se kommande workshops</a>
       </div>
     </div>
   </div>
@@ -680,14 +671,6 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     </nav>
   </div>
 </footer>
-
-<div class="consent" id="consent" role="dialog" aria-label="Cookies" hidden>
-  <p>Vi vill använda cookies för att mäta hur våra annonser fungerar (Meta-pixeln). Inget laddas förrän du säger ja. <a href="cookiepolicy.html">Läs mer</a></p>
-  <div class="row2">
-    <button type="button" class="yes" id="consent-yes">Godkänn</button>
-    <button type="button" id="consent-no">Nej tack</button>
-  </div>
-</div>
 
 <div class="mbar" id="mbar" aria-label="Bli medlem">
   <span class="p">349 kr<small>per månad · ingen bindning</small></span>
@@ -812,32 +795,7 @@ var MAX_ITEMS=3; // how many upcoming sessions to show
     .then(function(t){if(done)return;done=true;clearTimeout(timer);var items=fromSheet(t);if(items)render(items);else pruneStatic()})
     .catch(function(){if(done)return;done=true;clearTimeout(timer);pruneStatic()});
 })();
-
-/* Meta pixel – only after consent. Choice is remembered in this browser. */
-var META_PIXEL_ID='2188685271873764';
-(function(){
-  var KEY='rl-consent',box=document.getElementById('consent');
-  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
-  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
-  function loadPixel(){
-    if(window.fbq||!META_PIXEL_ID)return;
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',META_PIXEL_ID);fbq('track','PageView');
-  }
-  function show(){if(box)box.hidden=false}
-  function hide(){if(box)box.hidden=true}
-  var c=get();
-  if(c==='yes')loadPixel();else if(c!=='no')show();
-  var y=document.getElementById('consent-yes'),n=document.getElementById('consent-no'),o=document.getElementById('consent-open');
-  if(y)y.addEventListener('click',function(){set('yes');hide();loadPixel()});
-  if(n)n.addEventListener('click',function(){set('no');hide()});
-  if(o)o.addEventListener('click',show);
-  // Tell Meta when someone heads to checkout
-  document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('a[href*="/buy/plan/"]');
-    if(a&&window.fbq)fbq('track','InitiateCheckout',{value:+(a.getAttribute('data-value')||349),currency:'SEK'});
-  });
-})();
 </script>
+<script src="sparning.js"></script>
 </body>
 </html>
