@@ -8,7 +8,7 @@
   var ENDPOINT='https://api.web3forms.com/submit';
   var WORKSHOP_FORM=ACCESS_KEY?ENDPOINT:'',KONTAKT_FORM=ACCESS_KEY?ENDPOINT:'';
   var MAIL='monica@rostlabbet.se';
-  var AMNEN=['1:1-coachning','Workshop för kör eller grupp','Medlemskapet','Sjung Smart','Annat'];
+  var AMNEN=['1:1-coachning','Träningspass eller workshop','Workshop för kör eller grupp','Medlemskapet','Sjung Smart','Annat'];
   if(!WORKSHOP_FORM&&!KONTAKT_FORM)return;
   if(!window.HTMLDialogElement)return; // mycket gamla webbläsare: mejllänken gäller
 
@@ -27,31 +27,33 @@
     +'.signup .btn[disabled]{opacity:.6;cursor:wait}'
     +'.signup .small{font-size:.85rem;color:var(--ink-soft,#444);margin-top:12px}'
     +'.signup .err{color:var(--signal,#C8102E);margin-top:12px;font-weight:600}'
+    +'div.signup.inline{background:#fffaf0;border:1px solid rgba(26,26,27,.14);border-radius:18px;max-width:640px;color:var(--ink,#1A1A1B)}'
     +'.signup .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
-  // Bygg en dialog. kind = 'ws' eller 'kontakt'
-  function build(kind){
-    var d=document.createElement('dialog');d.className='signup';d.setAttribute('aria-labelledby','f-'+kind+'-t');
+  // Bygg ett formulär. kind = 'ws' eller 'kontakt'. Med host läggs det direkt på sidan, annars som popup.
+  function build(kind,host){
+    var P=kind+(host?'-in':'');
+    var d=document.createElement(host?'div':'dialog');d.className='signup'+(host?' inline':'');d.setAttribute('aria-labelledby','f-'+P+'-t');
     var fields=kind==='ws'
-      ?'<div class="row"><div><label for="f-ws-tel">Telefon</label><input id="f-ws-tel" name="telefon" type="tel" autocomplete="tel"></div>'
-        +'<div><label for="f-ws-antal">Antal</label><input id="f-ws-antal" name="antal" type="number" min="1" max="20" value="1" inputmode="numeric"></div></div>'
-        +'<label for="f-ws-msg">Något Monica bör veta? (frivilligt)</label><textarea id="f-ws-msg" name="meddelande" rows="3"></textarea>'
-      :'<label for="f-kontakt-tel">Telefon (frivilligt)</label><input id="f-kontakt-tel" name="telefon" type="tel" autocomplete="tel">'
-        +'<label for="f-kontakt-amne">Vad gäller det?</label><select id="f-kontakt-amne" name="amne">'+AMNEN.map(function(a){return '<option>'+esc(a)+'</option>'}).join('')+'</select>'
-        +'<label for="f-kontakt-msg">Meddelande</label><textarea id="f-kontakt-msg" name="meddelande" rows="5" required></textarea>';
-    d.innerHTML='<button type="button" class="x" aria-label="Stäng">×</button>'
-      +'<div class="in" data-step="form"><h3 id="f-'+kind+'-t">'+(kind==='ws'?'Anmälan':'Kontakta Monica')+'</h3>'
+      ?'<div class="row"><div><label for="f-'+P+'-tel">Telefon</label><input id="f-'+P+'-tel" name="telefon" type="tel" autocomplete="tel"></div>'
+        +'<div><label for="f-'+P+'-antal">Antal</label><input id="f-'+P+'-antal" name="antal" type="number" min="1" max="20" value="1" inputmode="numeric"></div></div>'
+        +'<label for="f-'+P+'-msg">Något Monica bör veta? (frivilligt)</label><textarea id="f-'+P+'-msg" name="meddelande" rows="3"></textarea>'
+      :'<label for="f-'+P+'-tel">Telefon (frivilligt)</label><input id="f-'+P+'-tel" name="telefon" type="tel" autocomplete="tel">'
+        +'<label for="f-'+P+'-amne">Vad gäller det?</label><select id="f-'+P+'-amne" name="amne">'+AMNEN.map(function(a){return '<option>'+esc(a)+'</option>'}).join('')+'</select>'
+        +'<label for="f-'+P+'-msg">Meddelande</label><textarea id="f-'+P+'-msg" name="meddelande" rows="5" required></textarea>';
+    d.innerHTML=(host?'':'<button type="button" class="x" aria-label="Stäng">×</button>')
+      +'<div class="in" data-step="form">'+(host?'':'<h3 id="f-'+P+'-t">'+(kind==='ws'?'Anmälan':'Kontakta Monica')+'</h3>')
       +'<p class="lead" data-text></p>'
       +'<form novalidate>'
       +(kind==='ws'?'<input type="hidden" name="workshop">':'')
       +'<input type="hidden" name="access_key" value="'+esc(ACCESS_KEY)+'">'
       +'<input type="hidden" name="subject"><input type="hidden" name="from_name" value="Röstlabbet hemsida">'
       +'<input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">'
-      +'<label for="f-'+kind+'-name">Namn</label><input id="f-'+kind+'-name" name="namn" autocomplete="name" required>'
-      +'<label for="f-'+kind+'-email">E-post</label><input id="f-'+kind+'-email" name="email" type="email" autocomplete="email" required>'
+      +'<label for="f-'+P+'-name">Namn</label><input id="f-'+P+'-name" name="namn" autocomplete="name" required>'
+      +'<label for="f-'+P+'-email">E-post</label><input id="f-'+P+'-email" name="email" type="email" autocomplete="email" required>'
       +fields
       +'<button class="btn" type="submit">'+(kind==='ws'?'Skicka anmälan':'Skicka')+' <span class="arrow" aria-hidden="true">→</span></button>'
       +'<p class="err" role="alert" hidden></p>'
@@ -59,14 +61,17 @@
       +'</form></div>'
       +'<div class="in" data-step="ok" hidden><h3>'+(kind==='ws'?'Tack, du är anmäld!':'Tack för ditt meddelande!')+'</h3>'
       +'<p class="lead" data-text></p>'
-      +'<p>'+(kind==='ws'?'Monica har fått din anmälan och hör av sig om något behövs. Betalning sker enligt informationen vid workshopen.':'Monica svarar så snart hon kan, oftast inom ett par dagar.')+'</p>'
-      +'<button class="btn" type="button" data-close>Stäng</button></div>';
-    document.body.appendChild(d);
+      +'<p>'+(kind==='ws'?'Monica har fått din anmälan och hör av sig om något behövs. Betalning sker enligt informationen på sidan.':'Monica svarar så snart hon kan, oftast inom ett par dagar.')+'</p>'
+      +'<button class="btn" type="button" data-close>'+(host?'Skicka ett meddelande till':'Stäng')+'</button></div>';
+    if(host){host.innerHTML='';host.appendChild(d)}else document.body.appendChild(d);
     var form=d.querySelector('form'),err=d.querySelector('.err'),send=form.querySelector('button[type=submit]');
-    function close(){d.close()}
-    d.querySelector('.x').addEventListener('click',close);
+    function close(){
+      if(!host){d.close();return}
+      d.querySelector('[data-step=form]').hidden=false;d.querySelector('[data-step=ok]').hidden=true;form.namn.focus();
+    }
+    if(!host){d.querySelector('.x').addEventListener('click',close);d.addEventListener('click',function(e){if(e.target===d)close()})}
     d.querySelector('[data-close]').addEventListener('click',close);
-    d.addEventListener('click',function(e){if(e.target===d)close()});
+    if(host)Array.prototype.forEach.call(d.querySelectorAll('[data-text]'),function(p){p.hidden=true});
     form.addEventListener('submit',function(e){
       e.preventDefault();err.hidden=true;
       if(!form.checkValidity()){
@@ -108,6 +113,12 @@
     d.showModal();
     setTimeout(function(){form.namn.focus()},50);
   }
+
+  // Kontaktformulär direkt på sidan: <div data-kontaktform="förvalt ämne">reservtext</div>
+  if(KONTAKT_FORM)Array.prototype.forEach.call(document.querySelectorAll('[data-kontaktform]'),function(host){
+    var f=build('kontakt',host).querySelector('form'),v=host.getAttribute('data-kontaktform');
+    if(v&&AMNEN.indexOf(v)>=0)f.amne.value=v;
+  });
 
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a[data-ws],a[data-kontakt]');
