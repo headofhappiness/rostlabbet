@@ -4,7 +4,7 @@
    - Workshopanmälan: länkar med data-ws="Workshopens namn · datum · plats"
    - Kontakt: länkar med data-kontakt (värdet förväljer ämnet, t.ex. data-kontakt="1:1-coachning") */
 (function(){
-  var ACCESS_KEY='';      // t.ex. 1a2b3c4d-1234-5678-9abc-def012345678
+  var ACCESS_KEY='cb26195b-d78c-4958-8c57-f7efba1051f3';      // t.ex. 1a2b3c4d-1234-5678-9abc-def012345678
   var ENDPOINT='https://api.web3forms.com/submit';
   var WORKSHOP_FORM=ACCESS_KEY?ENDPOINT:'',KONTAKT_FORM=ACCESS_KEY?ENDPOINT:'';
   var MAIL='monica@rostlabbet.se';

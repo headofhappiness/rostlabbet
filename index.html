@@ -250,7 +250,8 @@ details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
 .more .wrap > div:first-child{max-width:640px}
 .more h2{font-size:clamp(2rem,4vw,3rem)}
 .more .intro{margin-top:18px;color:var(--ink-soft)}
-.more-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+.more-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+@media (max-width:1100px){.more-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .offer{border:1px solid var(--line);background:var(--cream);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .offer .p{font-family:var(--f-display);font-size:1.7rem;color:var(--vocal);line-height:1}
 .offer .p small{font-family:var(--f-label);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:block;margin:8px 0 0}
@@ -351,6 +352,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm" href="#ingar">Det här ingår</a>
       <a class="hide-sm" href="workshops.html">Workshops</a>
+      <a class="hide-sm" href="pa-plats.html">På plats</a>
       <a class="hide-sm" href="#monica">Om Monica</a>
       <a class="hide-sm" href="#fragor">Frågor</a>
       <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
@@ -623,7 +625,13 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
         <h3>Workshops</h3>
         <div class="p">Köps till<small>medlemspris för medlemmar</small></div>
         <p>Liveworkshops med ett tema, med Monica eller gästcoacher. Följ digitalt eller var med på plats. Körer och grupper kan boka egna workshops.</p>
-        <a href="workshops.html#kommande">Se kommande workshops</a>
+        <a href="workshops.html">Läs om workshops</a>
+      </div>
+      <div class="offer">
+        <h3>Träna på plats</h3>
+        <div class="p">IRL<small>träningspass med Monica</small></div>
+        <p>Ibland ses vi i verkligheten och tränar rösten tillsammans på plats. Se vilka pass som är på gång och anmäl dig direkt.</p>
+        <a href="pa-plats.html">Se kommande pass</a>
       </div>
     </div>
   </div>
