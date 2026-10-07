@@ -339,6 +339,12 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 .logo-img{display:block;height:62px;width:auto}
 .mcard .logo-img{height:44px}
 @media (max-width:700px){.logo-img{height:50px}}
+/* contact form section */
+.contact h2{font-size:clamp(2rem,4vw,3rem)}
+.contact .intro{margin-top:18px;color:var(--ink-soft);max-width:48ch}
+.contact .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(--vocal);user-select:all}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -565,7 +571,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <p>Jag har arbetat med sång, röst och scen i över 30 år och har mött tusentals röster, på scener, i studior, i replokaler och i lektionsrum. Röster med olika drömmar och förutsättningar, men med samma längtan: att få låta mer som sig själv.</p>
       <p>Min drivkraft är att göra röstutveckling begriplig, trygg och tillgänglig. Teknik är inget stelt, utan ett verktyg som gör dig friare, starkare och modigare i ditt uttryck.</p>
       <p>Därför startade jag Röstlabbet: en plats där du kan träna smart, på dina villkor, med struktur, motivation och andra sångare omkring dig.</p>
-      <p id="kontakt">Hör gärna av dig: <a data-kontakt href="mailto:monica@rostlabbet.se" style="color:var(--vocal);font-weight:600">monica@rostlabbet.se</a></p>
+      <p>Hör gärna av dig: <a data-kontakt href="mailto:monica@rostlabbet.se" style="color:var(--vocal);font-weight:600">monica@rostlabbet.se</a></p>
       <blockquote>”Det här är en plats där röster får växa, låta och ta plats. På riktigt.”<cite>Monica Christoffersson, sångpedagog</cite></blockquote>
       <img class="cvt" src="media/cvt-authorised-teacher.png" alt="Complete Vocal Technique, Authorised Teacher" width="300" height="124" loading="lazy">
     </div>
@@ -661,6 +667,20 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <h2>Sluta gissa<span class="script">börja träna</span></h2>
     <p class="lede" id="next-live">Nästa livepass är tisdag 6 oktober kl 11. Bli medlem i dag så är du med.</p>
     <a class="btn" href="#pris">Bli medlem · 349 kr/mån <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="band contact" id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="kicker">Kontakt</p>
+      <h2>Frågor? Hör av dig</h2>
+      <p class="intro">Undrar du något om medlemskapet, vill du boka 1:1-coachning eller en workshop för din kör? Skriv till Monica här, så svarar hon så snart hon kan.</p>
+      <p class="mail">monica@rostlabbet.se</p>
+    </div>
+    <div data-kontaktform="Medlemskapet">
+      <p>Mejla Monica på <a href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>.</p>
+    </div>
   </div>
 </section>
 
