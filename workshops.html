@@ -151,7 +151,7 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 
 .sub{margin-top:48px;color:var(--vocal)}
 /* contact */
-.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,6vw,80px);align-items:end}
 @media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
 .contact .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(--vocal);user-select:all}
 .hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:34px}
@@ -313,8 +313,8 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <p class="lede" style="margin-top:18px">Undrar du något om träningspassen eller workshops, eller vill du boka för din kör? Skriv till Monica här, så svarar hon så snart hon kan.</p>
       <p class="mail">monica@rostlabbet.se</p>
     </div>
-    <div data-kontaktform="Träningspass eller workshop">
-      <p class="lede">Mejla Monica på <a href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>.</p>
+    <div class="contact-cta">
+      <a class="btn" data-kontakt="Träningspass eller workshop" href="mailto:monica@rostlabbet.se">Skriv till Monica <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>

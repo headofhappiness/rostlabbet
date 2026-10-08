@@ -343,7 +343,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 .contact h2{font-size:clamp(2rem,4vw,3rem)}
 .contact .intro{margin-top:18px;color:var(--ink-soft);max-width:48ch}
 .contact .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(--vocal);user-select:all}
-.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,6vw,80px);align-items:end}
 @media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
@@ -678,8 +678,8 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <p class="intro">Undrar du något om medlemskapet, vill du boka 1:1-coachning eller en workshop för din kör? Skriv till Monica här, så svarar hon så snart hon kan.</p>
       <p class="mail">monica@rostlabbet.se</p>
     </div>
-    <div data-kontaktform="Medlemskapet">
-      <p>Mejla Monica på <a href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>.</p>
+    <div class="contact-cta">
+      <a class="btn" data-kontakt="Medlemskapet" href="mailto:monica@rostlabbet.se">Skriv till Monica <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
