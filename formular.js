@@ -46,7 +46,7 @@
     var P=kind+(host?'-in':'');
     var d=document.createElement(host?'div':'dialog');d.className='signup';d.setAttribute('aria-labelledby','f-'+P+'-t');
     var top=kind==='ws'
-      ?'<label for="f-'+P+'-ws">Vilket pass?</label><select id="f-'+P+'-ws" name="workshop" required></select>'
+      ?(host?'<label for="f-'+P+'-ws">Vilket pass?</label><select id="f-'+P+'-ws" name="workshop" required></select>':'<input type="hidden" name="workshop">')
       :'';
     var fields=kind==='ws'
       ?'<div class="row"><div><label for="f-'+P+'-tel">Telefon</label><input id="f-'+P+'-tel" name="telefon" type="tel" autocomplete="tel"></div>'
@@ -57,6 +57,7 @@
         +'<label for="f-'+P+'-msg">Meddelande</label><textarea id="f-'+P+'-msg" name="meddelande" rows="5" required></textarea>';
     d.innerHTML=(host?'':'<button type="button" class="x" aria-label="Stäng">×</button>')
       +'<div class="in" data-step="form"><h3 id="f-'+P+'-t">'+(kind==='ws'?'Anmälan':'Kontakta Monica')+'</h3>'
+      +(kind==='ws'&&!host?'<p class="lead" data-pass></p>':'')
       +'<form novalidate>'
       +'<input type="hidden" name="access_key" value="'+esc(ACCESS_KEY)+'">'
       +'<input type="hidden" name="subject"><input type="hidden" name="from_name" value="Röstlabbet hemsida">'
@@ -113,7 +114,8 @@
 
   // Fyll passlistan i anmälningsformuläret med passen som syns på sidan
   function fillWs(d){
-    var sel=d._form.workshop,cur=sel.value,opts=wsOptions();
+    var sel=d._form.workshop;if(sel.tagName!=='SELECT')return 1;
+    var cur=sel.value,opts=wsOptions();
     sel.innerHTML=(opts.length>1?'<option value="">Välj pass</option>':'')+opts.map(function(o){return '<option>'+esc(o)+'</option>'}).join('');
     if(cur&&opts.indexOf(cur)>=0)sel.value=cur;
     return opts.length;
@@ -154,7 +156,7 @@
     var a=e.target.closest&&e.target.closest('a[data-ws],a[data-kontakt]');
     if(!a||!/^mailto:/i.test(a.getAttribute('href')||''))return;
     if(a.hasAttribute('data-ws')){
-      var ws=a.getAttribute('data-ws'),setW=function(f){f.workshop.value=ws};
+      var ws=a.getAttribute('data-ws'),setW=function(f){f.workshop.value=ws;var p=f.parentNode.querySelector('[data-pass]');if(p)p.textContent=ws};
       if(inline.ws){e.preventDefault();fillWs(inline.ws);goTo(inline.ws,setW)}
       else if(window.HTMLDialogElement){e.preventDefault();popup('ws',setW)}
     }else{
