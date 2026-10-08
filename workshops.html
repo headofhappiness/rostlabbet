@@ -336,8 +336,8 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 
 <script>
 /* Kommande träningspass på plats: läses från fliken "På plats" i Google-kalkylarket.
-   Kolumner: Datum | Tid | Pass | Plats | Pris | Digitalt | Info | Anmälan
-   Pris = pris på plats (tom = inte på plats). Digitalt = pris digitalt (tom = inte digitalt).
+   Kolumner: Datum | Tid | Pass | Plats | Pris på plats | Pris digitalt | Info | Anmälan
+   Tom "Pris på plats" = inte på plats. Tom "Pris digitalt" = inte digitalt. (Gamla rubrikerna Pris/Digitalt fungerar också.)
    Båda tomma räknas som bara på plats.
    Anmälan kan vara en mejladress eller en länk (tom = monica@rostlabbet.se). */
 (function(){
@@ -389,7 +389,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       var g=function(n){var i=ix(n);return i<0?'':(r[i]||'').trim()};
       var d=parseDate(g('datum'));
       if(!d||!g(nameCol)||d<t)return;
-      items.push({d:d,tid:g('tid'),namn:g(nameCol),plats:g('plats'),pris:g('pris'),info:g('info'),digitalt:g('digitalt'),anm:g('anmälan')||g('anmalan')});
+      items.push({d:d,tid:g('tid'),namn:g(nameCol),plats:g('plats'),pris:g('pris på plats')||g('pris'),info:g('info'),digitalt:g('pris digitalt')||g('digitalt'),anm:g('anmälan')||g('anmalan')});
     });
     items.sort(function(a,b){return a.d-b.d});
     // En knapp för på plats, och en till för digitalt om kolumnen Digitalt är ifylld
