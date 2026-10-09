@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="media/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700;800&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
 <style>
 /* Layout: "röstgym". Cream base, whole bands in Vocal Red, and a membership card as the hero object that shows the offer. */
 :root{
@@ -348,6 +348,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 /* nav: never wrap; drop two items on mid-size screens */
 nav.main a{white-space:nowrap}
 @media (max-width:1180px){nav.main .hide-md{display:none}}
+nav.main a.nav-strong{font-weight:800}
 </style>
 </head>
 <body>
@@ -359,7 +360,7 @@ nav.main a{white-space:nowrap}
       <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet – din digitala röstcoach" width="261" height="147">
     </a>
     <nav class="main" aria-label="Huvudmeny">
-      <a class="hide-sm" href="#ingar">Medlemskapet</a>
+      <a class="hide-sm nav-strong" href="#ingar">Medlemskapet</a>
       <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
       <a class="hide-sm" href="workshops.html">Boka gruppworkshop</a>
       <a class="hide-sm hide-md" href="#monica">Om Monica</a>
