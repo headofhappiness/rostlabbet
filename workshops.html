@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  RÖSTLABBET – workshopsidan (workshops.html)
+  RÖSTLABBET – workshops för grupper (workshops.html)
   Till den som ändrar i filen, människa eller AI:
   - Ändra bara text mellan taggarna. Rör inte design, färger eller kod om det inte uttryckligen efterfrågas.
   - Bilder ligger i mappen media/.
@@ -10,12 +10,13 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
+<script>if(location.hash==='#pa-plats')location.replace('pa-plats.html#pa-plats');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vocal Workout på plats – Röstlabbet med Monica</title>
-<meta name="description" content="Vocal Workout på plats med Monica: ett längre träningspass där vi ses på riktigt. Se kommande pass och anmäl dig. Körer och grupper kan boka en egen workshop.">
+<title>Workshops för körer, skolor och grupper – Röstlabbet med Monica</title>
+<meta name="description" content="Boka en workshop med Monica för din kör, skola, ditt kulturhus eller företag. Teman: Hållbar röst, Röst &amp; uttryck och Scenisk närvaro. På plats eller digitalt.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vocal Workout på plats – Röstlabbet med Monica">
-<meta property="og:description" content="Kommande Vocal Workouts på plats med Monica. Anmäl dig direkt.">
+<meta property="og:title" content="Workshops för körer, skolor och grupper – Röstlabbet med Monica">
+<meta property="og:description" content="Boka en workshop med Monica för din grupp. På plats eller digitalt.">
 <meta property="og:image" content="https://rostlabbet.se/media/monica-workshop.jpg">
 <meta name="theme-color" content="#780000">
 <link rel="icon" type="image/png" href="media/favicon.png">
@@ -178,6 +179,11 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 .logo-img{display:block;height:62px;width:auto}
 .mcard .logo-img{height:44px}
 @media (max-width:700px){.logo-img{height:50px}}
+.ways.themes{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.ways.themes{grid-template-columns:minmax(0,1fr)}}
+/* nav: never wrap; drop two items on mid-size screens */
+nav.main a{white-space:nowrap}
+@media (max-width:1180px){nav.main .hide-md{display:none}}
 </style>
 </head>
 <body>
@@ -189,9 +195,10 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     </a>
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm" href="index.html#ingar">Det här ingår</a>
-      <a class="hide-sm" href="workshops.html" aria-current="page">Träna på plats</a>
-      <a class="hide-sm" href="index.html#monica">Om Monica</a>
-      <a class="hide-sm" href="index.html#fragor">Frågor</a>
+      <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
+      <a class="hide-sm" href="workshops.html" aria-current="page">Boka gruppworkshop</a>
+      <a class="hide-sm hide-md" href="index.html#monica">Om Monica</a>
+      <a class="hide-sm hide-md" href="index.html#fragor">Frågor</a>
       <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
       <a class="btn" href="index.html#pris">Bli medlem</a>
     </nav>
@@ -203,66 +210,55 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 <section class="hero red">
   <div class="wrap">
     <div>
-      <p class="kicker">Röstlabbet · På plats</p>
-      <h1>Vocal Workout<span class="script">på plats med Monica</span></h1>
-      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla, medlem eller inte, men <b>betalas separat</b>.</p>
+      <p class="kicker">Röstlabbet · Workshops</p>
+      <h1>Workshops<span class="script">för körer, skolor och grupper</span></h1>
+      <p class="lede">Vill din kör, skola, ditt kulturhus eller företag vässa röstanvändningen och scennärvaron? Monica håller workshops på plats eller digitalt, med ett upplägg som passar just er.</p>
       <div class="ctas">
-        <a class="btn" href="#pa-plats">Kommande pass <span class="arrow" aria-hidden="true">↓</span></a>
-        <a class="textlink" href="index.html#ingar" style="color:var(--cream)">Träna digitalt? Se medlemskapet</a>
+        <a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20grupp">Boka en workshop <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="textlink" href="#teman" style="color:var(--cream)">Se teman</a>
       </div>
-      <p class="choir-hero">Är ni en <b>kör eller grupp</b> som vill boka en egen workshop? <a href="#korer">Kontakta Monica ↓</a></p>
+      <p class="choir-hero">Vill du själv träna med Monica på plats? <a href="pa-plats.html">Träna på plats →</a></p>
     </div>
     <div class="hero-photo"><img src="media/monica-workshop.jpg" alt="Monica i svartvitt, glad och i rörelse" width="900" height="1200"></div>
   </div>
 </section>
 
-<section class="band coming" id="pa-plats">
+<section class="band" id="teman">
   <div class="wrap">
-    <p class="kicker">På plats</p>
-    <h2>Kommande Vocal Workouts</h2>
-    <p class="lede" style="margin-top:18px">Passen sker bara på plats och <b>ingår inte i medlemskapet</b>, så de betalas separat även av medlemmar. Vid varje pass står var, när och vad det kostar. Det som ingår i medlemskapet är <a href="index.html#ingar">Live Vocal Workouts digitalt</a>.</p>
-    <!--
-      KOMMANDE TRÄNINGSPASS PÅ PLATS
-      Listan hämtas från fliken "På plats" i samma Google-kalkylark som repschemat.
-      Raderna här nedanför visas bara om kalkylarket inte går att nå.
-      Workshops vars datum har passerat döljs automatiskt.
-    -->
-    <div class="wlist" id="wlist">
-      <article class="wcard" data-date="2026-10-31">
-        <div class="wdate"><span class="d">31</span><span class="m">okt</span><span class="wd">lördag</span></div>
-        <div class="winfo">
-          <span class="wmode">Bara på plats</span> <span class="wmode extra">Ingår inte i medlemskapet</span>
-          <h3>Vocal Workout</h3>
-          <ul><li><b>Plats:</b> Dramalogen, Halmstad</li><li><b>Tid:</b> 11–12</li><li><b>Pris på plats:</b> 195 kr inkl moms</li></ul>
-          <p class="wnote">Betalas med Swish i dörren.</p>
-        </div>
-        <div class="wbtns"><a class="btn" data-ws="Vocal Workout · lördag 31 okt · Dramalogen, Halmstad · på plats" href="mailto:monica@rostlabbet.se?subject=Anm%C3%A4lan%3A%20Vocal%20Workout%2031%2F10">Delta på plats <span class="arrow" aria-hidden="true">→</span></a></div>
-      </article>
+    <p class="kicker">Teman</p>
+    <h2>Välj ett tema</h2>
+    <p class="lede" style="margin-top:18px">Upplägget anpassas efter er grupp och era förutsättningar.</p>
+    <div class="ways themes">
+      <div class="way">
+        <span class="n">1</span>
+        <h3>Hållbar röst</h3>
+        <p>Sjung och tala mer och längre, utan att slita på rösten.</p>
+      </div>
+      <div class="way">
+        <span class="n">2</span>
+        <h3>Röst &amp; uttryck</h3>
+        <p>Teknik och uttryck som hänger ihop, så att rösten bär det ni vill förmedla.</p>
+      </div>
+      <div class="way">
+        <span class="n">3</span>
+        <h3>Scenisk närvaro</h3>
+        <p>Närvaro på scen, mikrofonteknik och fokus på publiken.</p>
+      </div>
     </div>
-    <p class="wempty" id="wempty" hidden>Inga pass på plats är inplanerade just nu. Anmäl dig till <a href="index.html#gratis">nyhetsbrevet</a> så får du veta först när nästa släpps.</p>
   </div>
 </section>
 
-<section class="band choir" id="korer">
+<section class="band know">
   <div class="wrap">
     <div>
-      <p class="kicker">För körer och grupper</p>
-      <h2>Boka en workshop för er</h2>
-      <p class="lede">Vill din kör, ensemble eller grupp träna tillsammans med Monica? Hon håller workshops för körer och grupper, på plats eller digitalt, med ett tema som passar er.</p>
-      <p class="lede" style="margin-top:14px">Mejla Monica, så berättar hon mer om upplägg och pris.</p>
-      <p class="mail">monica@rostlabbet.se</p>
-      <p style="margin-top:28px"><a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20k%C3%B6r%20%2F%20grupp">Mejla Monica <span class="arrow" aria-hidden="true">→</span></a></p>
+      <p class="kicker">Bra att veta</p>
+      <h2>Så går det till</h2>
     </div>
-  </div>
-</section>
-
-<section class="band red final">
-  <div class="wrap">
-    <h2>Var med nästa gång<span class="script">vi utforskar rösten tillsammans</span></h2>
-    <p class="lede">Bli medlem, så tränar du med Monica live varje månad, digitalt var du än är.</p>
-    <div class="ctas">
-      <a class="btn" href="index.html#pris">Bli medlem · 349 kr/mån <span class="arrow" aria-hidden="true">→</span></a>
-      <a class="textlink" href="#kontakt">Frågor? Kontakta Monica</a>
+    <div class="facts">
+      <div class="fact"><h3>För vem</h3><p>Körer och körsångare, skolor och estetiska linjer, kulturhus, företag och andra grupper.</p></div>
+      <div class="fact"><h3>Det här ingår</h3><p>Gruppövningar och Vocal Labs för olika nivåer, och praktiska verktyg som ger märkbar skillnad direkt.</p></div>
+      <div class="fact"><h3>På plats eller digitalt</h3><p>Monica kommer till er, eller så ses ni via skärm.</p></div>
+      <div class="fact"><h3>Upplägg och pris</h3><p>Monica tar fram ett personligt upplägg och prisförslag för just er grupp.</p></div>
     </div>
   </div>
 </section>
@@ -270,13 +266,13 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 <section class="band contact" id="kontakt">
   <div class="wrap contact-grid">
     <div>
-      <p class="kicker">Kontakt</p>
-      <h2>Frågor? Hör av dig</h2>
-      <p class="lede" style="margin-top:18px">Undrar du något om passen på plats, eller vill du boka en workshop för din kör? Skriv till Monica här, så svarar hon så snart hon kan.</p>
+      <p class="kicker">Boka</p>
+      <h2>Boka en workshop</h2>
+      <p class="lede" style="margin-top:18px">Berätta lite om er grupp och vad ni vill jobba med, så återkommer Monica med upplägg och pris.</p>
       <p class="mail">monica@rostlabbet.se</p>
     </div>
     <div class="contact-cta">
-      <a class="btn" data-kontakt="Träningspass eller workshop" href="mailto:monica@rostlabbet.se">Skriv till Monica <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se">Skriv till Monica <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -296,103 +292,6 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
   </div>
 </footer>
 
-<script>
-/* Kommande träningspass på plats: läses från fliken "På plats" i Google-kalkylarket.
-   Kolumner: Datum | Tid | Pass | Plats | Pris på plats | Pris digitalt | Info | Anmälan
-   Anmälan: tom = formulär på sidan. En länk (t.ex. Zenlers betalsida) = knappen "Delta på plats" går dit.
-   Pris digitalt tom = knappen blir "Digitalt? Ingår i medlemskapet".
-   Tom "Pris på plats" = inte på plats. Tom "Pris digitalt" = inte digitalt. (Gamla rubrikerna Pris/Digitalt fungerar också.)
-   Båda tomma räknas som bara på plats.
-   Anmälan kan vara en mejladress eller en länk (tom = monica@rostlabbet.se). */
-(function(){
-  var URL='https://docs.google.com/spreadsheets/d/1psrrpbkBSNHctvYX_uolhrglpOxRO52bGWGunK1ZLcU/gviz/tq?tqx=out:csv&sheet='+encodeURIComponent('På plats');
-  var MAIL='monica@rostlabbet.se';
-  var list=document.getElementById('wlist'),empty=document.getElementById('wempty');
-  if(!list)return;
-  var M=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];
-  var W=['söndag','måndag','tisdag','onsdag','torsdag','fredag','lördag'];
-  function today(){var d=new Date();d.setHours(0,0,0,0);return d}
-  function parseDate(s){
-    s=(s||'').trim();var m;
-    if(m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/))return new Date(+m[1],m[2]-1,+m[3]);
-    if(m=s.match(/^(\d{1,2})[\/.](\d{1,2})(?:[\/.](\d{2,4}))?$/)){
-      var y=m[3]?(+m[3]<100?2000+ +m[3]:+m[3]):today().getFullYear();
-      var d=new Date(y,m[2]-1,+m[1]);
-      if(!m[3]&&d<today())d.setFullYear(y+1);
-      return d;
-    }
-    return null;
-  }
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function csv(t){
-    var rows=[],row=[],f='',q=false;
-    for(var i=0;i<t.length;i++){var c=t[i];
-      if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
-      else if(c=='"')q=true;else if(c==','){row.push(f);f=''}
-      else if(c=='\n'||c=='\r'){if(c=='\r'&&t[i+1]=='\n')i++;row.push(f);rows.push(row);row=[];f=''}
-      else f+=c}
-    if(f||row.length){row.push(f);rows.push(row)}
-    return rows;
-  }
-  function prune(){
-    var t=today(),left=0;
-    Array.prototype.forEach.call(list.querySelectorAll('[data-date]'),function(el){
-      var d=parseDate(el.getAttribute('data-date'));
-      if(d&&d<t)el.remove();else left++;
-    });
-    if(empty)empty.hidden=left>0;
-  }
-  function render(rows){
-    var h=rows[0].map(function(x){return x.trim().toLowerCase()});
-    var ix=function(n){return h.indexOf(n)};
-    // Only trust the tab if it really is the workshop tab (a missing tab returns the schedule)
-    var nameCol=ix('pass')>=0?'pass':'workshop';
-    if(ix(nameCol)<0||ix('plats')<0||ix('datum')<0)return false;
-    var t=today(),items=[];
-    rows.slice(1).forEach(function(r){
-      var g=function(n){var i=ix(n);return i<0?'':(r[i]||'').trim()};
-      var d=parseDate(g('datum'));
-      if(!d||!g(nameCol)||d<t)return;
-      items.push({d:d,tid:g('tid'),namn:g(nameCol),plats:g('plats'),pris:g('pris på plats')||g('pris'),info:g('info'),digitalt:g('pris digitalt')||g('digitalt'),anm:g('anmälan')||g('anmalan')});
-    });
-    items.sort(function(a,b){return a.d-b.d});
-    // En knapp för på plats, och en till för digitalt om kolumnen Digitalt är ifylld
-    function buttons(w,href){
-      var base=w.namn+' · '+W[w.d.getDay()]+' '+w.d.getDate()+' '+M[w.d.getMonth()]+(w.plats?' · '+w.plats:'');
-      var arrow=' <span class="arrow" aria-hidden="true">→</span>';
-      var ext=/^https?:/i.test(href);
-      var b=w.onsite
-        ?(ext?'<a class="btn" href="'+esc(href)+'" rel="noopener">Delta på plats'+arrow+'</a>':'<a class="btn" data-ws="'+esc(base+' · på plats')+'" href="'+esc(href)+'">Delta på plats'+arrow+'</a>')
-        :'<span class="btn off" aria-disabled="true">På plats · inte detta pass</span>';
-      b+=w.digital
-        ?'<a class="btn alt" data-ws="'+esc(base+' · digitalt')+'" href="'+esc(href)+'">Delta digitalt'+arrow+'</a>'
-        :'';
-      return b;
-    }
-    list.innerHTML=items.map(function(w){
-      var a=w.anm||MAIL,href;
-      if(/^https?:\/\//i.test(a))href=a;
-      else href='mailto:'+(a.indexOf('@')>0?a:MAIL)+'?subject='+encodeURIComponent('Anmälan: '+w.namn+' '+w.d.getDate()+'/'+(w.d.getMonth()+1));
-      w.digital=!!w.digitalt;w.onsite=!!w.pris||!w.digital;
-      var mode=w.onsite&&w.digital?'På plats och digitalt':(w.digital?'Bara digitalt':'Bara på plats');
-      var facts=[];
-      if(w.plats)facts.push('<li><b>Plats:</b> '+esc(w.plats)+'</li>');
-      if(w.tid)facts.push('<li><b>Tid:</b> '+esc(w.tid)+'</li>');
-      if(w.onsite&&w.pris)facts.push('<li><b>Pris på plats:</b> '+esc(w.pris)+'</li>');
-      if(w.digitalt)facts.push('<li><b>Pris digitalt:</b> '+esc(w.digitalt)+'</li>');
-      return '<article class="wcard"><div class="wdate"><span class="d">'+w.d.getDate()+'</span><span class="m">'+M[w.d.getMonth()]+'</span><span class="wd">'+W[w.d.getDay()]+'</span></div>'
-        +'<div class="winfo"><span class="wmode">'+mode+'</span> <span class="wmode extra">Ingår inte i medlemskapet</span><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
-        +'<div class="wbtns">'+buttons(w,href)+'</div></article>';
-    }).join('');
-    if(empty)empty.hidden=items.length>0;
-    return true;
-  }
-  prune();
-  fetch(URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text()})
-    .then(function(t){var rows=csv(t);if(rows.length)render(rows)})
-    .catch(function(){});
-})();
-</script>
 <script src="formular.js"></script>
 <script src="sparning.js"></script>
 </body>

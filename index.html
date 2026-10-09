@@ -345,6 +345,9 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 .contact .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(--vocal);user-select:all}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,6vw,80px);align-items:end}
 @media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+/* nav: never wrap; drop two items on mid-size screens */
+nav.main a{white-space:nowrap}
+@media (max-width:1180px){nav.main .hide-md{display:none}}
 </style>
 </head>
 <body>
@@ -357,9 +360,10 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     </a>
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm" href="#ingar">Det här ingår</a>
-      <a class="hide-sm" href="workshops.html">Träna på plats</a>
-      <a class="hide-sm" href="#monica">Om Monica</a>
-      <a class="hide-sm" href="#fragor">Frågor</a>
+      <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
+      <a class="hide-sm" href="workshops.html">Boka gruppworkshop</a>
+      <a class="hide-sm hide-md" href="#monica">Om Monica</a>
+      <a class="hide-sm hide-md" href="#fragor">Frågor</a>
       <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
       <a class="btn" href="#pris">Bli medlem</a>
     </nav>
@@ -630,13 +634,13 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
         <h3>Vocal Workout på plats</h3>
         <div class="p">195 kr<small>per pass · ingår inte i medlemskapet</small></div>
         <p>Ett längre träningspass där vi ses på riktigt och Monica anpassar passet efter gruppen. Bara på plats. Öppet för alla, medlem eller inte, men betalas separat.</p>
-        <a href="workshops.html#pa-plats">Se kommande pass</a>
+        <a href="pa-plats.html#pa-plats">Se kommande pass</a>
       </div>
       <div class="offer">
         <h3>Körer &amp; grupper</h3>
         <div class="p">Offert<small>på plats eller digitalt</small></div>
         <p>En workshop för din kör, ensemble eller grupp, med ett tema som passar er. Monica berättar mer om upplägg och pris.</p>
-        <a data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se">Kontakta Monica</a>
+        <a href="workshops.html">Läs om workshops</a>
       </div>
     </div>
   </div>

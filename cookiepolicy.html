@@ -145,6 +145,9 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 .logo-img{display:block;height:62px;width:auto}
 .mcard .logo-img{height:44px}
 @media (max-width:700px){.logo-img{height:50px}}
+/* nav: never wrap; drop two items on mid-size screens */
+nav.main a{white-space:nowrap}
+@media (max-width:1180px){nav.main .hide-md{display:none}}
 </style>
 </head>
 <body>
@@ -156,9 +159,10 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     </a>
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm" href="index.html#ingar">Det här ingår</a>
-      <a class="hide-sm" href="workshops.html">Träna på plats</a>
-      <a class="hide-sm" href="index.html#monica">Om Monica</a>
-      <a class="hide-sm" href="index.html#fragor">Frågor</a>
+      <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
+      <a class="hide-sm" href="workshops.html">Boka gruppworkshop</a>
+      <a class="hide-sm hide-md" href="index.html#monica">Om Monica</a>
+      <a class="hide-sm hide-md" href="index.html#fragor">Frågor</a>
       <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
       <a class="btn" href="index.html#pris">Bli medlem</a>
     </nav>
