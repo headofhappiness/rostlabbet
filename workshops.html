@@ -204,7 +204,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <div>
       <p class="kicker">Röstlabbet · På plats</p>
       <h1>Vocal Workout<span class="script">på plats med Monica</span></h1>
-      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. Öppet för alla, medlem eller inte.</p>
+      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla, medlem eller inte.</p>
       <div class="ctas">
         <a class="btn" href="#pa-plats">Kommande pass <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="textlink" href="index.html#ingar" style="color:var(--cream)">Träna digitalt? Se medlemskapet</a>
@@ -219,7 +219,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
   <div class="wrap">
     <p class="kicker">På plats</p>
     <h2>Kommande Vocal Workouts</h2>
-    <p class="lede" style="margin-top:18px">Vid varje pass står plats, tid och pris. Vill du träna digitalt ingår Live Vocal Workouts i <a href="index.html#ingar">medlemskapet</a>.</p>
+    <p class="lede" style="margin-top:18px">Passen sker bara på plats. Vid varje pass står var, när och vad det kostar. Vill du träna digitalt ingår Live Vocal Workouts i <a href="index.html#ingar">medlemskapet</a>.</p>
     <!--
       KOMMANDE TRÄNINGSPASS PÅ PLATS
       Listan hämtas från fliken "På plats" i samma Google-kalkylark som repschemat.
@@ -230,12 +230,12 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <article class="wcard" data-date="2026-10-31">
         <div class="wdate"><span class="d">31</span><span class="m">okt</span><span class="wd">lördag</span></div>
         <div class="winfo">
-          <span class="wmode">Endast på plats</span>
+          <span class="wmode">Bara på plats</span>
           <h3>Vocal Workout</h3>
           <ul><li><b>Plats:</b> Dramalogen, Halmstad</li><li><b>Tid:</b> 11–12</li><li><b>Pris på plats:</b> 195 kr inkl moms</li></ul>
           <p class="wnote">Betalas med Swish i dörren.</p>
         </div>
-        <div class="wbtns"><a class="btn" data-ws="Vocal Workout · lördag 31 okt · Dramalogen, Halmstad · på plats" href="mailto:monica@rostlabbet.se?subject=Anm%C3%A4lan%3A%20Vocal%20Workout%2031%2F10">Delta på plats <span class="arrow" aria-hidden="true">→</span></a><a class="btn alt" href="index.html#ingar">Digitalt? Ingår i medlemskapet</a></div>
+        <div class="wbtns"><a class="btn" data-ws="Vocal Workout · lördag 31 okt · Dramalogen, Halmstad · på plats" href="mailto:monica@rostlabbet.se?subject=Anm%C3%A4lan%3A%20Vocal%20Workout%2031%2F10">Delta på plats <span class="arrow" aria-hidden="true">→</span></a></div>
       </article>
     </div>
     <p class="wempty" id="wempty" hidden>Inga pass på plats är inplanerade just nu. Anmäl dig till <a href="index.html#gratis">nyhetsbrevet</a> så får du veta först när nästa släpps.</p>
@@ -365,7 +365,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
         :'<span class="btn off" aria-disabled="true">På plats · inte detta pass</span>';
       b+=w.digital
         ?'<a class="btn alt" data-ws="'+esc(base+' · digitalt')+'" href="'+esc(href)+'">Delta digitalt'+arrow+'</a>'
-        :'<a class="btn alt" href="index.html#ingar">Digitalt? Ingår i medlemskapet</a>';
+        :'';
       return b;
     }
     list.innerHTML=items.map(function(w){
@@ -373,7 +373,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       if(/^https?:\/\//i.test(a))href=a;
       else href='mailto:'+(a.indexOf('@')>0?a:MAIL)+'?subject='+encodeURIComponent('Anmälan: '+w.namn+' '+w.d.getDate()+'/'+(w.d.getMonth()+1));
       w.digital=!!w.digitalt;w.onsite=!!w.pris||!w.digital;
-      var mode=w.onsite&&w.digital?'På plats och digitalt':(w.digital?'Endast digitalt':'Endast på plats');
+      var mode=w.onsite&&w.digital?'På plats och digitalt':(w.digital?'Bara digitalt':'Bara på plats');
       var facts=[];
       if(w.plats)facts.push('<li><b>Plats:</b> '+esc(w.plats)+'</li>');
       if(w.tid)facts.push('<li><b>Tid:</b> '+esc(w.tid)+'</li>');
