@@ -144,6 +144,7 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 .wcard .btn.alt:hover{background:var(--ink);color:var(--cream)}
 .wcard .btn.off{background:transparent;border:2px dashed rgba(26,26,27,.25);color:var(--ink-soft);cursor:default;transform:none}
 .wcard .btn.off:hover{background:transparent;transform:none}
+.wmode.extra{background:transparent;border:1.5px solid var(--vocal)}
 .wmode{display:inline-block;margin-bottom:8px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;padding:4px 10px;border-radius:999px;background:var(--cream-2);color:var(--vocal)}
 @media (max-width:760px){.wcard .wbtns{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
 .anm{margin-top:28px}
@@ -204,7 +205,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
     <div>
       <p class="kicker">Röstlabbet · På plats</p>
       <h1>Vocal Workout<span class="script">på plats med Monica</span></h1>
-      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla, medlem eller inte.</p>
+      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla, och det <b>ingår inte i medlemskapet</b>.</p>
       <div class="ctas">
         <a class="btn" href="#pa-plats">Kommande pass <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="textlink" href="index.html#ingar" style="color:var(--cream)">Träna digitalt? Se medlemskapet</a>
@@ -219,7 +220,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
   <div class="wrap">
     <p class="kicker">På plats</p>
     <h2>Kommande Vocal Workouts</h2>
-    <p class="lede" style="margin-top:18px">Passen sker bara på plats. Vid varje pass står var, när och vad det kostar. Vill du träna digitalt ingår Live Vocal Workouts i <a href="index.html#ingar">medlemskapet</a>.</p>
+    <p class="lede" style="margin-top:18px">Passen sker bara på plats och <b>ingår inte i medlemskapet</b>, så de betalas separat även av medlemmar. Vid varje pass står var, när och vad det kostar. Det som ingår i medlemskapet är <a href="index.html#ingar">Live Vocal Workouts digitalt</a>.</p>
     <!--
       KOMMANDE TRÄNINGSPASS PÅ PLATS
       Listan hämtas från fliken "På plats" i samma Google-kalkylark som repschemat.
@@ -230,7 +231,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       <article class="wcard" data-date="2026-10-31">
         <div class="wdate"><span class="d">31</span><span class="m">okt</span><span class="wd">lördag</span></div>
         <div class="winfo">
-          <span class="wmode">Bara på plats</span>
+          <span class="wmode">Bara på plats</span> <span class="wmode extra">Ingår inte i medlemskapet</span>
           <h3>Vocal Workout</h3>
           <ul><li><b>Plats:</b> Dramalogen, Halmstad</li><li><b>Tid:</b> 11–12</li><li><b>Pris på plats:</b> 195 kr inkl moms</li></ul>
           <p class="wnote">Betalas med Swish i dörren.</p>
@@ -380,7 +381,7 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
       if(w.onsite&&w.pris)facts.push('<li><b>Pris på plats:</b> '+esc(w.pris)+'</li>');
       if(w.digitalt)facts.push('<li><b>Pris digitalt:</b> '+esc(w.digitalt)+'</li>');
       return '<article class="wcard"><div class="wdate"><span class="d">'+w.d.getDate()+'</span><span class="m">'+M[w.d.getMonth()]+'</span><span class="wd">'+W[w.d.getDay()]+'</span></div>'
-        +'<div class="winfo"><span class="wmode">'+mode+'</span><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
+        +'<div class="winfo"><span class="wmode">'+mode+'</span> <span class="wmode extra">Ingår inte i medlemskapet</span><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
         +'<div class="wbtns">'+buttons(w,href)+'</div></article>';
     }).join('');
     if(empty)empty.hidden=items.length>0;
