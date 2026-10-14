@@ -1,0 +1,328 @@
+<!doctype html>
+<!--
+  RÖSTLABBET – 1:1-coachning (coachning.html)
+  Till den som ändrar i filen, människa eller AI:
+  - Ändra bara text mellan taggarna. Rör inte design, färger eller kod om det inte uttryckligen efterfrågas.
+  - Bilder ligger i mappen media/.
+  - Lämna alltid tillbaka hela filen.
+  Hjälp: Lisa Jonsson, Head of Happiness.
+-->
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1:1-coachning för sångare och artister – Röstlabbet med Monica</title>
+<meta name="description" content="Personlig sångcoachning och artistcoachning med Monica, i studion i Mellbystrand eller online via Zoom. 995 kr per session, paket finns.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1:1-coachning för sångare och artister – Röstlabbet med Monica">
+<meta property="og:description" content="Sångcoachning och artistcoachning med Monica. I studion eller online.">
+<meta property="og:image" content="https://rostlabbet.se/media/monica-portratt.jpg">
+<meta name="theme-color" content="#780000">
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="apple-touch-icon" href="media/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@700&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700;800&family=Libre+Baskerville:ital@1&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Same system as index.html: cream base, Vocal Red bands, Lab Blue buttons with charcoal text. */
+:root{
+  color-scheme:light;
+  --vocal:#780000;
+  --vocal-deep:#5a0000;
+  --signal:#C1121F;
+  --lab:#00A6E6;
+  --cream:#FDF0D5;
+  --cream-2:#F7E4BF;
+  --ink:#1A1A1B;
+  --ink-soft:#4d4542;
+  --line:#e9d2a6;
+  --f-display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --f-script:"Caveat","Segoe Script","Brush Script MT",cursive;
+  --f-label:"League Spartan",Arial,sans-serif;
+  --f-body:"Hanken Grotesk","Segoe UI",Arial,sans-serif;
+  --f-logo:"Be Vietnam Pro","Arial Black",sans-serif;
+  --wrap:1180px;
+  --gutter:clamp(16px,4vw,44px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.band{padding-block:clamp(72px,10vw,120px)}
+.red{background:var(--vocal);color:var(--cream)}
+.kicker{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.34em;font-size:.78rem;margin:0 0 20px;color:var(--signal)}
+.red .kicker{color:var(--cream);opacity:.8}
+h1,h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.36;color:var(--vocal)}
+.red h2{color:var(--cream)}
+h3{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;margin:0 0 8px}
+.script{font-family:var(--f-script);font-weight:600;text-transform:none;letter-spacing:0;color:var(--lab);display:inline-block;transform:rotate(-6deg);line-height:1}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);max-width:56ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;text-decoration:none;padding:19px 30px 17px;border-radius:999px;border:2px solid transparent;background:var(--lab);color:var(--ink);transition:transform .15s ease,background .15s ease}
+.btn:hover{background:#2bb8ee;transform:translateY(-2px)}
+.btn .arrow{font-family:var(--f-body);font-size:1.2rem;line-height:0}
+.textlink{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:3px}
+:focus-visible{outline:3px solid var(--lab);outline-offset:3px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;color:var(--vocal)}
+.logo .word{font-family:var(--f-logo);font-weight:700;font-size:1.6rem;letter-spacing:.01em}
+.logo .word i{font-family:"Times New Roman",Times,serif;font-weight:400;font-style:italic;letter-spacing:0;margin-left:1px}
+.logo .tag{font-family:var(--f-label);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;margin-top:6px;line-height:1.35;color:var(--ink-soft);white-space:nowrap;text-align:left;padding:0;border-radius:0;background:none;max-width:none}
+nav.main{display:flex;align-items:center;gap:28px;font-family:var(--f-label);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+nav.main a{text-decoration:none}
+nav.main a[aria-current="page"]{color:var(--signal)}
+nav.main a:not(.btn):hover{color:var(--signal)}
+nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
+@media (max-width:900px){nav.main .hide-sm{display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(36px,6vw,80px);align-items:center;padding-block:clamp(56px,8vw,100px)}
+.hero h1{font-size:clamp(3.6rem,9vw,7rem);line-height:1.14}
+.hero h1 .script{font-size:.5em;display:block;margin:.2em 0 0 .06em}
+.hero .lede{margin-top:40px}
+.members{display:block;margin-top:22px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;color:var(--cream);opacity:.85}
+.hero-photo{border-radius:220px 220px 18px 18px;overflow:hidden;aspect-ratio:4/5;max-width:420px;justify-self:center;background:#111;border:1px solid rgba(253,240,213,.2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero-photo{max-width:320px;justify-self:start}}
+
+/* two ways */
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:44px}
+@media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}}
+.way{background:#fffaf0;border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3vw,36px);min-width:0}
+.way .n{font-family:var(--f-display);font-size:3.2rem;line-height:1;color:var(--signal);display:block;margin-bottom:12px}
+.way h3{color:var(--vocal);font-size:1.1rem}
+.way p{color:var(--ink-soft)}
+
+/* good to know */
+.know{background:var(--cream-2)}
+.know .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:860px){.know .wrap{grid-template-columns:minmax(0,1fr)}}
+.facts{display:grid;gap:0}
+.fact{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:20px 0;border-top:2px solid var(--vocal)}
+.fact:last-child{border-bottom:2px solid var(--vocal)}
+.fact p{color:var(--ink-soft)}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:44px}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step .n{font-family:var(--f-display);font-size:4rem;line-height:1;color:var(--signal);display:block;margin-bottom:10px}
+.step p{color:var(--ink-soft)}
+
+/* choirs */
+.choir .wrap > div{max-width:760px}
+.choir{background:var(--cream)}
+.choir .mail{color:var(--vocal)}
+.choir .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:clamp(1.2rem,3vw,1.6rem);letter-spacing:.04em;user-select:all}
+.choir-hero{margin-top:18px;font-size:1rem;opacity:.95}
+.choir-hero a{color:var(--cream);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* upcoming workshops */
+.coming{background:var(--cream-2)}
+.wlist{display:grid;gap:18px;margin-top:40px}
+.wcard{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,3vw,36px);align-items:center;background:#fffaf0;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,32px)}
+.wdate{background:var(--vocal);color:var(--cream);border-radius:14px;width:96px;padding:12px 8px 10px;text-align:center;line-height:1}
+.wdate .d{display:block;font-family:var(--f-display);font-size:2.8rem;line-height:1.1}
+.wdate .m{display:block;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-top:4px}
+.wdate .wd{display:block;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;opacity:.8;margin-top:6px}
+.winfo h3{color:var(--vocal);font-size:1.15rem;margin-bottom:6px}
+.winfo ul{list-style:none;margin:0;padding:0;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:4px 22px}
+.winfo li b{color:var(--ink);font-weight:700}
+.winfo .wnote{margin-top:8px;color:var(--ink-soft);font-size:.95rem}
+.wcard .btn{padding:15px 22px 13px;font-size:.82rem}
+@media (max-width:760px){.wcard{grid-template-columns:auto minmax(0,1fr);align-items:start}.wcard .btn{grid-column:1/-1;justify-self:start}}
+.wempty{margin-top:32px;color:var(--ink-soft)}
+.wempty[hidden]{display:none}
+.wbtns{display:flex;flex-direction:column;gap:10px}
+.wcard .btn.alt{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+.wcard .btn.alt:hover{background:var(--ink);color:var(--cream)}
+.wcard .btn.off{background:transparent;border:2px dashed rgba(26,26,27,.25);color:var(--ink-soft);cursor:default;transform:none}
+.wcard .btn.off:hover{background:transparent;transform:none}
+.wmode.extra{background:transparent;border:1.5px solid var(--vocal)}
+.wmode{display:inline-block;margin-bottom:8px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;padding:4px 10px;border-radius:999px;background:var(--cream-2);color:var(--vocal)}
+@media (max-width:760px){.wcard .wbtns{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
+.anm{margin-top:28px}
+.anm[hidden]{display:none}
+
+.sub{margin-top:48px;color:var(--vocal)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,6vw,80px);align-items:end}
+@media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+.contact .mail{margin-top:18px;font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(--vocal);user-select:all}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:34px}
+
+/* final */
+.final{text-align:center}
+.final h2{font-size:clamp(3rem,7vw,5.6rem);line-height:1.32}
+.final .script{font-size:.55em;display:block;margin-top:.2em}
+.final .lede{margin:38px auto 34px}
+.final .ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 28px}
+
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:28px;font-family:var(--f-label);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+footer span{opacity:.75}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{text-decoration:none;opacity:.75}
+footer a:hover{opacity:1}
+/* login button in the header */
+nav.main a.nav-login{border:2px solid var(--ink);border-radius:999px;padding:10px 18px 8px;font-weight:700;transition:background .15s,color .15s}
+nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
+@media (max-width:900px){nav.main{gap:10px}nav.main a.nav-login{padding:9px 13px 7px;font-size:.7rem}}
+/* Monica's real logo (same as Zenler) */
+.logo-img{display:block;height:62px;width:auto}
+.mcard .logo-img{height:44px}
+@media (max-width:700px){.logo-img{height:50px}}
+.ways.themes{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.ways.themes{grid-template-columns:minmax(0,1fr)}}
+/* nav: never wrap; drop two items on mid-size screens */
+nav.main a{white-space:nowrap}
+.top .logo{flex-shrink:0}
+nav.main{min-width:0}
+@media (max-width:1080px) and (min-width:901px){nav.main{gap:16px;letter-spacing:.06em;font-size:.72rem}nav.main .btn{padding:11px 14px 9px}nav.main a.nav-login{padding:9px 13px 7px}}
+@media (max-width:1400px){nav.main .hide-md{display:none}}
+nav.main a.nav-strong{font-weight:800}
+/* coaching cards + price list */
+.ways.coach .way ul{margin:10px 0 0;padding-left:18px;color:var(--ink-soft);display:grid;gap:6px}
+.ways.coach .way .intro{color:var(--ink-soft)}
+.prices{margin-top:36px;display:grid;gap:0;max-width:640px}
+.price{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;padding:16px 0;border-top:2px solid var(--vocal);align-items:baseline}
+.price:last-child{border-bottom:2px solid var(--vocal)}
+.price h3{margin:0}
+.price .amt{font-family:var(--f-display);font-size:1.6rem;color:var(--vocal);white-space:nowrap}
+.price p{grid-column:1/-1;color:var(--ink-soft);margin:0}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Röstlabbet, till startsidan">
+      <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet – din digitala röstcoach" width="261" height="147">
+    </a>
+    <nav class="main" aria-label="Huvudmeny">
+      <a class="hide-sm nav-strong" href="index.html#ingar">Medlemskapet</a>
+      <a class="hide-sm" href="coachning.html" aria-current="page">1:1-coachning</a>
+      <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
+      <a class="hide-sm" href="workshops.html">Boka gruppworkshop</a>
+      <a class="hide-sm hide-md" href="index.html#monica">Om Monica</a>
+      <a class="hide-sm hide-md" href="index.html#fragor">Frågor</a>
+      <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
+      <a class="btn" href="index.html#pris">Bli medlem</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero red">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Röstlabbet · 1:1</p>
+      <h1>1:1-coachning<span class="script">för sångare och artister</span></h1>
+      <p class="lede">Personlig coachning med Monica, i studion i Mellbystrand eller online via Zoom. För dig från 16 år som vill utveckla din röst på ett tryggt, lekfullt och effektivt sätt.</p>
+      <div class="ctas">
+        <a class="btn" data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se?subject=Boka%201%3A1-coachning">Boka en tid <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="textlink" href="#priser" style="color:var(--cream)">Se priser</a>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="media/monica-portratt.jpg" alt="Monica i studion med hörlurar och mikrofon" width="900" height="1200"></div>
+  </div>
+</section>
+
+<section class="band" id="val">
+  <div class="wrap">
+    <p class="kicker">Två inriktningar</p>
+    <h2>Välj det som passar dig</h2>
+    <div class="ways coach">
+      <div class="way">
+        <h3>Sångcoachning</h3>
+        <p class="intro">För dig som vill få personlig guidning och verktyg anpassade efter din röst.</p>
+        <ul>
+          <li>Röstanalys och en plan för dina önskemål och din utveckling</li>
+          <li>Teknikträning (CVT-baserad) för rätt växel och hållbart sound</li>
+          <li>Vocal Labs som stärker din röst</li>
+          <li>Konkreta övningar och feedback du kan använda direkt</li>
+        </ul>
+      </div>
+      <div class="way">
+        <h3>Artistcoachning, för scen och studio</h3>
+        <p class="intro">För artister och band som vill utveckla sitt uttryck, bygga låtmaterial eller förbereda sig inför gig och inspelning.</p>
+        <ul>
+          <li>Scenisk närvaro, mikrofonteknik och publikfokus</li>
+          <li>Röststrategier för live och studio</li>
+          <li>Mentorskap kring låtval, arrangemang och soundprofil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band know" id="priser">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Priser</p>
+      <h2>Samma pris för båda</h2>
+    </div>
+    <div class="prices">
+      <div class="price"><h3>Första sångcoachningen</h3><span class="amt">790 kr</span><p>40 minuter. För dig som vill testa innan du bokar fler tillfällen.</p></div>
+      <div class="price"><h3>Enstaka session</h3><span class="amt">995 kr</span><p>50 minuter.</p></div>
+      <div class="price"><h3>3-pack</h3><span class="amt">2 685 kr</span><p>895 kr per session.</p></div>
+      <div class="price"><h3>5-pack</h3><span class="amt">4 475 kr</span><p>895 kr per session.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="know-inner">
+      <p class="kicker">Bra att veta</p>
+      <h2>Av- och ombokning</h2>
+    </div>
+    <div class="facts" style="margin-top:28px;max-width:760px">
+      <div class="fact"><h3>Senast 24 timmar innan</h3><p>Av- eller ombokning görs senast 24 timmar innan, annars debiteras hela beloppet.</p></div>
+      <div class="fact"><h3>Vid sjukdom</h3><p>Då bokar vi om, och sessionen behöver tas inom 30 dagar.</p></div>
+      <div class="fact"><h3>Paket</h3><p>Paketbokningar gäller i 6 månader.</p></div>
+      <div class="fact"><h3>I studion och online</h3><p>Reglerna gäller både i studion i Mellbystrand och online.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="kicker">Boka</p>
+      <h2>Boka en tid</h2>
+      <p class="lede" style="margin-top:18px">Skriv vad du vill jobba med och om du vill ses i studion eller online, så återkommer Monica med en tid.</p>
+      <p class="mail">monica@rostlabbet.se</p>
+    </div>
+    <div class="contact-cta">
+      <a class="btn" data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se">Skriv till Monica <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Röstlabbet · Monk Produktion · <a href="mailto:monica@rostlabbet.se" style="opacity:1;text-transform:none;letter-spacing:.04em">monica@rostlabbet.se</a></span>
+    <nav aria-label="Sidfot">
+      <a href="https://www.instagram.com/rostlabbet/" rel="noopener">Instagram</a>
+      <a href="index.html">Startsidan</a>
+      <a href="villkor.html">Allmänna villkor</a>
+      <a href="integritetspolicy.html">Integritetspolicy</a>
+      <a href="cookiepolicy.html">Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="formular.js"></script>
+<script src="sparning.js"></script>
+</body>
+</html>

@@ -183,7 +183,10 @@ nav.main a.nav-login:hover{background:var(--ink);color:var(--cream)}
 @media (max-width:860px){.ways.themes{grid-template-columns:minmax(0,1fr)}}
 /* nav: never wrap; drop two items on mid-size screens */
 nav.main a{white-space:nowrap}
-@media (max-width:1180px){nav.main .hide-md{display:none}}
+.top .logo{flex-shrink:0}
+nav.main{min-width:0}
+@media (max-width:1080px) and (min-width:901px){nav.main{gap:16px;letter-spacing:.06em;font-size:.72rem}nav.main .btn{padding:11px 14px 9px}nav.main a.nav-login{padding:9px 13px 7px}}
+@media (max-width:1400px){nav.main .hide-md{display:none}}
 nav.main a.nav-strong{font-weight:800}
 </style>
 </head>
@@ -196,6 +199,7 @@ nav.main a.nav-strong{font-weight:800}
     </a>
     <nav class="main" aria-label="Huvudmeny">
       <a class="hide-sm nav-strong" href="index.html#ingar">Medlemskapet</a>
+      <a class="hide-sm" href="coachning.html">1:1-coachning</a>
       <a class="hide-sm" href="pa-plats.html">Träna på plats</a>
       <a class="hide-sm" href="workshops.html" aria-current="page">Boka gruppworkshop</a>
       <a class="hide-sm hide-md" href="index.html#monica">Om Monica</a>
