@@ -201,6 +201,7 @@ nav.main a.nav-strong{font-weight:800}
 .price h3{margin:0}
 .price .amt{font-family:var(--f-display);font-size:1.6rem;color:var(--vocal);white-space:nowrap}
 .price p{grid-column:1/-1;color:var(--ink-soft);margin:0}
+.prices .pay{margin-top:18px;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -254,7 +255,7 @@ nav.main a.nav-strong{font-weight:800}
           <li>Vocal Labs som stärker din röst</li>
           <li>Konkreta övningar och feedback du kan använda direkt</li>
         </ul>
-        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener">Boka sångcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
+        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/50min">Boka sångcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
       </div>
       <div class="way">
         <h3>Artistcoachning, för scen och studio</h3>
@@ -264,7 +265,7 @@ nav.main a.nav-strong{font-weight:800}
           <li>Röststrategier för live och studio</li>
           <li>Mentorskap kring låtval, arrangemang och soundprofil</li>
         </ul>
-        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/artist50min" rel="noopener">Boka artistcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
+        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/artist50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/artist50min">Boka artistcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
       </div>
     </div>
   </div>
@@ -277,10 +278,10 @@ nav.main a.nav-strong{font-weight:800}
       <h2>Samma pris för båda</h2>
     </div>
     <div class="prices">
-      <div class="price"><h3>Första sångcoachningen</h3><span class="amt">790 kr</span><p>40 minuter. För dig som vill testa innan du bokar fler tillfällen.</p></div>
       <div class="price"><h3>Enstaka session</h3><span class="amt">995 kr</span><p>50 minuter.</p></div>
       <div class="price"><h3>3-pack</h3><span class="amt">2 685 kr</span><p>895 kr per session.</p></div>
       <div class="price"><h3>5-pack</h3><span class="amt">4 475 kr</span><p>895 kr per session.</p></div>
+      <p class="pay">Betalning enligt överenskommelse, via Swish eller faktura.</p>
     </div>
   </div>
 </section>
@@ -330,6 +331,27 @@ nav.main a.nav-strong{font-weight:800}
   </div>
 </footer>
 
+<script>
+/* Cal.com i popup: laddas först vid klick. Fungerar inte popupen öppnas bokningssidan som vanligt. */
+(function(){
+  var loaded=false;
+  function load(){
+    if(loaded)return;loaded=true;
+    (function(C,A,L){var p=function(a,ar){a.q.push(ar)};var d=C.document;C.Cal=C.Cal||function(){var cal=C.Cal;var ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){var api=function(){p(api,arguments)};var namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init",{origin:"https://cal.com"});
+    Cal("ui",{hideEventTypeDetails:false,layout:"month_view"});
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[data-cal]");
+    if(!a)return;
+    e.preventDefault();
+    var link=a.getAttribute("data-cal"),href=a.href;
+    try{load();Cal("modal",{calLink:link,config:{layout:"month_view"}})}catch(err){location.href=href;return}
+    // reserv: syns ingen bokningsruta inom 6 sekunder, gå till bokningssidan
+    setTimeout(function(){if(!document.querySelector('cal-modal-box, iframe[src*="cal.com"]'))location.href=href},6000);
+  });
+})();
+</script>
 <script src="formular.js"></script>
 <script src="sparning.js"></script>
 </body>
