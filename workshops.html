@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <script>if(location.hash==='#pa-plats')location.replace('pa-plats.html#pa-plats');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Workshops för körer, skolor och grupper – Röstlabbet med Monica</title>
+<title>Workshops för grupper och företag – Röstlabbet med Monica</title>
 <meta name="description" content="Boka en workshop med Monica för din kör, skola, ditt kulturhus eller företag. Teman: Hållbar röst, Röst &amp; uttryck och Scenisk närvaro. På plats eller digitalt.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Workshops för körer, skolor och grupper – Röstlabbet med Monica">
@@ -188,6 +188,18 @@ nav.main{min-width:0}
 @media (max-width:1080px) and (min-width:901px){nav.main{gap:16px;letter-spacing:.06em;font-size:.72rem}nav.main .btn{padding:11px 14px 9px}nav.main a.nav-login{padding:9px 13px 7px}}
 @media (max-width:1400px){nav.main .hide-md{display:none}}
 nav.main a.nav-strong{font-weight:800}
+/* themes: groups (cream) and business (blue band) */
+.ways.themes.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ways.themes.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.ways.themes.two,.ways.themes.three{grid-template-columns:minmax(0,1fr)}}
+.way .tagline{font-weight:600;color:var(--ink);margin:2px 0 8px}
+.biz{background:var(--lab);color:var(--ink)}
+.biz .kicker{color:var(--ink);opacity:.75}
+.biz h2{color:var(--ink)}
+.biz .way{background:#fffaf0;border-color:transparent}
+.biz-cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 30px;padding:24px 28px;border-radius:18px;background:var(--ink);color:var(--cream)}
+.biz-cta h3{color:var(--cream);margin:0 0 4px}
+.biz-cta p{color:var(--cream);opacity:.85;margin:0}
 </style>
 </head>
 <body>
@@ -216,10 +228,11 @@ nav.main a.nav-strong{font-weight:800}
   <div class="wrap">
     <div>
       <p class="kicker">Röstlabbet · Workshops</p>
-      <h1>Workshops<span class="script">för körer, skolor och grupper</span></h1>
-      <p class="lede">Vill din kör, skola, ditt kulturhus eller företag vässa röstanvändningen och scennärvaron? Monica håller workshops på plats eller digitalt, med ett upplägg som passar just er.</p>
+      <h1>Workshops<span class="script">för grupper och företag</span></h1>
+      <p class="lede">Vill din kör, skola, ditt kulturhus eller företag träna rösten tillsammans? Monica håller workshops på plats eller digitalt, med ett upplägg som passar just er.</p>
       <div class="ctas">
-        <a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20grupp">Boka en workshop <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="#teman">Se teman <span class="arrow" aria-hidden="true">↓</span></a>
+        <a class="textlink" href="#foretag" style="color:var(--cream)">För företag</a>
       </div>
       <p class="choir-hero">Vill du själv träna med Monica på plats? <a href="pa-plats.html">Träna på plats →</a></p>
     </div>
@@ -227,28 +240,48 @@ nav.main a.nav-strong{font-weight:800}
   </div>
 </section>
 
-<!-- DOLD tills vidare (2026-10-14): Monica funderar på om temana ska vara med. Ta bort ordet hidden för att visa. -->
-<section class="band" id="teman" hidden>
+<section class="band" id="teman">
   <div class="wrap">
-    <p class="kicker">Teman</p>
+    <p class="kicker">För körer, skolor och grupper</p>
     <h2>Välj ett tema</h2>
     <p class="lede" style="margin-top:18px">Upplägget anpassas efter er grupp och era förutsättningar.</p>
-    <div class="ways themes">
+    <div class="ways themes two">
       <div class="way">
-        <span class="n">1</span>
-        <h3>Hållbar röst</h3>
-        <p>Sjung och tala mer och längre, utan att slita på rösten.</p>
+        <h3>Vocal Workout</h3>
+        <p class="tagline">Kom och träna rösten tillsammans!</p>
+        <p>Ett energifyllt pass där vi värmer upp, utmanar och utforskar rösten genom praktiska övningar. Vi jobbar med styrka, uthållighet, omfång och sound, med mycket sång, nyfikenhet och träningsglädje!</p>
       </div>
       <div class="way">
-        <span class="n">2</span>
-        <h3>Röst &amp; uttryck</h3>
-        <p>Teknik och uttryck som hänger ihop, så att rösten bär det ni vill förmedla.</p>
+        <h3>CVT Intro</h3>
+        <p class="tagline">Nyfiken på vad din röst faktiskt kan?</p>
+        <p>En inspirerande introduktion till Complete Vocal Technique där vi blandar enkel teori med massor av praktiskt testande. Du får prova konkreta verktyg, upptäcka nya möjligheter och förstå lite mer av hur din röst fungerar.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px"><a class="btn" data-kontakt="Workshop för kör eller grupp" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20v%C3%A5r%20grupp">Boka en workshop <span class="arrow" aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<section class="band biz" id="foretag">
+  <div class="wrap">
+    <p class="kicker">För företag och yrkespersoner</p>
+    <h2>Rösten på jobbet</h2>
+    <div class="ways themes three">
+      <div class="way">
+        <h3>Vocal Workout</h3>
+        <p>En energikick för teamet på konferensen, eventet eller mitt i arbetsdagen, med röst, kropp och sång.</p>
       </div>
       <div class="way">
-        <span class="n">3</span>
-        <h3>Scenisk närvaro</h3>
-        <p>Närvaro på scen, mikrofonteknik och fokus på publiken.</p>
+        <h3>Rösten som arbetsredskap</h3>
+        <p>Få mer kraft, tydlighet och hållbarhet i rösten under arbetsdagen.</p>
       </div>
+      <div class="way">
+        <h3>Röst, uttryck &amp; presentation</h3>
+        <p>Mer närvaro, trygghet och genomslag i presentationer och pitchar.</p>
+      </div>
+    </div>
+    <div class="biz-cta">
+      <div><h3>Något annat i åtanke?</h3><p>Hör av er till Monica, så bygger ni ett upplägg som passar just er.</p></div>
+      <a class="btn" data-kontakt="Workshop för företag" href="mailto:monica@rostlabbet.se?subject=Workshop%20f%C3%B6r%20f%C3%B6retag">Kontakta Monica <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -260,7 +293,7 @@ nav.main a.nav-strong{font-weight:800}
       <h2>Så går det till</h2>
     </div>
     <div class="facts">
-      <div class="fact"><h3>För vem</h3><p>Körer och körsångare, skolor och estetiska linjer, kulturhus, företag och andra grupper.</p></div>
+      <div class="fact"><h3>För vem</h3><p>Körer och körsångare, skolor och estetiska linjer, kulturhus, företag, yrkespersoner och andra grupper.</p></div>
       <div class="fact"><h3>Det här ingår</h3><p>Gruppövningar och Vocal Labs för olika nivåer, och praktiska verktyg som ger märkbar skillnad direkt.</p></div>
       <div class="fact"><h3>På plats eller digitalt</h3><p>Monica kommer till er, eller så ses ni via skärm.</p></div>
       <div class="fact"><h3>Upplägg och pris</h3><p>Monica tar fram ett personligt upplägg och prisförslag för just er grupp.</p></div>

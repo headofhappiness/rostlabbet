@@ -11,7 +11,7 @@
   var ACCESS_KEY='cb26195b-d78c-4958-8c57-f7efba1051f3';
   var ENDPOINT='https://api.web3forms.com/submit';
   var MAIL='monica@rostlabbet.se';
-  var AMNEN=['1:1-coachning','Träningspass eller workshop','Workshop för kör eller grupp','Medlemskapet','Sjung Smart','Annat'];
+  var AMNEN=['1:1-coachning','Träningspass eller workshop','Workshop för kör eller grupp','Workshop för företag','Medlemskapet','Sjung Smart','Annat'];
   if(!ACCESS_KEY)return;
 
   var css='.signup{color:var(--ink,#1A1A1B)}'
