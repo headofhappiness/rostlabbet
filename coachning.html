@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  RÖSTLABBET – 1:1-coachning (coachning.html)
+  RÖSTLABBET – 1:1 sångcoachning (coachning.html)
   Till den som ändrar i filen, människa eller AI:
   - Ändra bara text mellan taggarna. Rör inte design, färger eller kod om det inte uttryckligen efterfrågas.
   - Bilder ligger i mappen media/.
@@ -11,11 +11,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>1:1-coachning för sångare och artister – Röstlabbet med Monica</title>
-<meta name="description" content="Personlig sångcoachning och artistcoachning med Monica, i studion i Mellbystrand eller online via Zoom. 995 kr per session, paket finns.">
+<title>1:1 sångcoachning – Röstlabbet med Monica</title>
+<meta name="description" content="Personlig sångcoachning med Monica, i studion i Mellbystrand eller online via Zoom. 50 minuter för 995 kr. Boka och betala direkt.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="1:1-coachning för sångare och artister – Röstlabbet med Monica">
-<meta property="og:description" content="Sångcoachning och artistcoachning med Monica. I studion eller online.">
+<meta property="og:title" content="1:1 sångcoachning – Röstlabbet med Monica">
+<meta property="og:description" content="Personlig sångcoachning med Monica. I studion eller online.">
 <meta property="og:image" content="https://rostlabbet.se/media/monica-1-1.jpg">
 <meta name="theme-color" content="#780000">
 <link rel="icon" type="image/png" href="media/favicon.png">
@@ -193,7 +193,11 @@ nav.main a.nav-strong{font-weight:800}
 .ways.coach .way ul{margin:10px 0 0;padding-left:18px;color:var(--ink-soft);display:grid;gap:6px}
 .ways.coach .way .intro{color:var(--ink-soft)}
 .ways.coach .way{display:flex;flex-direction:column}
-.ways.coach .way .book{margin-top:auto;padding-top:22px}
+.ways.coach .way .book{margin-top:auto;padding-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.ways.coach .way h3{margin-top:14px}
+.ways.coach .how ol{margin:10px 0 0;padding-left:20px;color:var(--ink-soft);display:grid;gap:8px}
+.ways.coach .how .note{margin-top:16px;color:var(--ink-soft)}
+.ways.coach .how{background:transparent}
 .ways.coach .way .book .btn{padding:15px 22px 13px;font-size:.82rem}
 .prices{margin-top:36px;display:grid;gap:0;max-width:640px}
 .price{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;padding:16px 0;border-top:2px solid var(--vocal);align-items:baseline}
@@ -230,10 +234,10 @@ nav.main a.nav-strong{font-weight:800}
   <div class="wrap">
     <div>
       <p class="kicker">Röstlabbet · 1:1</p>
-      <h1><span class="nobr">1:1-coachning</span><span class="script">för sångare och artister</span></h1>
+      <h1><span class="nobr">1:1-coachning</span><span class="script">personlig guidning för din röst</span></h1>
       <p class="lede">Personlig coachning med Monica, i studion i Mellbystrand eller online via Zoom. För dig från 16 år som vill utveckla din röst på ett tryggt, lekfullt och effektivt sätt.</p>
       <div class="ctas">
-        <a class="btn" href="#val">Boka en tid <span class="arrow" aria-hidden="true">↓</span></a>
+        <a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/50min">Boka en tid <span class="arrow" aria-hidden="true">→</span></a>
         <a class="textlink" href="#priser" style="color:var(--cream)">Se priser</a>
       </div>
     </div>
@@ -243,29 +247,32 @@ nav.main a.nav-strong{font-weight:800}
 
 <section class="band" id="val">
   <div class="wrap">
-    <p class="kicker">Två inriktningar</p>
-    <h2>Välj det som passar dig</h2>
-    <div class="ways coach">
+    <p class="kicker">Sångcoachning</p>
+    <h2>Utveckla din röst</h2>
+    <div class="ways coach one">
       <div class="way">
-        <h3>Sångcoachning</h3>
-        <p class="intro">För dig som vill få personlig guidning och verktyg anpassade efter din röst.</p>
+        <p class="intro">För dig som vill utveckla din röst, hitta nya möjligheter och få personlig guidning utifrån det du behöver just nu.</p>
+        <h3>Vi kan till exempel jobba med</h3>
         <ul>
-          <li>Röstanalys och en plan för dina önskemål och din utveckling</li>
-          <li>Teknikträning (CVT-baserad) för rätt växel och hållbart sound</li>
-          <li>Vocal Labs som stärker din röst</li>
-          <li>Konkreta övningar och feedback du kan använda direkt</li>
+          <li>mer kraft, lätthet eller uthållighet i rösten</li>
+          <li>en låt, fras eller ett sound du vill få bättre koll på</li>
+          <li>teknik och verktyg som gör sången enklare och mer hållbar</li>
+          <li>övningar som stärker det du vill utveckla</li>
+          <li>konkret feedback som du kan använda direkt</li>
         </ul>
-        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/50min">Boka sångcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
+        <div class="book">
+          <a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/50min">Boka sångcoachning <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="textlink" data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se?subject=Fr%C3%A5ga%20om%201%3A1">Frågor först? Skriv till Monica</a>
+        </div>
       </div>
-      <div class="way">
-        <h3>Artistcoachning, för scen och studio</h3>
-        <p class="intro">För artister och band som vill utveckla sitt uttryck, bygga låtmaterial eller förbereda sig inför gig och inspelning.</p>
-        <ul>
-          <li>Scenisk närvaro, mikrofonteknik och publikfokus</li>
-          <li>Röststrategier för live och studio</li>
-          <li>Mentorskap kring låtval, arrangemang och soundprofil</li>
-        </ul>
-        <p class="book"><a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/artist50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/artist50min">Boka artistcoachning <span class="arrow" aria-hidden="true">→</span></a></p>
+      <div class="way how">
+        <h3>Så bokar du</h3>
+        <ol>
+          <li>Klicka <b>Boka sångcoachning</b> och välj en ledig tid i Monicas kalender.</li>
+          <li>Fyll i namn och e-post och betala med kort direkt i bokningen. Betalningen sker säkert via Stripe.</li>
+          <li>Du får en bekräftelse med tid och plats via e-post, och en påminnelse innan.</li>
+        </ol>
+        <p class="note">Vill du hellre prata med Monica innan du bokar? <a data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se?subject=Fr%C3%A5ga%20om%201%3A1">Skriv till henne här</a>, så hör hon av sig.</p>
       </div>
     </div>
   </div>
@@ -274,11 +281,11 @@ nav.main a.nav-strong{font-weight:800}
 <section class="band know" id="priser">
   <div class="wrap">
     <div>
-      <p class="kicker">Priser</p>
-      <h2>Samma pris för båda</h2>
+      <p class="kicker">Vad det kostar</p>
+      <h2>Priser</h2>
     </div>
     <div class="prices">
-      <div class="price"><h3>Enstaka session</h3><span class="amt">995 kr</span><p>50 minuter. Betalas när du bokar.</p></div>
+      <div class="price"><h3>Enstaka session</h3><span class="amt">995 kr</span><p>50 minuter. Betalas med kort när du bokar.</p></div>
       <div class="price"><h3>3-pack</h3><span class="amt">2 685 kr</span><p>895 kr per session. Betalas enligt överenskommelse, via Swish eller faktura.</p></div>
       <div class="price"><h3>5-pack</h3><span class="amt">4 475 kr</span><p>895 kr per session. Betalas enligt överenskommelse, via Swish eller faktura.</p></div>
       <p class="pay">Vill du köpa ett paket? <a data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se?subject=Paket%201%3A1">Skriv till Monica</a>.</p>
@@ -306,11 +313,11 @@ nav.main a.nav-strong{font-weight:800}
     <div>
       <p class="kicker">Boka</p>
       <h2>Boka en tid</h2>
-      <p class="lede" style="margin-top:18px">Välj sångcoachning eller artistcoachning och boka en ledig tid direkt i Monicas kalender. Har du frågor först, eller vill du köpa ett paket? Skriv till Monica.</p>
+      <p class="lede" style="margin-top:18px">Välj en ledig tid direkt i Monicas kalender. Har du frågor först, eller vill du köpa ett paket? Skriv till Monica.</p>
       <p class="mail">monica@rostlabbet.se</p>
     </div>
     <div class="contact-cta" style="display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center">
-      <a class="btn" href="#val">Boka en tid <span class="arrow" aria-hidden="true">↑</span></a>
+      <a class="btn" href="https://cal.com/monica-christoffersson-9pvndm/50min" rel="noopener" data-cal="monica-christoffersson-9pvndm/50min">Boka en tid <span class="arrow" aria-hidden="true">→</span></a>
       <a class="textlink" data-kontakt="1:1-coachning" href="mailto:monica@rostlabbet.se">Skriv till Monica</a>
     </div>
   </div>
