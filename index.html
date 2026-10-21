@@ -355,6 +355,17 @@ nav.main a.nav-strong{font-weight:800}
 .peek{margin-top:38px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;font-size:1.05rem;color:var(--cream)}
 .peek-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;text-decoration:none;color:var(--cream);border:2px solid var(--cream);border-radius:999px;padding:15px 24px 13px;transition:background .15s,color .15s}
 .peek-btn:hover{background:var(--cream);color:var(--vocal)}
+/* smakprov: three vertical clips */
+#smakprov h2{font-size:clamp(2rem,4vw,3rem)}
+#smakprov .intro{margin-top:14px;color:var(--ink-soft);max-width:52ch}
+.clips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:34px}
+@media (max-width:760px){.clips{grid-template-columns:minmax(0,1fr);max-width:360px;margin-inline:auto}}
+.clip{margin:0;display:grid;gap:10px;min-width:0}
+.clip video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:18px;background:#111;object-fit:cover}
+.clip figcaption{display:grid;gap:2px}
+.clip figcaption b{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--vocal)}
+.clip figcaption span{color:var(--ink-soft);font-size:.95rem}
+.clips-cta{margin-top:30px}
 </style>
 </head>
 <body>
@@ -498,6 +509,29 @@ nav.main a.nav-strong{font-weight:800}
       </div>
     </div>
     <p class="peek"><span>Vill du kika in först?</span><a class="peek-btn" href="https://kurs.rostlabbet.se/courses" rel="noopener">Se kurserna i Röstlabbet <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<section class="band" id="smakprov">
+  <div class="wrap">
+    <p class="kicker">Smakprov</p>
+    <h2>Träna en stund med Monica</h2>
+    <p class="intro">Så här låter det när Monica coachar. Tryck på en film och sätt på ljudet.</p>
+    <div class="clips">
+      <figure class="clip">
+        <video src="media/klipp-starkare-rost.mp4" poster="media/klipp-starkare-rost.jpg" controls playsinline preload="none" width="720" height="1280"></video>
+        <figcaption><b>Vill du ha en starkare röst?</b><span>Därför ger kontinuitet resultat.</span></figcaption>
+      </figure>
+      <figure class="clip">
+        <video src="media/klipp-intonation.mp4" poster="media/klipp-intonation.jpg" controls playsinline preload="none" width="720" height="1280"></video>
+        <figcaption><b>Träffar du tonen, eller nästan?</b><span>Ett intonationstips vid pianot.</span></figcaption>
+      </figure>
+      <figure class="clip">
+        <video src="media/klipp-vocal-lab.mp4" poster="media/klipp-vocal-lab.jpg" controls playsinline preload="none" width="720" height="1280"></video>
+        <figcaption><b>Prova en Vocal Lab med mig</b><span>Sjung med, sedan provar du själv.</span></figcaption>
+      </figure>
+    </div>
+    <p class="clips-cta"><a class="btn" href="#pris">Bli medlem <span class="arrow" aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
@@ -835,6 +869,9 @@ var MAX_ITEMS=3; // how many upcoming sessions to show
     .then(function(t){if(done)return;done=true;clearTimeout(timer);var items=fromSheet(t);if(items)render(items);else pruneStatic()})
     .catch(function(){if(done)return;done=true;clearTimeout(timer);pruneStatic()});
 })();
+</script>
+<script>
+document.addEventListener("play",function(e){var v=e.target;if(!v.closest||!v.closest(".clips"))return;Array.prototype.forEach.call(document.querySelectorAll(".clips video"),function(o){if(o!==v)o.pause()});},true);
 </script>
 <script src="formular.js"></script>
 <script src="nav.js"></script>
