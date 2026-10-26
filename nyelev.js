@@ -1,6 +1,6 @@
 /* Röstlabbet – formulär för nya 1:1-elever (Web3Forms).
    Öppnas från länkar/knappar med data-nyelev. Svaren mejlas till Monica, så att hon kan prata
-   med eleven innan första lektionen i studion. Använder samma utseende som formular.js (.signup). */
+   med eleven innan första sessionen i studion. Använder samma utseende som formular.js (.signup). */
 (function(){
   var ACCESS_KEY='cb26195b-d78c-4958-8c57-f7efba1051f3';
   var ENDPOINT='https://api.web3forms.com/submit';
@@ -13,7 +13,7 @@
     d=document.createElement('dialog');d.className='signup';d.setAttribute('aria-labelledby','ne-t');
     d.innerHTML='<button type="button" class="x" aria-label="Stäng">×</button>'
       +'<div class="in" data-step="form"><h3 id="ne-t">Ny elev hos Monica</h3>'
-      +'<p class="lead">Berätta lite om dig, så hör Monica av sig för ett kort samtal innan första lektionen.</p>'
+      +'<p class="lead">Berätta lite om dig, så hör Monica av sig och bokar in ett kort hej-samtal på 10 minuter innan din första session.</p>'
       +'<form novalidate>'
       +'<input type="hidden" name="access_key" value="'+ACCESS_KEY+'">'
       +'<input type="hidden" name="subject"><input type="hidden" name="from_name" value="Röstlabbet hemsida">'
@@ -22,7 +22,7 @@
       +'<label for="ne-email">E-post</label><input id="ne-email" name="email" type="email" autocomplete="email" required>'
       +'<label for="ne-tel">Telefon</label><input id="ne-tel" name="telefon" type="tel" autocomplete="tel" required>'
       +'<label for="ne-plats">Var vill du ses?</label><select id="ne-plats" name="plats">'+opts(['I studion i Mellbystrand','Online via Zoom','Vet inte än'])+'</select>'
-      +'<label for="ne-erf">Har du sjungit eller tagit lektioner tidigare?</label><select id="ne-erf" name="erfarenhet">'+opts(['Nej, det här är första gången','Lite grann','Ja, en del','Ja, mycket'])+'</select>'
+      +'<label for="ne-erf">Har du sjungit eller tagit sångcoachning tidigare?</label><select id="ne-erf" name="erfarenhet">'+opts(['Nej, det här är första gången','Lite grann','Ja, en del','Ja, mycket'])+'</select>'
       +'<label for="ne-mal">Vad vill du jobba med?</label><textarea id="ne-mal" name="vill_jobba_med" rows="4" required placeholder="Till exempel mer kraft i rösten, en låt du övar på eller inför ett framträdande"></textarea>'
       +'<label for="ne-kalla">Hur hittade du Röstlabbet?</label><select id="ne-kalla" name="hittade_via">'+opts(['Instagram','Google','Tips från någon','Annat'])+'</select>'
       +'<button class="btn" type="submit">Skicka <span class="arrow" aria-hidden="true">→</span></button>'
@@ -30,7 +30,7 @@
       +'<p class="small">Dina uppgifter går bara till Monica. <a href="integritetspolicy.html">Integritetspolicy</a></p>'
       +'</form></div>'
       +'<div class="in" data-step="ok" hidden><h3>Tack!</h3>'
-      +'<p>Monica hör av sig inom ett par dagar för ett kort samtal. Sedan bokar ni din första tid.</p>'
+      +'<p>Monica hör av sig inom ett par dagar och bokar in ett kort hej-samtal. Sedan bokar ni din första session.</p>'
       +'<button class="btn" type="button" data-close>Stäng</button></div>';
     document.body.appendChild(d);
     var form=d.querySelector('form'),err=d.querySelector('.err'),send=form.querySelector('button[type=submit]');
