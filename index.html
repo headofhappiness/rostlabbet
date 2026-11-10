@@ -123,7 +123,12 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 .mcard dl{margin:18px 0 0;display:grid;gap:0}
 .mcard dl div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-top:1px dashed #d8bd8d;font-size:.98rem}
 .mcard dt{margin:0}
-.mcard dd{margin:0;font-family:var(--f-display);font-size:1.25rem;color:var(--vocal);font-variant-numeric:tabular-nums}
+.mcard .ben div{position:relative;align-items:center}
+.mcard .ben dt a{color:var(--ink);text-decoration:none;font-weight:700}
+.mcard .ben dt a::after{content:"";position:absolute;inset:0}
+.mcard .ben dt small{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+.mcard .ben div:hover dt a{color:var(--vocal);text-decoration:underline}
+.mcard dd{margin:0;white-space:nowrap;font-family:var(--f-display);font-size:1.25rem;color:var(--vocal);font-variant-numeric:tabular-nums}
 .mcard-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:14px}
 .mcard .price{font-family:var(--f-display);font-size:2rem;line-height:1;color:var(--ink)}
 .mcard .price small{font-family:var(--f-label);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-left:4px;color:var(--ink-soft)}
@@ -212,7 +217,7 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 /* monica */
 .monica{background:var(--cream-2)}
 .monica .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:center}
-.photo{aspect-ratio:4/5;max-width:100%;border-radius:220px 220px 18px 18px;background:linear-gradient(170deg,#2a2a2b,#111);color:var(--cream);display:grid;place-items:end center;padding:26px;font-family:var(--f-label);letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;text-align:center}
+.photo{aspect-ratio:4/5;max-width:100%;border-radius:0;background:linear-gradient(170deg,#2a2a2b,#111);color:var(--cream);display:grid;place-items:end center;padding:26px;font-family:var(--f-label);letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;text-align:center}
 .photo span{outline:2px dashed var(--cream);outline-offset:4px;padding:4px 8px}
 .monica h2{margin-bottom:24px}
 .monica p+p{margin-top:14px}
@@ -417,22 +422,19 @@ nav.main a.nav-strong{font-weight:800}
     </div>
 
     <div class="mcard-wrap">
-      <div class="mcard" aria-label="Det här jobbar vi med">
+      <div class="mcard" aria-label="Så kan du jobba med Monica">
         <div class="mcard-top">
           <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet" width="261" height="147">
         </div>
         <div class="title">Röst &amp; scen</div>
-        <div class="month">Det här jobbar vi med</div>
-        <dl>
-          <div><dt>Kraft, lätthet och uthållighet</dt><dd>✓</dd></div>
-          <div><dt>Teknik som gör sången hållbar</dt><dd>✓</dd></div>
-          <div><dt>Låten, frasen och ditt sound</dt><dd>✓</dd></div>
-          <div><dt>Uttryck och trygghet på scen</dt><dd>✓</dd></div>
+        <div class="month">Så kan du jobba med Monica</div>
+        <dl class="ben">
+          <div><dt><a href="coachning.html">1:1-coachning</a><small>I studion eller online</small></dt><dd>995 kr</dd></div>
+          <div><dt><a href="workshops.html">Workshops</a><small>För körer och grupper</small></dt><dd>→</dd></div>
+          <div><dt><a href="workshops.html#foretag">Rösten på jobbet</a><small>Workshops för företag</small></dt><dd>→</dd></div>
+          <div><dt><a href="pa-plats.html">Träna på plats</a><small>Vocal Workout, öppet för alla</small></dt><dd>→</dd></div>
         </dl>
-        <div class="mcard-foot">
-          <span class="price">995 kr<small>/ 50 min</small></span>
-        </div>
-        <div class="stamp" aria-hidden="true">Studio<br>och<br>online</div>
+        <div class="stamp" aria-hidden="true">Studio<br>scen och<br>online</div>
       </div>
     </div>
   </div>
@@ -460,7 +462,7 @@ nav.main a.nav-strong{font-weight:800}
       <div class="gym-row"><span class="h">Du vill</span><span class="h">Vi jobbar med</span></div>
       <div class="gym-row"><span>Få mer kraft, lätthet eller uthållighet</span><span>Teknik och verktyg som gör sången enklare och mer hållbar</span></div>
       <div class="gym-row"><span>Få koll på en låt, en fras eller ett sound</span><span>Övningar och konkret feedback som du kan använda direkt</span></div>
-      <div class="gym-row"><span>Känna dig tryggare på scen</span><span>Uttryck, närvaro och förberedelse inför framträdandet</span></div>
+      <div class="gym-row"><span>Känna dig tryggare på scen</span><span>Uttryck, närvaro och förberedelse inför scenen</span></div>
       <div class="gym-row"><span>Utvecklas tillsammans med din kör eller grupp</span><span>En workshop med ett tema som passar er</span></div>
     </div>
   </div>
@@ -530,7 +532,7 @@ nav.main a.nav-strong{font-weight:800}
 <!-- MONICA -->
 <section class="band monica" id="monica">
   <div class="wrap">
-    <div class="photo has-img"><img src="media/monica-1-1.jpg" alt="Monica coachar en elev, glad och engagerad" width="900" height="1350" loading="lazy"></div>
+    <div class="photo has-img"><img src="media/monica-skratt.jpg" alt="Monica skrattar med armarna i kors, i svartvitt" width="1600" height="2000" loading="lazy"></div>
     <div>
       <p class="kicker">Din coach</p>
       <h2>Hej, jag heter Monica</h2>
@@ -568,7 +570,6 @@ nav.main a.nav-strong{font-weight:800}
     <details><summary>Vad kostar det?</summary><p>En session på 50 minuter kostar 995 kr. Det finns också paket med 3 eller 5 sessioner. <a href="coachning.html#priser">Se alla priser</a>.</p></details>
     <details><summary>Jag är ny. Hur börjar jag?</summary><p>Berätta lite om dig på <a href="coachning.html">sidan om 1:1-coachning</a>. Monica hör av sig och bokar in ett kort hej-samtal på 10 minuter innan din första session.</p></details>
     <details><summary>Kan Monica komma till vår kör, grupp eller arbetsplats?</summary><p>Ja. Läs om <a href="workshops.html">workshops</a>, eller skriv till Monica så berättar hon mer om upplägg och pris.</p></details>
-    <details><summary>Jag är redan med i Röstlabbet. Hur kommer jag åt mitt material?</summary><p>Klicka på Logga in högst upp på sidan, så kommer du till dina kurser.</p></details>
     <details><summary>Hur kontaktar jag Monica?</summary><p>Mejla till <a data-kontakt href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>, så svarar Monica så snart hon kan.</p></details>
   </div>
 </section>
@@ -593,7 +594,7 @@ nav.main a.nav-strong{font-weight:800}
 <section class="band red final">
   <div class="wrap">
     <h2>Ta plats<span class="script">med din röst</span></h2>
-    <p class="lede">Boka en session med Monica, i studion i Mellbystrand eller online.</p>
+    <p class="lede">Boka en session med Monica i studion i Mellbystrand/Halmstad eller online.</p>
     <a class="btn" href="coachning.html">Boka 1:1-coachning <span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </section>
