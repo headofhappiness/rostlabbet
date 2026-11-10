@@ -1,0 +1,246 @@
+<!doctype html>
+<!--
+  RÖSTLABBET – provmodul: Prova en Vocal Lab
+  Mall för Monicas moduler. En modul = en mapp under moduler/ med en index.html (modulen) och en tack/index.html (dit Stripe skickar köparen).
+  - Text med streckad ram är exempeltext som Monica byter ut.
+  - Låset: koden står inte i sidan, bara dess kontrollsumma (KOD_HASH). Byt kod = räkna om summan (fråga Lisa).
+  - Låset sitter i webbläsaren. Det håller borta den som saknar kod, men den som har koden kan dela den.
+-->
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Prova en Vocal Lab – Röstlabbet</title>
+<meta name="theme-color" content="#780000">
+<link rel="icon" type="image/png" href="../../media/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=League+Spartan:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: a module as one calm page. Red hero with the module card, then the steps in order, the film beside them. Same tokens as rostlabbet.se. */
+:root{
+  color-scheme:light;
+  --vocal:#780000;--signal:#C1121F;--lab:#00A6E6;--cream:#FDF0D5;--cream-2:#F7E4BF;--ink:#1A1A1B;--ink-soft:#4d4542;--line:#e9d2a6;
+  --f-display:"Anton",Impact,"Arial Narrow",sans-serif;--f-script:"Caveat","Segoe Script",cursive;
+  --f-label:"League Spartan",Arial,sans-serif;--f-body:"Hanken Grotesk","Segoe UI",Arial,sans-serif;
+  --wrap:1080px;--gutter:clamp(16px,4vw,44px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+:focus-visible{outline:3px solid var(--lab);outline-offset:3px}
+.kicker{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:.76rem;margin:0 0 16px;color:var(--signal)}
+h1,h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;margin:0;text-wrap:balance;line-height:1.2}
+h2{font-size:clamp(2rem,4.4vw,3rem);color:var(--vocal)}
+h3{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:1rem;margin:0 0 6px}
+.script{font-family:var(--f-script);font-weight:600;text-transform:none;color:var(--lab);display:block;transform:rotate(-4deg);font-size:.45em;margin-top:.2em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;text-decoration:none;padding:17px 28px 15px;border-radius:999px;border:2px solid transparent;background:var(--lab);color:var(--ink);cursor:pointer;white-space:nowrap}
+.btn:hover{background:#2bb8ee}
+.btn-line{background:transparent;border-color:currentColor;color:inherit}
+.btn-line:hover{background:transparent;opacity:.8}
+/* example text Monica replaces */
+.ph{outline:2px dashed var(--signal);outline-offset:3px;border-radius:3px}
+.hero .ph{outline-color:var(--cream)}
+.demo{background:var(--ink);color:var(--cream);font-family:var(--f-label);font-size:.8rem;letter-spacing:.06em;text-align:center;padding:9px 16px}
+
+header.top{background:var(--cream);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px}
+header.top img{height:50px;width:auto;display:block}
+header.top a.back{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;text-decoration:none}
+
+.hero{background:var(--vocal);color:var(--cream);padding-block:clamp(48px,8vw,96px)}
+.hero .kicker{color:var(--cream);opacity:.8}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem)}
+.hero .lede{margin-top:22px;max-width:52ch;font-size:clamp(1.05rem,1.6vw,1.25rem)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;padding:0;list-style:none}
+.facts li{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;border:1.5px solid rgba(253,240,213,.5);border-radius:999px;padding:7px 14px 5px}
+
+.band{padding-block:clamp(56px,8vw,96px)}
+.lesson .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,72px);align-items:start}
+@media (max-width:860px){.lesson .wrap{grid-template-columns:minmax(0,1fr)}}
+.film{position:sticky;top:20px}
+@media (max-width:860px){.film{position:static;max-width:360px;margin-inline:auto;order:-1}}
+.film video{display:block;width:100%;aspect-ratio:9/16;border-radius:18px;background:#111;object-fit:cover}
+.film p{margin-top:10px;font-size:.92rem;color:var(--ink-soft);text-align:center}
+.steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0}
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:22px 0;border-top:2px solid var(--vocal)}
+.step:last-child{border-bottom:2px solid var(--vocal)}
+.step input{appearance:none;width:34px;height:34px;margin:2px 0 0;border:2px solid var(--vocal);border-radius:50%;cursor:pointer;display:grid;place-items:center;background:var(--cream)}
+.step input::after{content:"";width:12px;height:7px;border-left:3px solid var(--cream);border-bottom:3px solid var(--cream);transform:rotate(-45deg) translate(1px,-1px)}
+.step input:checked{background:var(--vocal)}
+.step .n{font-family:var(--f-display);color:var(--signal);font-size:1.1rem;margin-right:6px}
+.step p{color:var(--ink-soft)}
+.step.done h3{color:var(--vocal)}
+.progress{margin-top:20px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--ink-soft)}
+
+.take{background:var(--cream-2)}
+.tips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:30px}
+@media (max-width:760px){.tips{grid-template-columns:minmax(0,1fr)}}
+.tip{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:22px}
+.tip p{color:var(--ink-soft);font-size:1rem}
+
+.next{background:var(--vocal);color:var(--cream);text-align:center}
+.next h2{color:var(--cream)}
+.next .lede{margin:18px auto 30px;max-width:46ch}
+.next .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 18px}
+
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px;font-family:var(--f-label);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+footer a{text-decoration:none;opacity:.75}
+
+/* the lock */
+.lock{position:fixed;inset:0;z-index:50;background:var(--vocal);color:var(--cream);display:grid;place-items:center;padding:24px;overflow:auto}
+.lock[hidden]{display:none}
+.lock .box{width:100%;max-width:440px;text-align:center}
+.lock img{height:56px;width:auto;margin:0 auto 26px;display:block;background:var(--cream);border-radius:12px;padding:8px 12px}
+.lock h1{font-size:clamp(2.4rem,9vw,3.4rem)}
+.lock p{margin-top:14px;opacity:.9}
+.lock form{margin-top:26px;display:grid;gap:12px}
+.lock input{font:inherit;font-family:var(--f-label);font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-align:center;font-size:1.3rem;padding:14px;border-radius:14px;border:2px solid var(--cream);background:var(--cream);color:var(--ink)}
+.lock .err{color:#ffd0d0;font-size:.95rem;min-height:1.4em}
+.lock .small{font-size:.88rem;opacity:.75}
+.lock .small a{color:var(--cream)}
+body.locked main,body.locked header.top,body.locked footer{visibility:hidden}
+</style>
+</head>
+<body class="locked">
+
+<!-- LÅSET: visas tills rätt kod har skrivits in en gång i den här webbläsaren -->
+<div class="lock" id="lock">
+  <div class="box">
+    <img src="../../media/rostlab-logga.png" alt="Röstlabbet" width="261" height="147">
+    <h1>Prova en Vocal Lab</h1>
+    <p>Skriv in koden du fick efter köpet.</p>
+    <form id="lock-form" novalidate>
+      <label for="kod" class="small">Din kod</label>
+      <input id="kod" name="kod" autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+      <button class="btn" type="submit">Öppna modulen <span aria-hidden="true">→</span></button>
+      <p class="err" id="lock-err" role="alert"></p>
+    </form>
+    <p class="small">Hittar du inte koden? Mejla <a href="mailto:monica@rostlabbet.se">monica@rostlabbet.se</a>.</p>
+  </div>
+</div>
+
+<p class="demo">Provmodul. Text med streckad ram är exempeltext som Monica byter ut.</p>
+
+<header class="top">
+  <div class="wrap">
+    <a href="https://rostlabbet.se/"><img src="../../media/rostlab-logga.png" alt="Röstlabbet, till startsidan" width="261" height="147"></a>
+    <a class="back" href="https://rostlabbet.se/">rostlabbet.se</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Röstlabbet · Modul</p>
+    <h1>Prova en Vocal Lab<span class="script">sjung med Monica</span></h1>
+    <p class="lede"><span class="ph">En kort övning där du först sjunger med mig och sedan provar själv. Gör den gärna några gånger i veckan, så märker du skillnad.</span></p>
+    <ul class="facts">
+      <li>ca 10 minuter</li>
+      <li>Film</li>
+      <li>Tre steg</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band lesson">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Så gör du</p>
+      <h2>Tre steg</h2>
+      <ol class="steps" id="steps">
+        <li class="step">
+          <input type="checkbox" id="s1" data-step="1" aria-label="Steg 1 klart">
+          <label for="s1"><h3><span class="n">1</span>Värm upp</h3><p><span class="ph">Ställ dig bekvämt, andas lugnt och nynna lätt i några minuter innan du börjar.</span></p></label>
+        </li>
+        <li class="step">
+          <input type="checkbox" id="s2" data-step="2" aria-label="Steg 2 klart">
+          <label for="s2"><h3><span class="n">2</span>Sjung med i filmen</h3><p><span class="ph">Starta filmen och sjung med mig. Lyssna mer än du presterar, och följ med i takten.</span></p></label>
+        </li>
+        <li class="step">
+          <input type="checkbox" id="s3" data-step="3" aria-label="Steg 3 klart">
+          <label for="s3"><h3><span class="n">3</span>Prova själv</h3><p><span class="ph">Gör övningen en gång till utan filmen. Märk hur det känns i kroppen och i rösten.</span></p></label>
+        </li>
+      </ol>
+      <p class="progress" id="progress" aria-live="polite">0 av 3 steg klara</p>
+    </div>
+    <figure class="film">
+      <video src="../../media/klipp-vocal-lab.mp4" poster="../../media/klipp-vocal-lab.jpg" controls playsinline preload="none" width="720" height="1280"></video>
+      <p>Tryck på filmen och sätt på ljudet.</p>
+    </figure>
+  </div>
+</section>
+
+<section class="band take">
+  <div class="wrap">
+    <p class="kicker">Ta med dig</p>
+    <h2>Tre saker att komma ihåg</h2>
+    <div class="tips">
+      <div class="tip"><h3>Lite och ofta</h3><p><span class="ph">Tio minuter tre gånger i veckan ger mer än en lång timme ibland.</span></p></div>
+      <div class="tip"><h3>Lyssna inåt</h3><p><span class="ph">Det ska kännas lätt. Blir det trångt, gör en paus och börja om lite mjukare.</span></p></div>
+      <div class="tip"><h3>Kom tillbaka</h3><p><span class="ph">Modulen finns kvar här. Gör övningen igen när du vill.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band next">
+  <div class="wrap">
+    <h2>Vill du gå vidare?</h2>
+    <p class="lede">Personlig coachning för din röst, i studion i Mellbystrand eller online via Zoom.</p>
+    <div class="ctas">
+      <a class="btn" href="https://rostlabbet.se/coachning.html">Boka 1:1-coachning <span aria-hidden="true">→</span></a>
+      <a class="btn btn-line" href="https://www.instagram.com/rostlabbet/" rel="noopener">Följ på Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Röstlabbet · monica@rostlabbet.se</span>
+    <a href="https://rostlabbet.se/villkor.html">Allmänna villkor</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KOD_HASH='18daf5d4';          // kontrollsumma för modulens kod, inte koden själv
+  var NYCKEL='rl-modul-prova-vocal-lab';
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  function hash(s){var x=0x811c9dc5;for(var i=0;i<s.length;i++){x^=s.codePointAt(i);if(s.codePointAt(i)>0xffff)i++;x=Math.imul(x,0x01000193)>>>0}return('0000000'+x.toString(16)).slice(-8)}
+  function norm(s){return String(s||'').trim().toUpperCase().replace(/\s+/g,'')}
+  var lock=document.getElementById('lock'),form=document.getElementById('lock-form'),err=document.getElementById('lock-err'),input=document.getElementById('kod');
+  function open(){store(NYCKEL+'-oppen','1');lock.hidden=true;document.body.classList.remove('locked')}
+  // Länken från tacksidan har ?kod=… med; kolla den och ta bort den ur adressfältet.
+  var fromUrl=new URLSearchParams(location.search).get('kod');
+  if(fromUrl){if(hash(norm(fromUrl))===KOD_HASH)open();history.replaceState(null,'',location.pathname)}
+  if(store(NYCKEL+'-oppen')==='1')open();
+  else{input.focus()}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(hash(norm(input.value))===KOD_HASH){err.textContent='';open();window.scrollTo(0,0)}
+    else{err.textContent='Koden stämmer inte. Kolla stavningen och försök igen.';input.select()}
+  });
+
+  // Stegen: markeringarna sparas bara i den här webbläsaren.
+  var boxes=document.querySelectorAll('#steps input'),prog=document.getElementById('progress');
+  function update(){
+    var n=0;Array.prototype.forEach.call(boxes,function(b){b.closest('.step').classList.toggle('done',b.checked);if(b.checked)n++});
+    prog.textContent=n===boxes.length?'Klart för nu! Kom gärna tillbaka och gör övningen igen.':n+' av '+boxes.length+' steg klara';
+  }
+  Array.prototype.forEach.call(boxes,function(b){
+    b.checked=store(NYCKEL+'-steg'+b.dataset.step)==='1';
+    b.addEventListener('change',function(){store(NYCKEL+'-steg'+b.dataset.step,b.checked?'1':'0');update()});
+  });
+  update();
+})();
+</script>
+</body>
+</html>
