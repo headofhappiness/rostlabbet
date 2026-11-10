@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Röstlabbet – röst- och scenutveckling med Monica">
 <meta property="og:description" content="1:1-coachning för dig som sjunger, och workshops för körer, grupper och företag. I studion i Mellbystrand eller online.">
-<meta property="og:image" content="https://rostlabbet.se/media/monica-poster.jpg">
+<meta property="og:image" content="https://rostlabbet.se/media/monica-1-1.jpg">
 <meta property="og:url" content="https://rostlabbet.se/">
 <meta name="theme-color" content="#780000">
 <link rel="icon" type="image/png" href="media/favicon.png">
@@ -259,7 +259,7 @@ details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
 @media (max-width:860px){.more-grid{grid-template-columns:minmax(0,1fr)}}
 
 /* lead capture (hidden until the Zenler funnel is ready) */
-.lead{background:var(--cream)}
+.lead{background:var(--cream-2)}
 .lead .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center}
 @media (max-width:860px){.lead .wrap{grid-template-columns:minmax(0,1fr)}}
 .lead .lede{margin-top:20px;color:var(--ink-soft)}
@@ -353,7 +353,7 @@ nav.main a.nav-strong{font-weight:800}
 .peek-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;text-decoration:none;color:var(--cream);border:2px solid var(--cream);border-radius:999px;padding:15px 24px 13px;transition:background .15s,color .15s}
 .peek-btn:hover{background:var(--cream);color:var(--vocal)}
 /* smakprov: three vertical clips */
-#smakprov{background:var(--cream-2)}
+#smakprov{background:var(--cream)}
 #smakprov h2{font-size:clamp(2rem,4vw,3rem)}
 #smakprov .intro{margin-top:14px;color:var(--ink-soft);max-width:52ch}
 .clips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:34px}
@@ -363,7 +363,9 @@ nav.main a.nav-strong{font-weight:800}
 .clip figcaption{display:grid;gap:2px}
 .clip figcaption b{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--vocal)}
 .clip figcaption span{color:var(--ink-soft);font-size:.95rem}
-.clips-cta{margin-top:30px}
+.clips-cta{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.clips-cta span{flex-basis:100%;color:var(--ink-soft)}
+.clips-cta .btn-line{color:var(--vocal)!important}
 /* Sjung Smart as bonus in the price card */
 .pcard .bonus{margin:18px 0 20px;padding:14px 16px;border:2px dashed var(--lab);border-radius:14px;line-height:1.5}
 .pcard .bonus .bl{display:inline-block;margin-right:8px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;background:var(--lab);color:var(--ink);padding:3px 9px 2px;border-radius:99px}
@@ -445,27 +447,6 @@ nav.main a.nav-strong{font-weight:800}
   </div>
 </div>
 
-<!-- FILM -->
-<section class="band film" id="film">
-  <div class="wrap">
-    <div>
-      <p class="kicker">Titta in i studion</p>
-      <h2>Så jobbar Monica</h2>
-      <p class="lede">Monica visar, du provar, och tillsammans jobbar ni med andning, klang och uttryck. Tryggt, lekfullt och effektivt.</p>
-      <ul>
-        <li>I studion i Mellbystrand eller online</li>
-        <li>Complete Vocal Technique</li>
-        <li>För dig från 16 år, nybörjare eller van</li>
-      </ul>
-    </div>
-    <div class="player">
-      <video id="film-video" src="media/monica-livepass.mp4" poster="media/monica-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Monica leder ett röstpass i studion"></video>
-      <span class="live-badge">Röstlabbet</span>
-      <button class="sound" id="film-sound" type="button"><span class="dot" aria-hidden="true"></span>Spela med ljud</button>
-    </div>
-  </div>
-</section>
-
 <!-- WHAT YOU WANT -->
 <section class="band gym">
   <div class="wrap">
@@ -542,14 +523,14 @@ nav.main a.nav-strong{font-weight:800}
         <figcaption><b>Prova en Vocal Lab med mig</b><span>Sjung med, sedan provar du själv.</span></figcaption>
       </figure>
     </div>
-    <p class="clips-cta"><a class="btn" href="coachning.html">Boka 1:1-coachning <span class="arrow" aria-hidden="true">→</span></a></p>
+    <p class="clips-cta"><span>Fler filmer och tips delar Monica på Instagram.</span><a class="btn btn-line" href="https://www.instagram.com/rostlabbet/" rel="noopener">Följ @rostlabbet på Instagram <span class="arrow" aria-hidden="true">→</span></a><a class="btn" href="coachning.html">Boka 1:1-coachning <span class="arrow" aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
 <!-- MONICA -->
 <section class="band monica" id="monica">
   <div class="wrap">
-    <div class="photo has-img"><img src="media/monica-portratt.jpg" alt="Monica sjunger i studion med hörlurar och mikrofon" width="720" height="900" loading="lazy"></div>
+    <div class="photo has-img"><img src="media/monica-1-1.jpg" alt="Monica coachar en elev, glad och engagerad" width="900" height="1350" loading="lazy"></div>
     <div>
       <p class="kicker">Din coach</p>
       <h2>Hej, jag heter Monica</h2>
@@ -646,16 +627,6 @@ nav.main a.nav-strong{font-weight:800}
   </div>
 </footer>
 
-<script>
-(function(){
-  var v=document.getElementById('film-video'),b=document.getElementById('film-sound');
-  if(v&&b){b.addEventListener('click',function(){
-    v.muted=false;v.loop=false;v.currentTime=0;v.controls=true;
-    var p=v.play();if(p&&p.catch)p.catch(function(){});
-    b.hidden=true;
-  });}
-})();
-</script>
 <script>
 document.addEventListener("play",function(e){var v=e.target;if(!v.closest||!v.closest(".clips"))return;Array.prototype.forEach.call(document.querySelectorAll(".clips video"),function(o){if(o!==v)o.pause()});},true);
 </script>
