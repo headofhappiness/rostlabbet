@@ -89,7 +89,7 @@ button{font:inherit;color:inherit}
 .scenrad{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:24px;margin-top:22px;align-items:start}
 .huvudspalt{container-type:inline-size}
 @container (max-width:620px){.scenrad{grid-template-columns:minmax(0,1fr)}.scenrad video{max-width:280px;margin-inline:auto}}
-.scenrad video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#111}
+.scenrad video{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#111}
 .delar{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .delar button{width:100%;display:flex;gap:12px;align-items:center;text-align:left;background:var(--cream);border:1.5px solid transparent;border-radius:12px;padding:12px 14px;cursor:pointer}
 .delar button:hover{border-color:var(--line)}
