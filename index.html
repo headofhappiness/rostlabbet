@@ -136,9 +136,11 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 @media (max-width:480px){.stamp{right:-8px;top:-46px;width:104px;height:104px;font-size:.68rem}}
 
 /* proof */
-.proof{border-bottom:1px solid var(--line)}
-.proof .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 36px;padding-block:24px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:600}
-.proof b{font-family:var(--f-display);font-weight:400;font-size:1.7rem;letter-spacing:.02em;color:var(--vocal);margin-right:8px;vertical-align:-3px}
+.proof{background:var(--ink);color:var(--cream)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding-block:clamp(30px,4vw,46px);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.16em;font-size:.82rem;font-weight:600;text-align:center}
+.proof span{padding:4px 16px;border-left:1px solid rgba(253,240,213,.18)}
+.proof span:first-child{border-left:0}
+.proof b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(2.2rem,3.6vw,3.2rem);line-height:1.05;white-space:nowrap;letter-spacing:.02em;color:var(--lab);margin:0 0 8px}
 
 /* gym analogy */
 .gym .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
@@ -312,8 +314,10 @@ details p{margin-top:12px;color:var(--ink-soft);max-width:64ch}
   .hero .ctas .sub{width:100%;text-align:center}
   .mcard{padding:22px 22px 18px}
   .mcard .title{font-size:2.8rem}
-  .proof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;font-size:.72rem}
-  .proof b{display:block;margin:0 0 2px;font-size:1.9rem}
+  .proof .wrap{grid-template-columns:1fr 1fr;gap:22px 0;font-size:.72rem;letter-spacing:.12em}
+  .proof span{padding:0 10px}
+  .proof span:nth-child(3){border-left:0}
+  .proof b{margin:0 0 4px;font-size:clamp(1.8rem,10vw,2.4rem)}
   .gym-row{grid-template-columns:1fr;gap:4px;padding:16px 0}
   .gym-row:first-child{display:none}
   .gym-row span:first-child{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--signal)}
