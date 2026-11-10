@@ -84,6 +84,9 @@ header.top a.back{font-family:var(--f-label);font-weight:700;text-transform:uppe
 .step .n{font-family:var(--f-display);color:var(--signal);font-size:1.1rem;margin-right:6px}
 .step p{color:var(--ink-soft)}
 .step.done h3{color:var(--vocal)}
+.step label{cursor:pointer}
+.step.aktiv{background:linear-gradient(90deg,rgba(0,166,230,.12),transparent 85%);box-shadow:inset 4px 0 0 var(--lab);padding-left:12px;margin-left:-12px}
+.step.aktiv h3::after{content:"▶ Visas i filmen";margin-left:10px;font-size:.66rem;letter-spacing:.1em;color:var(--ink);background:var(--lab);border-radius:99px;padding:3px 8px 1px;vertical-align:2px;white-space:nowrap}
 .progress{margin-top:20px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--ink-soft)}
 
 .take{background:var(--cream-2)}
@@ -184,9 +187,9 @@ body.locked main,body.locked header.top,body.locked footer{visibility:hidden}
       <p>Tryck på filmen och sätt på ljudet.</p>
       <!-- Filmval: 1–3 filmer. En knapp per film. Är det bara en film kan listan tas bort, den döljs ändå. -->
       <ol class="filmval" id="filmval" aria-label="Välj film">
-        <li><button type="button" aria-current="true" data-src="../../media/klipp-vocal-lab.mp4" data-poster="../../media/klipp-vocal-lab.jpg"><img src="../../media/klipp-vocal-lab.jpg" alt="" width="720" height="1280"><span><b>Film 1</b><span class="ph">Sjung med mig</span></span></button></li>
-        <li><button type="button" aria-current="false" data-src="../../media/klipp-starkare-rost.mp4" data-poster="../../media/klipp-starkare-rost.jpg"><img src="../../media/klipp-starkare-rost.jpg" alt="" width="720" height="1280" loading="lazy"><span><b>Film 2</b><span class="ph">Starkare röst</span></span></button></li>
-        <li><button type="button" aria-current="false" data-src="../../media/klipp-intonation.mp4" data-poster="../../media/klipp-intonation.jpg"><img src="../../media/klipp-intonation.jpg" alt="" width="720" height="1280" loading="lazy"><span><b>Film 3</b><span class="ph">Träffa tonen</span></span></button></li>
+        <li><button type="button" aria-current="true" data-src="../../media/klipp-vocal-lab.mp4" data-poster="../../media/klipp-vocal-lab.jpg"><img src="../../media/klipp-vocal-lab.jpg" alt="" width="720" height="1280"><span><b>Steg 1</b><span class="ph">Sjung med mig</span></span></button></li>
+        <li><button type="button" aria-current="false" data-src="../../media/klipp-starkare-rost.mp4" data-poster="../../media/klipp-starkare-rost.jpg"><img src="../../media/klipp-starkare-rost.jpg" alt="" width="720" height="1280" loading="lazy"><span><b>Steg 2</b><span class="ph">Starkare röst</span></span></button></li>
+        <li><button type="button" aria-current="false" data-src="../../media/klipp-intonation.mp4" data-poster="../../media/klipp-intonation.jpg"><img src="../../media/klipp-intonation.jpg" alt="" width="720" height="1280" loading="lazy"><span><b>Steg 3</b><span class="ph">Träffa tonen</span></span></button></li>
       </ol>
     </figure>
   </div>
@@ -256,19 +259,33 @@ body.locked main,body.locked header.top,body.locked footer{visibility:hidden}
   });
   update();
 
-  // Filmvalet: byt film i spelaren. Med bara en film döljs valet.
+  // Filmerna hör ihop med stegen: steg 1 visar film 1, steg 2 film 2 och så vidare.
+  // Klick på ett steg (eller bocken) byter film. Miniatyrerna under filmen gör samma sak åt andra hållet.
+  // Med bara en film döljs miniatyrerna och stegen byter ingenting.
   var video=document.getElementById('film'),val=document.getElementById('filmval');
-  if(val){
-    var knappar=val.querySelectorAll('button');
-    if(knappar.length<2)val.hidden=true;
-    Array.prototype.forEach.call(knappar,function(k){
-      k.addEventListener('click',function(){
-        if(k.getAttribute('aria-current')==='true')return;
-        Array.prototype.forEach.call(knappar,function(a){a.setAttribute('aria-current',a===k?'true':'false')});
-        video.pause();video.src=k.dataset.src;video.poster=k.dataset.poster||'';
-        var p=video.play();if(p&&p.catch)p.catch(function(){});
+  var knappar=val?val.querySelectorAll('button'):[];
+  var steg=document.querySelectorAll('#steps .step');
+  if(val&&knappar.length<2)val.hidden=true;
+  function visaFilm(i,spela){
+    var k=knappar[i];if(!k)return;
+    Array.prototype.forEach.call(steg,function(s,j){s.classList.toggle('aktiv',j===i)});
+    if(k.getAttribute('aria-current')!=='true'){
+      Array.prototype.forEach.call(knappar,function(a){a.setAttribute('aria-current',a===k?'true':'false')});
+      video.pause();video.src=k.dataset.src;video.poster=k.dataset.poster||'';
+    }
+    if(spela){var p=video.play();if(p&&p.catch)p.catch(function(){})}
+  }
+  if(knappar.length>1){
+    Array.prototype.forEach.call(knappar,function(k,i){k.addEventListener('click',function(){visaFilm(i,true)})});
+    Array.prototype.forEach.call(steg,function(s,i){
+      s.addEventListener('click',function(){
+        if(i>=knappar.length)return;
+        visaFilm(i,false);
+        // På mobil ligger filmen ovanför stegen: rulla upp så att man ser att den bytts.
+        if(window.innerWidth<=860){var r=video.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight*.6)video.scrollIntoView({behavior:'smooth',block:'start'})}
       });
     });
+    visaFilm(0,false);
   }
 })();
 </script>
