@@ -216,7 +216,9 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 
 /* monica */
 .monica{background:var(--cream-2)}
-.monica .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:center}
+.monica .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:start}
+/* fotots överkant i linje med rubriken "Hej, jag heter Monica" */
+.monica .photo{margin-top:calc(40px + .2425 * clamp(2.7rem,6.4vw,5rem))}
 .photo{aspect-ratio:4/5;max-width:100%;border-radius:0;background:linear-gradient(170deg,#2a2a2b,#111);color:var(--cream);display:grid;place-items:end center;padding:26px;font-family:var(--f-label);letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;text-align:center}
 .photo span{outline:2px dashed var(--cream);outline-offset:4px;padding:4px 8px}
 .monica h2{margin-bottom:24px}
@@ -224,7 +226,7 @@ nav.main .btn{padding:12px 20px 10px;font-size:.76rem}
 blockquote{margin:36px 0 0;padding:0;font-family:var(--f-quote);font-style:italic;color:var(--vocal);font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.45}
 .cvt{display:block;margin-top:28px;width:220px;height:auto;max-width:100%}
 blockquote cite{display:block;margin-top:14px;font-family:var(--f-label);font-style:normal;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;color:var(--ink)}
-@media (max-width:860px){.monica .wrap{grid-template-columns:1fr}.photo{max-width:340px}}
+@media (max-width:860px){.monica .wrap{grid-template-columns:1fr}.photo{max-width:340px}.monica .photo{margin-top:0}}
 
 /* voices */
 .voices h2{text-align:center}
