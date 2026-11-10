@@ -24,7 +24,9 @@
     /* under 1100: bara Meny, Logga in och Boka coachning */
     +'@media (max-width:1099px){nav.main a.hide-sm{display:none}}'
     /* mobil: Logga in flyttar in i menyn */
-    +'@media (max-width:600px){nav.main a.nav-login{display:none}.nav-panel a.panel-login{display:block}nav.main .nav-toggle{padding:9px 12px 7px;font-size:.7rem}}'
+    +'@media (max-width:600px){nav.main a.nav-login{display:none}.nav-panel a.panel-login{display:block}nav.main .nav-toggle{padding:9px 12px 7px;font-size:.7rem}nav.main{gap:10px}nav.main .btn{padding:10px 14px 8px;font-size:.68rem;letter-spacing:.1em;white-space:nowrap}}'
+    /* minsta mobilerna: knappen säger bara Boka (skärmläsare läser fortfarande hela texten) */
+    +'@media (max-width:370px){nav.main .btn{font-size:0;gap:0}nav.main .btn::after{content:"Boka";font-size:.68rem}}'
     +'@media (min-width:1400px){.nav-panel{display:none!important}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
