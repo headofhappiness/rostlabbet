@@ -21,7 +21,7 @@
     +'.nav-panel a.panel-login{display:none}'
     /* 1100–1399: fyra punkter i raden + Meny */
     +'@media (max-width:1399px){nav.main .nav-toggle{display:inline-flex}}'
-    /* under 1100: bara Meny, Logga in och Bli medlem */
+    /* under 1100: bara Meny, Logga in och Boka coachning */
     +'@media (max-width:1099px){nav.main a.hide-sm{display:none}}'
     /* mobil: Logga in flyttar in i menyn */
     +'@media (max-width:600px){nav.main a.nav-login{display:none}.nav-panel a.panel-login{display:block}nav.main .nav-toggle{padding:9px 12px 7px;font-size:.7rem}}'

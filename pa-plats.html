@@ -192,17 +192,16 @@ nav.main a.nav-strong{font-weight:800}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Röstlabbet, till startsidan">
-      <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet – din digitala röstcoach" width="261" height="147">
+      <img class="logo-img" src="media/rostlab-logga.png" alt="Röstlabbet" width="261" height="147">
     </a>
     <nav class="main" aria-label="Huvudmeny">
-      <a class="hide-sm nav-strong" href="index.html">Medlemskapet</a>
-      <a class="hide-sm" href="coachning.html">1:1-coachning</a>
-      <a class="hide-sm" href="pa-plats.html" aria-current="page">Träna på plats</a>
+      <a class="hide-sm nav-strong" href="coachning.html">1:1-coachning</a>
       <a class="hide-sm" href="workshops.html">Boka gruppworkshop</a>
-      <a class="hide-sm hide-md" href="index.html#monica">Om Monica</a>
+      <a class="hide-sm" href="pa-plats.html" aria-current="page">Träna på plats</a>
+      <a class="hide-sm" href="index.html#monica">Om Monica</a>
       <a class="hide-sm hide-md" href="index.html#fragor">Frågor</a>
       <a class="nav-login" href="https://kurs.rostlabbet.se/login">Logga in</a>
-      <a class="btn" href="index.html#pris">Bli medlem</a>
+      <a class="btn" href="coachning.html">Boka coachning</a>
     </nav>
   </div>
 </header>
@@ -214,10 +213,10 @@ nav.main a.nav-strong{font-weight:800}
     <div>
       <p class="kicker">Röstlabbet · På plats</p>
       <h1>Vocal Workout<span class="script">på plats med Monica</span></h1>
-      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla, medlem eller inte, men <b>betalas separat</b>.</p>
+      <p class="lede">Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. <b>Bara på plats</b>, passet sänds inte digitalt. Öppet för alla.</p>
       <div class="ctas">
         <a class="btn" href="#pa-plats">Kommande pass <span class="arrow" aria-hidden="true">↓</span></a>
-        <a class="textlink" href="index.html#ingar" style="color:var(--cream)">Träna digitalt? Se medlemskapet</a>
+        <a class="textlink" href="coachning.html" style="color:var(--cream)">Hellre personlig coachning? Se 1:1</a>
       </div>
       <p class="choir-hero">Är ni en <b>kör eller grupp</b> som vill boka en egen workshop? <a href="workshops.html">Läs om workshops →</a></p>
     </div>
@@ -229,7 +228,7 @@ nav.main a.nav-strong{font-weight:800}
   <div class="wrap">
     <p class="kicker">På plats</p>
     <h2>Kommande Vocal Workouts</h2>
-    <p class="lede" style="margin-top:18px">Passen sker bara på plats och <b>ingår inte i medlemskapet</b>, så de betalas separat även av medlemmar. Vid varje pass står var, när och vad det kostar. Det som ingår i medlemskapet är <a href="index.html#ingar">Live Vocal Workouts digitalt</a>.</p>
+    <p class="lede" style="margin-top:18px">Passen sker bara på plats. Vid varje pass står var, när och vad det kostar.</p>
     <!--
       KOMMANDE TRÄNINGSPASS PÅ PLATS
       Listan hämtas från fliken "På plats" i samma Google-kalkylark som repschemat.
@@ -240,7 +239,7 @@ nav.main a.nav-strong{font-weight:800}
       <article class="wcard" data-date="2026-10-31">
         <div class="wdate"><span class="d">31</span><span class="m">okt</span><span class="wd">lördag</span></div>
         <div class="winfo">
-          <span class="wmode">Bara på plats</span> <span class="wmode extra">Ingår inte i medlemskapet</span>
+          <span class="wmode">Bara på plats</span>
           <h3>Vocal Workout</h3>
           <ul><li><b>Plats:</b> Dramalogen, Halmstad</li><li><b>Tid:</b> 11–12</li><li><b>Pris på plats:</b> 195 kr inkl moms</li></ul>
           <p class="wnote">Betalas med Swish i dörren.</p>
@@ -254,10 +253,10 @@ nav.main a.nav-strong{font-weight:800}
 
 <section class="band red final">
   <div class="wrap">
-    <h2>Träna digitalt<span class="script">när det passar dig</span></h2>
-    <p class="lede">Som medlem tränar du med Monica live varje månad, digitalt var du än är, och alla pass spelas in.</p>
+    <h2>Vill du gå djupare?<span class="script">1:1 med Monica</span></h2>
+    <p class="lede">Personlig coachning för din röst, i studion i Mellbystrand eller online via Zoom.</p>
     <div class="ctas">
-      <a class="btn" href="index.html#pris">Bli medlem · 349 kr/mån <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="coachning.html">Boka 1:1-coachning <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -295,7 +294,6 @@ nav.main a.nav-strong{font-weight:800}
 /* Kommande träningspass på plats: läses från fliken "På plats" i Google-kalkylarket.
    Kolumner: Datum | Tid | Pass | Plats | Pris på plats | Pris digitalt | Info | Anmälan
    Anmälan: tom = formulär på sidan. En länk (t.ex. Zenlers betalsida) = knappen "Delta på plats" går dit.
-   Pris digitalt tom = knappen blir "Digitalt? Ingår i medlemskapet".
    Tom "Pris på plats" = inte på plats. Tom "Pris digitalt" = inte digitalt. (Gamla rubrikerna Pris/Digitalt fungerar också.)
    Båda tomma räknas som bara på plats.
    Anmälan kan vara en mejladress eller en länk (tom = monica@rostlabbet.se). */
@@ -376,7 +374,7 @@ nav.main a.nav-strong{font-weight:800}
       if(w.onsite&&w.pris)facts.push('<li><b>Pris på plats:</b> '+esc(w.pris)+'</li>');
       if(w.digitalt)facts.push('<li><b>Pris digitalt:</b> '+esc(w.digitalt)+'</li>');
       return '<article class="wcard"><div class="wdate"><span class="d">'+w.d.getDate()+'</span><span class="m">'+M[w.d.getMonth()]+'</span><span class="wd">'+W[w.d.getDay()]+'</span></div>'
-        +'<div class="winfo"><span class="wmode">'+mode+'</span> <span class="wmode extra">Ingår inte i medlemskapet</span><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
+        +'<div class="winfo"><span class="wmode">'+mode+'</span><h3>'+esc(w.namn)+'</h3><ul>'+facts.join('')+'</ul>'+(w.info?'<p class="wnote">'+esc(w.info)+'</p>':'')+'</div>'
         +'<div class="wbtns">'+buttons(w,href)+'</div></article>';
     }).join('');
     if(empty)empty.hidden=items.length>0;
