@@ -388,6 +388,20 @@ nav.main a.nav-strong{font-weight:800}
 .hero-g{margin-top:18px;font-size:.95rem;opacity:.9}
 /* offer cards */
 .item .n.sm{font-size:3.4rem;line-height:1}
+.paket{background:var(--cream-2)}
+.paket-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:860px){.paket-grid{grid-template-columns:minmax(0,1fr)}}
+.paket-bild{display:block;border-radius:18px;overflow:hidden;box-shadow:0 24px 50px rgba(120,0,0,.16);transition:transform .2s ease}
+.paket-bild:hover{transform:translateY(-3px)}
+.paket-bild img{display:block;width:100%;height:auto}
+.paket-text h2{margin-bottom:6px}
+.paket-under{font-family:var(--f-script);font-weight:600;color:var(--lab);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.15;margin:0 0 16px;transform:rotate(-2deg);transform-origin:left}
+.paket-chips{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.paket-chips li{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;border:1.5px solid var(--vocal);color:var(--vocal);border-radius:999px;padding:6px 12px 4px}
+.paket-pris{margin:22px 0 18px;font-family:var(--f-display);font-size:2.4rem;line-height:1;color:var(--vocal)}
+.paket-pris small{font-family:var(--f-label);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:6px}
+.paket-text .fine{margin-top:14px;font-size:.92rem;color:var(--ink-soft)}
+@media (prefers-reduced-motion:reduce){.paket-bild{transition:none}.paket-bild:hover{transform:none}}
 .item a.go{margin-top:auto;padding-top:8px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;text-decoration:none;color:var(--cream);border-bottom:2px solid var(--lab);align-self:flex-start;padding-bottom:3px}
 .item a.go:hover{color:#fff;border-color:#fff}
 </style>
@@ -439,6 +453,7 @@ nav.main a.nav-strong{font-weight:800}
           <div><dt><a href="workshops.html">Workshops</a><small>För körer och grupper</small></dt><dd>→</dd></div>
           <div><dt><a href="workshops.html#foretag">Rösten på jobbet</a><small>Workshops för företag</small></dt><dd>→</dd></div>
           <div><dt><a href="pa-plats.html">Träna på plats</a><small>Vocal Workout, öppet för alla</small></dt><dd>→</dd></div>
+          <div><dt><a href="#traningspaket">Träna hemma</a><small>Röstlabbets träningspaket</small></dt><dd>595 kr</dd></div>
         </dl>
         <div class="stamp" aria-hidden="true">Studio<br>scen och<br>online</div>
       </div>
@@ -508,6 +523,23 @@ nav.main a.nav-strong{font-weight:800}
         <p>Ett längre träningspass, ungefär en timme, där vi ses på riktigt och Monica anpassar passet efter gruppen. Öppet för alla.</p>
         <a class="go" href="pa-plats.html">Se kommande pass →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRÄNINGSPAKETET: säljs i Zenler (engångsköp). Tillgång t.o.m. 30 sep 2027. -->
+<section class="band paket" id="traningspaket">
+  <div class="wrap paket-grid">
+    <a class="paket-bild" href="https://rostlabbet.newzenler.com/courses/o8zakdvc" rel="noopener"><img src="media/traningspaket.png" alt="Röstlabbets träningspaket: uppvärmning, Vocal Labs och stretch, med Monica" width="640" height="357" loading="lazy"></a>
+    <div class="paket-text">
+      <p class="kicker">Nytt · Träna hemma</p>
+      <h2>Röstlabbets träningspaket</h2>
+      <p class="paket-under">Träna rösten hemma – när det passar dig!</p>
+      <p class="lede">Korta, konkreta träningspass med uppvärmning, stretch och Vocal Labs – för dig som vill hålla igång och utveckla rösten hemma.</p>
+      <ul class="paket-chips"><li>Uppvärmning</li><li>Stretch</li><li>Vocal Labs</li></ul>
+      <p class="paket-pris">595 kr <small>inkl. moms, engångsköp</small></p>
+      <a class="btn" href="https://rostlabbet.newzenler.com/courses/o8zakdvc" rel="noopener">Köp träningspaketet <span class="arrow" aria-hidden="true">→</span></a>
+      <p class="fine">Tillgång till innehållet till och med 30 september 2027.</p>
     </div>
   </div>
 </section>
